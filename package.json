@@ -36,6 +36,9 @@
     "gulp-webpcss": "^1.1.1",
     "pug": "^3.0.2",
     "sass": "^1.62.0",
-    "webp-converter": "^2.2.3"
+    "swiper": "^9.2.4",
+    "webp-converter": "^2.2.3",
+    "webpack": "^5.80.0",
+    "webpack-stream": "^7.0.0"
   }
 }
