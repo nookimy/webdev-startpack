@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nookimy/build-2023#readme",
   "devDependencies": {
+    "browser-sync": "^2.29.1",
     "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
