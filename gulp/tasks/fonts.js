@@ -84,7 +84,7 @@ export const fontsStyle = () => {
                         `@font-face {
                             font-family: ${fontName};
                             font-display: swap;
-                            src: url("../fonts/${fontFileName}.woff2) format(woff2), url("../fonts/${fontFileName}.woff) format(woff);
+                            src: url("../fonts/${fontFileName}.woff2") format(woff2), url("../fonts/${fontFileName}.woff") format(woff);
                             font-weight: ${fontWeight};
                             font-style: normal;
                         }`,cb);
