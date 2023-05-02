@@ -11,6 +11,7 @@ export const html = () => {
                 message: "Error: <%= error.message %>"
             }))
         )
+
         .pipe(pug({
             // сжатие html-файла
             pretty: true,
@@ -44,6 +45,6 @@ export const html = () => {
                 })
             )
         )
-        .pipe(app.gulp.dest(app.path.build.html))
+        .pipe(app.gulp.dest(app.path.build.root))
         .pipe(app.plugins.browsersync.stream());
 }

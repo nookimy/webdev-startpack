@@ -1,5 +1,6 @@
 // Основной модуль
 import gulp from "gulp";
+
 // Импорт путей
 import { path } from "./gulp/config/path.js";
 
@@ -44,7 +45,8 @@ export { svgSprive };
 const fonts = gulp.series( otfToTtf, ttfToWoff, fontsStyle);
 
 // основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.parallel(copy, html, scss, js, images);
+/*const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));*/
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
