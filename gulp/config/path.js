@@ -40,6 +40,7 @@ export const path = {
         images: basePath.dev + '/img/',
         css: basePath.dev + '/css/',
         fonts: basePath.dev + '/fonts/',
+
         files: basePath.dev + '/files/',
     },
 
@@ -48,9 +49,13 @@ export const path = {
             [basePath.src + '/*.pug'
                 // Сюда добавим пути к файлам блоков чуть ниже по коду
             ],
+        // Чтобы вотчер не тормозил прописываем каждую папку отдельно
+        scss:
+            [basePath.less + '/*.scss'
+                // Сюда добавим пути к файлам блоков чуть ниже по коду
+            ],
         js: `${srcFolder}/scss/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,svg}`,
-        scss: basePath.blocks + '/**/*.scss',
         files: `${srcFolder}/files/**/*.*`,
     },
 
@@ -65,14 +70,21 @@ export const path = {
 
 // Массив для списка папок блоков, заполнится сам чуть ниже по коду
 let blocks = [];
+// Массив для списка папок модулей, заполнится сам чуть ниже по коду
+let modules = [];
 
-// Получаем список блоков и записываем их в массив blocs
+// Получаем список блоков и записываем их в массив blocks
 if (basePath.blocks) {
     fs.readdirSync(basePath.blocks).forEach(function (directory) {
         blocks.push(directory);
         console.log(blocks);
     });
 }
+
+// Добавляем к path.src.lessWatch пути к блокам
+blocks.forEach (function (block) {
+    path.watch.scss.push(basePath.less + '/blocks/' + block + '/*.scss');
+});
 
 // Добавляем к path.src.htmlWatch пути к блокам
 blocks.forEach (function (block) {

@@ -53,12 +53,14 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
+const style = gulp.series(scss);
 
 //Экспорт сценариев
 export { dev }
 export  { build }
 export  { deployZIP }
 export  { deployFTP }
+export  { style }
 
 //Выполнение сценария по умолчанию
 gulp.task('default', dev);

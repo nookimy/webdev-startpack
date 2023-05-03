@@ -9,7 +9,8 @@
     "build": "gulp build --build",
     "zip": "gulp deployZIP --build",
     "ftp": "gulp deployFTP --build",
-    "svgSprive": "gulp svgSprive"
+    "svgSprive": "gulp svgSprive",
+    "style": "gulp style"
   },
   "repository": {
     "type": "git",
