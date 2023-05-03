@@ -12,7 +12,8 @@ export const basePath = {
     src: 'src',
     dev: 'dist',
     prod: 'prod',
-    blocks: 'src/blocks', // Путь до папки с блоками препроцессорных файлов
+    less: 'src/less',
+    blocks: 'src/less/blocks', // Путь до папки с блоками препроцессорных файлов
     srcCms: 'source-cms', // Название папки в которой размещаются исходники для CMS, например, source-cms
     templatesFolder: 'custom', // Название папки в которой размещаются шаблоны, например, custom
     modulesFolder: 'modules', // Название папки в которой размещаются модули CMS, например, modules
@@ -27,7 +28,7 @@ export const path = {
         js: basePath.src + '/js/app.js',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
         svg: basePath.src + '/img/**/*.svg',
-        scss: basePath.blocks + '/style.scss',
+        scss: basePath.less + '/style.scss',
         html: basePath.src + '/*.pug',
         files: basePath.files + '/**/*.*',
         svgicons: basePath.src + '/svgicons/*.svg',
@@ -69,12 +70,13 @@ let blocks = [];
 if (basePath.blocks) {
     fs.readdirSync(basePath.blocks).forEach(function (directory) {
         blocks.push(directory);
+        console.log(blocks);
     });
 }
 
 // Добавляем к path.src.htmlWatch пути к блокам
 blocks.forEach (function (block) {
-    path.watch.html.push(basePath.blocks + block + '/*.pug');
+    path.watch.html.push(basePath.less + '/blocks/' + block + '/*.pug');
 });
 
 
