@@ -9,6 +9,8 @@
 custom/
 dev/
 prod/
+package-lock.json
+
 faviconData.json
 gulp-config.json
 gulp-config-dev.json
