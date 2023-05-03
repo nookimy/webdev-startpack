@@ -9,6 +9,7 @@
 *.sublime*
 custom/
 dev/
+dist/
 prod/
 package-lock.json
 
