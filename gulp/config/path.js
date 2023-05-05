@@ -29,18 +29,18 @@ export const path = {
         scss: basePath.components + '/style.scss',
         js: basePath.src + '/js/app.js',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
-        svg: [`${basePath.src}/img/*.svg`, `!${basePath.src}/**/icon-*.svg`],
+        svg: [`${basePath.blocks}/**/*.svg`, `!${basePath.src}/**/icon-*.svg`],
         svgicons: basePath.src + '/svgicons/*.svg',
         files: basePath.files + '/**/*.*',
     },
 
     build: {
         root: basePath.dev,
-        js: basePath.dev + '/js/',
-        images: basePath.dev + '/img/',
         css: basePath.dev + '/css/',
-        fonts: basePath.dev + '/fonts/',
+        js: basePath.dev + '/js/',
 
+        images: basePath.dev + '/img/',
+        fonts: basePath.dev + '/fonts/',
         files: basePath.dev + '/files/',
     },
     // Чтобы вотчер не тормозил прописываем каждую папку отдельно
