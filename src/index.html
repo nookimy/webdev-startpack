@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
-    @@include('./components/blocks/head/head.html', {
-    "title": "Главная"
-    })
+@@include('components/head.html',{
+"lang":"ru",
+"title":"Easy-webdev-startpack v3.0",
+"description":"Gulp pack for easy html/php markup development",
+"keywords":"",
+"favicon":"img/favicons/favicon",
+})
+
 <body>
-<main>
-    @@include('./components/blocks/section/section.html', {})
-</main>
-<script src="./js/app.min.js"></script>
+    <div style="display:none">
+        @@include('components/sprite.svg')
+    </div>
+    @@include('components/blocks/main-header/main-header.html')
+	<main class="main">
+        @@include('components/blocks/section/section.html')
+    </main>
+    @@include('components/blocks/main-footer/main-footer.html')
+	@@include('components/scripts.html')
 </body>
+
 </html>

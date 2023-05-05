@@ -2,3 +2,17 @@ p {
   background-color: black;
   color: $company-color--pressing;
 }
+
+@media  (max-width: 768px) {
+  span {
+    font-size: 16px;
+  }
+
+}
+
+@media  (max-width: 768px) {
+  body {
+    background-color: #faebd7;
+  }
+
+}

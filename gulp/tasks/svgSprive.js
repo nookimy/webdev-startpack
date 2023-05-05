@@ -1,4 +1,5 @@
 import svgSprite from "gulp-svg-sprite";
+import svgmin from "gulp-svgmin";
 
 export const svgSprive = () => {
     return app.gulp.src(`${app.path.src.svgicons}`, {})
@@ -8,14 +9,18 @@ export const svgSprive = () => {
                 message: "Error: <%= error.message %>"
             }))
         )
+
+        
+
+
         .pipe(svgSprite({
                 mode: {
                     stack: {
-                        sprite: `../icons/icons.svg`,
+                        sprite: `../components/sprite.svg`,
                         example: true,
                     }
                 },
             }
         ))
-        .pipe(app.gulp.dest(`${app.path.build.images}`));
+        .pipe(app.gulp.dest(`${app.path.build.svgicons}`));
 }
