@@ -12,8 +12,8 @@ export const basePath = {
     src: 'src',
     dev: 'dist',
     prod: 'prod',
-    less: 'src/less',
-    blocks: 'src/less/blocks', // Путь до папки с блоками препроцессорных файлов
+    components: 'src/components',
+    blocks: 'src/components/blocks', // Путь до папки с блоками препроцессорных файлов
     srcCms: 'source-cms', // Название папки в которой размещаются исходники для CMS, например, source-cms
     templatesFolder: 'custom', // Название папки в которой размещаются шаблоны, например, custom
     modulesFolder: 'modules', // Название папки в которой размещаются модули CMS, например, modules
@@ -25,13 +25,13 @@ export const basePath = {
 
 export const path = {
     src: {
+        html: basePath.src + '/*.html',
+        scss: basePath.components + '/style.scss',
         js: basePath.src + '/js/app.js',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
-        svg: basePath.src + '/img/**/*.svg',
-        scss: basePath.less + '/style.scss',
-        html: basePath.src + '/*.pug',
-        files: basePath.files + '/**/*.*',
+        svg: [`${basePath.src}/img/*.svg`, `!${basePath.src}/**/icon-*.svg`],
         svgicons: basePath.src + '/svgicons/*.svg',
+        files: basePath.files + '/**/*.*',
     },
 
     build: {
@@ -43,18 +43,17 @@ export const path = {
 
         files: basePath.dev + '/files/',
     },
-
+    // Чтобы вотчер не тормозил прописываем каждую папку отдельно
     watch: {
         html:
-            [basePath.src + '/*.pug'
+            [basePath.src + '/*.html'
                 // Сюда добавим пути к файлам блоков чуть ниже по коду
             ],
-        // Чтобы вотчер не тормозил прописываем каждую папку отдельно
         scss:
-            [basePath.less + '/*.scss'
+            [basePath.components + '/*.scss'
                 // Сюда добавим пути к файлам блоков чуть ниже по коду
             ],
-        js: `${srcFolder}/scss/**/*.js`,
+        js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,svg}`,
         files: `${srcFolder}/files/**/*.*`,
     },
@@ -81,14 +80,14 @@ if (basePath.blocks) {
     });
 }
 
-// Добавляем к path.src.lessWatch пути к блокам
+// Добавляем к path.src.componentsWatch пути к блокам
 blocks.forEach (function (block) {
-    path.watch.scss.push(basePath.less + '/blocks/' + block + '/*.scss');
+    path.watch.scss.push(basePath.components + '/blocks/' + block + '/*.scss');
 });
 
 // Добавляем к path.src.htmlWatch пути к блокам
 blocks.forEach (function (block) {
-    path.watch.html.push(basePath.less + '/blocks/' + block + '/*.pug');
+    path.watch.html.push(basePath.components + '/blocks/' + block + '/*.html');
 });
 
 

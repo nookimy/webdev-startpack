@@ -1,10 +1,12 @@
-/*import fileInclude from "gulp-file-include";*/
+import fileInclude from "gulp-file-include";
 import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
-import pug from "gulp-pug";
+
 
 export const html = () => {
     return app.gulp.src(app.path.src.html)
+
+        // Уведомления об ошибках
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
                 title: "HTML",
@@ -12,38 +14,31 @@ export const html = () => {
             }))
         )
 
-        .pipe(pug({
-            // сжатие html-файла
-            pretty: true,
-            // Показывать в терминале какой файл обработан
-            verbose: true
+        // Сборка html-файлов
+        .pipe(fileInclude())
 
-        }))
+        // Подмена путей до изображений
         .pipe(app.plugins.replace(/@img\//g, 'img/'))
+
+        // Добавление варианта webp изображений и тега picture
+        .pipe(webpHtmlNosvg())
+
+        // Версионность файлов стилей и скриптов
         .pipe(
-            app.plugins.if(
-                app.isBuild,
-                webpHtmlNosvg()
-            )
-        )
-        .pipe(
-            app.plugins.if(
-                app.isBuild,
-                versionNumber({
-                    'value': '%DT%',
-                    'append': {
-                        'key': '_v',
-                        'cover': 0,
-                        'to': [
-                            'css',
-                            'js',
-                        ]
-                    },
-                    'output': {
-                        'file': 'gulp/version.json'
-                    }
-                })
-            )
+            versionNumber({
+                'value': '%DT%',
+                'append': {
+                    'key': '_v',
+                    'cover': 0,
+                    'to': [
+                        'css',
+                        'js',
+                    ]
+                },
+                'output': {
+                    'file': 'gulp/version.json'
+                }
+            })
         )
         .pipe(app.gulp.dest(app.path.build.root))
         .pipe(app.plugins.browsersync.stream());
