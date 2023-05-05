@@ -29,8 +29,8 @@ export const path = {
         scss: basePath.components + '/style.scss',
         js: basePath.src + '/js/app.js',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
-        svg: [`${basePath.blocks}/**/*.svg`, `!${basePath.src}/**/icon-*.svg`],
-        svgicons: basePath.src + '/svgicons/*.svg',
+        svg: [`${basePath.blocks}/**/*.svg`, `!${basePath.blocks}/**/icon-*.svg`],
+        svgicons: basePath.blocks + '/**/icon-*.svg',
         files: basePath.files + '/**/*.*',
     },
 
@@ -38,10 +38,11 @@ export const path = {
         root: basePath.dev,
         css: basePath.dev + '/css/',
         js: basePath.dev + '/js/',
-
         images: basePath.dev + '/img/',
         fonts: basePath.dev + '/fonts/',
         files: basePath.dev + '/files/',
+
+        svgicons: basePath.components,
     },
     // Чтобы вотчер не тормозил прописываем каждую папку отдельно
     watch: {
