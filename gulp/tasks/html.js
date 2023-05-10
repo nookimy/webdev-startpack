@@ -1,4 +1,6 @@
 import fileInclude from "gulp-file-include";
+import posthtml from "gulp-posthtml";
+import include from "posthtml-include";
 import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
 
@@ -15,7 +17,9 @@ export const html = () => {
         )
 
         // Сборка html-файлов
-        .pipe(fileInclude())
+        .pipe(posthtml([
+            include()
+          ]))
 
         // Подмена путей до изображений
         .pipe(app.plugins.replace(/@img\//g, 'img/'))

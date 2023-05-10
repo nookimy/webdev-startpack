@@ -26,6 +26,7 @@ import  { server } from "./gulp/tasks/server.js";
 import  { scss } from "./gulp/tasks/scss.js";
 import  { js } from "./gulp/tasks/js.js";
 import  { images } from "./gulp/tasks/images.js";
+import  { svg } from "./gulp/tasks/svg.js";
 import  { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import  { svgSprive } from "./gulp/tasks/svgSprive.js";
 import  { zip } from "./gulp/tasks/zip.js";
@@ -42,6 +43,9 @@ function watcher() {
 
 // Создание svg-спрайта
 export { svgSprive };
+
+// Оптимизация svg-изображений
+export { svg };
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, fontsStyle);

@@ -11,7 +11,7 @@
     "zip": "gulp deployZIP --build",
     "ftp": "gulp deployFTP --build",
     "svgSprive": "gulp svgSprive",
-    "style": "gulp style"
+    "svg": "gulp svg"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-posthtml": "^3.0.5",
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
@@ -56,10 +57,13 @@
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "imagemin-svgo": "^10.0.1",
     "newer": "^0.1.5",
+    "posthtml-include": "^1.7.4",
     "pug": "^3.0.2",
     "rollup-plugin-uglify": "^6.0.4",
     "sass": "^1.62.0",
+    "svgo": "^3.0.2",
     "swiper": "^9.2.4",
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "^2.2.3",
