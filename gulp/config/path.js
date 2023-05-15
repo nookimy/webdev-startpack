@@ -30,7 +30,7 @@ export const path = {
         js: basePath.src + '/js/app.js',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
         svg: [`${basePath.blocks}/**/*.svg`, `!${basePath.blocks}/**/icon-*.svg`],
-        svgicons: basePath.blocks + '/**/icon-*.svg',
+        svgicons: basePath.blocks + '/icons/**/icon-*.svg',
         files: basePath.files + '/**/*.*',
     },
 
@@ -41,7 +41,6 @@ export const path = {
         images: basePath.dev + '/img/',
         fonts: basePath.dev + '/fonts/',
         files: basePath.dev + '/files/',
-
         svgicons: basePath.components,
     },
     // Чтобы вотчер не тормозил прописываем каждую папку отдельно
@@ -90,7 +89,3 @@ blocks.forEach (function (block) {
 blocks.forEach (function (block) {
     path.watch.html.push(basePath.components + '/blocks/' + block + '/*.html');
 });
-
-
-
-

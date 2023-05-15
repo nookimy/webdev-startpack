@@ -3,6 +3,8 @@ import posthtml from "gulp-posthtml";
 import include from "posthtml-include";
 import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
+import htmlBeautify from "gulp-html-beautify";
+
 
 
 export const html = () => {
@@ -44,9 +46,11 @@ export const html = () => {
                 }
             })
         )
+        .pipe(htmlBeautify())
         .pipe(app.gulp.dest(app.path.build.root))
         .pipe(app.plugins.browsersync.stream());
 }
+
 
 export const htmlprod = () => {
     return app.gulp.src(app.path.src.html)

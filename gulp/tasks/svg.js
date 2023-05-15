@@ -18,7 +18,6 @@ export const svg = () => {
           'removeDoctype',
           'removeComments',
           'sortAttrs',
-          'removeXMLNS',
           'removeViewBox',
           'removeUselessStrokeAndFill',
           {
