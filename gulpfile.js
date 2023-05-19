@@ -19,7 +19,6 @@ global.app = {
 // Импорт задач
 import  { copy } from "./gulp/tasks/copy.js";
 import  { reset } from "./gulp/tasks/reset.js";
-
 import  { html } from "./gulp/tasks/html.js";
 import  { htmlprod } from "./gulp/tasks/html.js";
 import  { server } from "./gulp/tasks/server.js";
@@ -44,26 +43,21 @@ function watcher() {
 // Создание svg-спрайта
 export { svgSprive };
 
-// Оптимизация svg-изображений
-export { svg };
-
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, fontsStyle);
 
 // основные задачи
-const mainTasks = gulp.parallel(copy, html, scss, js, images);
-/*const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));*/
-
+const mainTasks = gulp.parallel(copy, html, scss, js, images, svg);
+/*const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, svg));*/
 const mainTasksProd = gulp.parallel(htmlprod);
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-
 const prod = gulp.series(reset, mainTasksProd);
-
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
+
 const style = gulp.series(scss);
 
 //Экспорт сценариев
@@ -72,6 +66,7 @@ export { prod }
 export  { build }
 export  { deployZIP }
 export  { deployFTP }
+
 export  { style }
 
 //Выполнение сценария по умолчанию
