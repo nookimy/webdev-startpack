@@ -42,6 +42,10 @@ function watcher() {
 
 // Создание svg-спрайта
 export { svgSprive };
+// Нарезка изображений
+export { img };
+
+const img = gulp.series(images);
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, fontsStyle);
@@ -58,8 +62,6 @@ const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
-const style = gulp.series(scss);
-
 //Экспорт сценариев
 export { dev }
 export { prod }
@@ -67,7 +69,7 @@ export  { build }
 export  { deployZIP }
 export  { deployFTP }
 
-export  { style }
+
 
 //Выполнение сценария по умолчанию
 gulp.task('default', dev);
