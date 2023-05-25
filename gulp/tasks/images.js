@@ -1,6 +1,5 @@
 import webp from "gulp-webp";
 import imagemin from "gulp-imagemin";
-import webpHtmlNosvg from "gulp-webp-html-nosvg";
 
 
 export const images = () => {
@@ -24,8 +23,6 @@ export const images = () => {
                 optimizationLevel: 3 // 0 to 7
             })
         )
-        .pipe(app.gulp.dest(app.path.build.images))       
-
-
+        .pipe(app.gulp.dest(app.path.build.images))
         .pipe(app.plugins.browsersync.stream());
 }
