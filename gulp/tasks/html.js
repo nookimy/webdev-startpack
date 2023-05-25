@@ -24,7 +24,7 @@ export const html = () => {
           ]))
 
         // Подмена путей до изображений
-        .pipe(app.plugins.replace(/@img\//g, 'img/'))
+        .pipe(app.plugins.replace('../', './img/'))
 
         // Добавление варианта webp изображений и тега picture
         .pipe(webpHtmlNosvg())

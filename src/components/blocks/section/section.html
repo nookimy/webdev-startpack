@@ -1,11 +1,21 @@
 <section class="test">
     <h1>Блок</h1>
+
     <picture>
-        <img src="./cover-600.jpg"
-        srcset="./cover-600@3x.jpg 3x,
-                ./cover-600@2x.jpg 2x,
-                ./cover-600.jpg" alt="">
-      </picture>
+        <source media="(min-width: 1170px)"
+            srcset="../section/cover-1170@3x.jpg 3x,
+                    ../section/cover-1170@2x.jpg 2x,
+                    ../section/cover-1170.jpg">
+        <source media="(min-width: 750px)"
+            srcset="../section/cover-750@3x.jpg 3x,
+                    ../section/cover-750@2x.jpg 2x,
+                    ../section/cover-750.jpg">
+        <img src="../section/cover.jpg"
+             srcset="../section/cover-320@3x.jpg 3x,
+                     ../section/cover-320@2x.jpg 2x,
+                     ../section/cover-320.jpg"
+             alt="Изображение">
+    </picture>
     <svg class="icon">
         <use xlink:href="#icon-vk"></use>
     </svg>
