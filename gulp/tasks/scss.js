@@ -19,13 +19,14 @@ export const scss = () => {
             })
         ))
 
-        // Меняем пути для изображений
-        .pipe(app.plugins.replace(/@img\//g, '../img/'))
-
         // Преобразование в css
         .pipe(sass({
            outputStyle: 'expanded'
         }))
+
+        // Подмена путей до изображений
+        .pipe(app.plugins.replace('../', '../img/'))
+
         // Группировка медиазапросов
         .pipe(groupCssMediaQueries())
         // webp-изображения, если они поддерживаются

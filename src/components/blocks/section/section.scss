@@ -26,3 +26,18 @@ p {
   height: 20px;
   fill: #d01d37;
 }
+
+.section__block {
+  width: 350px;
+  height: 350px;
+  background-color: lightgray;
+  margin: 0 auto 50px;
+  background-image: url("../section/sangel-x350.jpg");
+  background-image: image-set(
+                  url("../section/sangel-x350.jpg") 1x,
+                  url("../section/sangel-x350@2x.jpg") 2x,
+                  url("../section/sangel-x350@3x.jpg") 3x);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
