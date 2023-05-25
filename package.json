@@ -30,6 +30,7 @@
     "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-avif": "^1.1.1",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
@@ -75,6 +76,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "gulp-svgo": "^2.2.1"
+    "gulp-svgo": "^2.2.1",
+    "sharp": "^0.32.1"
   }
 }

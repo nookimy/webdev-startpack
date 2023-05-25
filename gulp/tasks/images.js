@@ -2,6 +2,7 @@ import responsive from "gulp-responsive";
 import responsiveConfig from "gulp-responsive-config";
 /*import imagemin from "gulp-imagemin";*/
 import webp from "gulp-webp";
+import gulpAvif from "gulp-avif";
 
 export const images = () => {
     // Make configuration from existing HTML and CSS files
@@ -26,6 +27,7 @@ export const images = () => {
             compressionLevel: 7,
         }))
         .pipe(app.gulp.dest('./dist/img/section/'))
+        .pipe(gulpAvif())
         .pipe(webp({quality: 80}))
         .pipe(app.gulp.dest('./dist/img/section/'))
 }
