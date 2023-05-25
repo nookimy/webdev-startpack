@@ -27,7 +27,9 @@ export const images = () => {
             compressionLevel: 7,
         }))
         .pipe(app.gulp.dest('./dist/img/section/'))
-        .pipe(gulpAvif())
         .pipe(webp({quality: 80}))
         .pipe(app.gulp.dest('./dist/img/section/'))
+
+        /*.pipe(gulpAvif({quality: 30}))
+        .pipe(app.gulp.dest('./dist/img/section/'))*/
 }
