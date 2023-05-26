@@ -3,14 +3,11 @@ import responsiveConfig from "gulp-responsive-config";
 /*import imagemin from "gulp-imagemin";*/
 import webp from "gulp-webp";
 import gulpAvif from "gulp-avif";
-import {blocks} from "../config/path.js";
 
 export const images = (done) => {
     // Make configuration from existing HTML and CSS files
-    console.log(blocks);
-    blocks.forEach (function (block) {
-
-
+    console.log(app.blocks);
+    app.blocks.forEach (function (block) {
         var config = responsiveConfig([
             app.basePath.blocks + '/' + block + '/*.scss',
             app.basePath.blocks + '/' + block + '/*.html'

@@ -58,8 +58,6 @@ export const path = {
         files: `${srcFolder}/files/**/*.*`,
     },
 
-
-
     clean: buildFolder,
     buildFolder: buildFolder,
     srcFolder: srcFolder,
@@ -69,7 +67,6 @@ export const path = {
 
 // Массив для списка папок блоков, заполнится сам чуть ниже по коду
 export const blocks = [];
-
 
 // Получаем список блоков и записываем их в массив blocks
 if (basePath.blocks) {
