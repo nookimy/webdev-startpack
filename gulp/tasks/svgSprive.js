@@ -84,8 +84,8 @@ export const svgSprive = () => {
 
         mode: {
             symbol: {
-                dest : '../../src/components',
-                sprite: '../../src/components/sprite.svg',
+                dest : '../../src/components/blocks/icons',
+                sprite: './sprite.svg',
                 example: true,
             }
         },
