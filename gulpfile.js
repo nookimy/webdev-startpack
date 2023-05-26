@@ -44,10 +44,11 @@ function watcher() {
 
 // Создание svg-спрайта
 export { svgSprive };
-// Нарезка изображений
-export { img };
 
-const img = gulp.series(images);
+// Тестовая задача
+export { test };
+
+const test = gulp.series(html);
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, fontsStyle);
@@ -63,6 +64,7 @@ const prod = gulp.series(reset, mainTasksProd);
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
+
 
 //Экспорт сценариев
 export { dev }

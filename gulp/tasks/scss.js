@@ -19,6 +19,16 @@ export const scss = () => {
             })
         ))
 
+        // webp-изображения, если они поддерживаются
+        .pipe(webpCss(
+            {
+                webpClass: ".webp",
+                noWebpClass: ".no-webp"
+            }
+        ))
+
+
+
         // Преобразование в css
         .pipe(sass({
            outputStyle: 'expanded'
@@ -29,13 +39,8 @@ export const scss = () => {
 
         // Группировка медиазапросов
         .pipe(groupCssMediaQueries())
-        // webp-изображения, если они поддерживаются
-        .pipe(webpCss(
-            {
-                webpClass: ".webp",
-                noWebpClass: ".no-webp"
-            }
-        ))
+
+
         // Автопрефиксер
         .pipe(autoprefixer(
             {
@@ -49,6 +54,9 @@ export const scss = () => {
         // Сжатие css файла
         .pipe(cleanCss())
         // Переименование файла min.css файла
+
+
+
         .pipe(rename({
             extname: ".min.css"
         }))

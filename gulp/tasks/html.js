@@ -1,9 +1,9 @@
 import fileInclude from "gulp-file-include";
 import posthtml from "gulp-posthtml";
 import include from "posthtml-include";
-import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
 import htmlBeautify from "gulp-html-beautify";
+
 
 
 
@@ -26,8 +26,7 @@ export const html = () => {
         // Подмена путей до изображений
         .pipe(app.plugins.replace('../', './img/'))
 
-        // Добавление варианта webp изображений и тега picture
-        .pipe(webpHtmlNosvg())
+
 
         // Версионность файлов стилей и скриптов
         .pipe(
@@ -68,9 +67,6 @@ export const htmlprod = () => {
 
         // Подмена путей до изображений
         .pipe(app.plugins.replace(/@img\//g, 'img/'))
-
-        // Добавление варианта webp изображений и тега picture
-        .pipe(webpHtmlNosvg())
 
         // Версионность файлов стилей и скриптов
         .pipe(

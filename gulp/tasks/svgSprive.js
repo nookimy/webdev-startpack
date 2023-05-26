@@ -18,6 +18,12 @@ export const svgSprive = () => {
                 "svgo": {
                     "plugins": [
                         {
+                            name: 'moveGroupAttrsToElems',
+                            params: {
+                                opationName: 'true'
+                            }
+                        },
+                        {
                             name: 'removeXMLNS',
                             params: {
                                 opationName: 'true'
@@ -26,7 +32,7 @@ export const svgSprive = () => {
                         {
                             name: 'removeAttrs',
                             params: {
-                                attrs: '(fill|stroke|style)'
+                                attrs: '(style)'
                             }
                         },
                         {
@@ -39,12 +45,6 @@ export const svgSprive = () => {
                             name: 'removeUnusedNS',
                             params: {
                                 opationName: 'false'
-                            }
-                        },
-                        {
-                            name: 'removeUselessStrokeAndFill',
-                            params: {
-                                opationName: 'true'
                             }
                         },
                         {
@@ -84,8 +84,9 @@ export const svgSprive = () => {
 
         mode: {
             symbol: {
-                dest : './components/icons',
-                sprite: '../../sprite.svg'
+                dest : '../../src/components',
+                sprite: '../../src/components/sprite.svg',
+                example: true,
             }
         },
     };
