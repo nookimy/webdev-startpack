@@ -3,9 +3,11 @@ import responsiveConfig from "gulp-responsive-config";
 /*import imagemin from "gulp-imagemin";*/
 import webp from "gulp-webp";
 import gulpAvif from "gulp-avif";
+import {blocks} from "../config/path.js";
 
 export const images = () => {
     // Make configuration from existing HTML and CSS files
+
     var config = responsiveConfig([
         './src/components/blocks/section/*.scss',
         './src/components/blocks/section/*.html'
@@ -33,3 +35,12 @@ export const images = () => {
         /*.pipe(gulpAvif({quality: 30}))
         .pipe(app.gulp.dest('./dist/img/section/'))*/
 }
+
+function showBlocks() {
+    console.log('Блоки: ' + blocks);
+}
+
+showBlocks();
+
+
+
