@@ -2,7 +2,7 @@
 import gulp from "gulp";
 
 // Импорт путей
-import { path } from "./gulp/config/path.js";
+import {basePath, path} from "./gulp/config/path.js";
 
 // Импорт общих плагинов
 import { plugins } from "./gulp/config/plugins.js";
@@ -12,6 +12,7 @@ global.app = {
     isBuild: process.argv.includes('--build'), // Режим продакшена
     isDev: !process.argv.includes('--build'), // Режим разработчика
     path: path,
+    basePath: basePath,
     gulp: gulp,
     plugins: plugins,
 }
