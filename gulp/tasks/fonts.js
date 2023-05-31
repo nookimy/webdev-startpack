@@ -111,7 +111,7 @@ export const fontsStyle = () => {
                             fontWeight = 400;
                         }
                         fs.appendFile(fontsFile,
-                        `@font-face {\n\tfont-family: "${fontName}";\n\tfont-display: swap;\n\tsrc:\n\t\tlocal("${fontName}"),\n\t\turl("../fonts/${fontFileName}.woff2") format("woff2"),\n\t\turl("../fonts/${fontFileName}.woff") format("woff");\n\tfont-weight: ${fontWeight};\n\tfont-style: ${fontStyle};\r\n}\r\n`,cb);
+                        `@font-face {\n\tfont-family: "${fontName}";\n\tfont-display: swap;\n\tsrc:\n\t\tlocal("${fontName}"),\n\t\turl("./src/fonts/${fontFileName}.woff2") format("woff2"),\n\t\turl("./src/fonts/${fontFileName}.woff") format("woff");\n\tfont-weight: ${fontWeight};\n\tfont-style: ${fontStyle};\r\n}\r\n`,cb);
                         newFileOnly = fontFileName;
                     }
                 }

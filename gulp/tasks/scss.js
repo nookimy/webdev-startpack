@@ -36,6 +36,8 @@ export const scss = () => {
 
         // Подмена путей до изображений
         .pipe(app.plugins.replace('../', '../img/'))
+        .pipe(app.plugins.replace('./src/fonts/', '../fonts/'))
+
 
         // Группировка медиазапросов
         .pipe(groupCssMediaQueries())
