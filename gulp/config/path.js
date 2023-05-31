@@ -3,14 +3,14 @@ import * as nodePath from 'path';
 const rootFolder = nodePath.basename(nodePath.resolve());
 import fs from "fs";
 
-const buildFolder = `./dist`; // Также можно использовать rootFolder
+const buildFolder = `./dev`; // Также можно использовать rootFolder
 const srcFolder = `./src`;
 
 // Базовые пути отдельно, чтобы можно было использовать для других путей
 export const basePath = {
     files: 'src/files', // Тестовая папка
     src: 'src',
-    dev: 'dist',
+    dev: 'dev',
     prod: 'prod',
     components: 'src/components',
     blocks: 'src/components/blocks', // Путь до папки с блоками препроцессорных файлов
@@ -27,10 +27,10 @@ export const path = {
     src: {
         html: basePath.src + '/*.html',
         scss: basePath.components + '/style.scss',
-        js: basePath.src + '/js/app.js',
+        js: basePath.src + '/js/*.js',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
-        svg: [`${basePath.blocks}/**/*.svg`, `!${basePath.blocks}/**/icon-*.svg`],
-        svgicons: basePath.blocks + '/icons/**/icon-*.svg',
+        fonts: basePath.src + '/fonts/',
+        svg: basePath.blocks + '/**/*.svg',
         files: basePath.files + '/**/*.*',
     },
 
@@ -41,7 +41,6 @@ export const path = {
         images: basePath.dev + '/img/',
         fonts: basePath.dev + '/fonts/',
         files: basePath.dev + '/files/',
-        svgicons: basePath.components,
     },
     // Чтобы вотчер не тормозил прописываем каждую папку отдельно
     watch: {
@@ -55,6 +54,7 @@ export const path = {
             ],
         js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,svg}`,
+
         files: `${srcFolder}/files/**/*.*`,
     },
 
@@ -84,5 +84,7 @@ blocks.forEach (function (block) {
 blocks.forEach (function (block) {
     path.watch.html.push(basePath.components + '/blocks/' + block + '/*.html');
 });
+
+
 
 

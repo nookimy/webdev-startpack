@@ -7,11 +7,9 @@
   "scripts": {
     "dev": "gulp",
     "prod": "gulp prod",
-    "build": "gulp build --build",
-    "zip": "gulp deployZIP --build",
-    "ftp": "gulp deployFTP --build",
-    "svgSprive": "gulp svgSprive",
-    "images": "gulp img"
+    "zip": "gulp deployZIP",
+    "ftp": "gulp deployFTP",
+    "svg": "gulp svg"
   },
   "repository": {
     "type": "git",

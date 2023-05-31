@@ -33,11 +33,12 @@ export const images = (done) => {
             .pipe(app.gulp.dest(app.path.build.images + '/' + block + '/'))
 
         /*.pipe(gulpAvif({quality: 30}))
-        .pipe(app.gulp.dest('./dist/img/section/'))*/
+        .pipe(app.gulp.dest('./dev/img/section/'))*/
 
     });
     done();
 }
+
 
 
 

@@ -1,7 +1,7 @@
 .icon {
   &__symbol {
     fill: none;
-
+    transition: $transition;
   }
 
   &__color-element {

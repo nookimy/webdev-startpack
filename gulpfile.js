@@ -9,8 +9,6 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // Передаем значения в глобальную переменную
 global.app = {
-    isBuild: process.argv.includes('--build'), // Режим продакшена
-    isDev: !process.argv.includes('--build'), // Режим разработчика
     path: path,
     basePath: basePath,
     blocks: blocks,
@@ -22,14 +20,14 @@ global.app = {
 import  { copy } from "./gulp/tasks/copy.js";
 import  { reset } from "./gulp/tasks/reset.js";
 import  { html } from "./gulp/tasks/html.js";
-import  { htmlprod } from "./gulp/tasks/html.js";
+import  { htmlProd } from "./gulp/tasks/html.js";
 import  { server } from "./gulp/tasks/server.js";
 import  { scss } from "./gulp/tasks/scss.js";
 import  { js } from "./gulp/tasks/js.js";
+import  { jsProd } from "./gulp/tasks/js.js";
 import  { images } from "./gulp/tasks/images.js";
 import  { svg } from "./gulp/tasks/svg.js";
 import  { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
-import  { svgSprive } from "./gulp/tasks/svgSprive.js";
 import  { zip } from "./gulp/tasks/zip.js";
 import  { ftp } from "./gulp/tasks/ftp.js";
 
@@ -43,33 +41,34 @@ function watcher() {
 }
 
 // Создание svg-спрайта
-export { svgSprive };
-
-// Тестовая задача
-export { test };
-
-const test = gulp.series(html);
+export { svg };
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, fontsStyle);
 
+
+const test = gulp.series( otfToTtf, ttfToWoff, fontsStyle);
+
+// Тестовая задача
+export { test };
+
+
+
 // основные задачи
-const mainTasks = gulp.parallel(copy, html, scss, js, images, svg);
+const mainTasks = gulp.parallel(copy, html, scss, js, images);
 /*const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, svg));*/
-const mainTasksProd = gulp.parallel(htmlprod);
+const mainTasksProd = gulp.parallel(htmlProd, jsProd);
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const prod = gulp.series(reset, mainTasksProd);
-const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 
 //Экспорт сценариев
 export { dev }
-export { prod }
-export  { build }
+export  { prod }
 export  { deployZIP }
 export  { deployFTP }
 
