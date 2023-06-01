@@ -1,0 +1,28 @@
+.main-header {
+  position: fixed; /* Сделайте его липким/фиксированным */
+  top: 0; /* Оставайтесь на вершине */
+  width: 100%; /* Полная ширина */
+  transition: top 0.3s; /* Эффект перехода при скольжении вниз (и вверх) */
+
+  &__nav {
+    padding: 2rem 0 2.5rem;
+    background-color: $light;
+    box-shadow: 0px 10px 50px rgba(181, 181, 181, 0.5);
+  }
+
+  &__menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid;
+    transition: $transition;
+    z-index: -1;
+    background-color: #EAEBEC;
+
+    &--opened {
+      transform: translateY(100%);
+    }
+  }
+}

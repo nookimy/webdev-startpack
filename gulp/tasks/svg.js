@@ -85,7 +85,6 @@ export const svg = () => {
             symbol: {
                 dest : '../../src/components/',
                 sprite: './sprite.svg',
-                example: true,
             }
         },
     };

@@ -11,12 +11,17 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  min-width: $sm-width;
+  @include text-12;
+  @include mp();
+  color: $text-color;
+  background-color: $bg-body;
+  min-height: 1500px;
 
+  @media (min-width: $md-width) {
+    @include text-normal;
+  }
 }
-
-
 
 img {
   max-width: 100%;
@@ -35,4 +40,4 @@ img {
   white-space: nowrap;
   clip-path: inset(100%);
 }
-  
+

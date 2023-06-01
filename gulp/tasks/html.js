@@ -21,6 +21,9 @@ export const html = () => {
 
         // Подмена путей до изображений
         .pipe(app.plugins.replace('../', './img/'))
+        .pipe(app.plugins.replace('fill="none" ', ''))
+
+        .pipe(htmlBeautify())
 
         .pipe(app.gulp.dest(app.path.build.root))
 

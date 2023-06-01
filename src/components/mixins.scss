@@ -7,3 +7,201 @@
     font-style: #{$style};
     }
 }
+
+@mixin h1 {
+    font-family: "EBGaramond", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, serif;
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 700;
+    font-style: normal;
+
+    @media (min-width: $md-width) {
+        font-size: 4.5rem;
+    }
+}
+
+@mixin h2 {
+    font-family: "EBGaramond", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, serif;
+    font-size: 2.2rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-style: normal;
+
+    @media (min-width: $md-width) {
+        font-size: 3.2rem;
+    }
+}
+
+@mixin h3 {
+    font-family: "EBGaramond", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, serif;
+    font-size: 1.8rem;
+    line-height: 1.25;
+    font-weight: 700;
+    font-style: normal;
+
+    @media (min-width: $md-width) {
+        font-size: 2.3rem;
+    }
+}
+
+@mixin text-normal-caps {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    font-weight: 400;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    @media (min-width: $md-width) {
+        font-size: 1.6rem;
+    }
+}
+
+@mixin text-status {
+    font-size: 1.0rem;
+    line-height: 1.25;
+    font-weight: 700;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+
+    @media (min-width: $md-width) {
+        font-size: 1.2rem;
+    }
+}
+
+@mixin text-10 {
+    font-size: 1.0rem;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+@mixin text-accent {
+    font-size: 1.6rem;
+    line-height: 1.1;
+    font-weight: 700;
+    font-family: "EBGaramond", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, serif;
+
+    @media (min-width: $md-width) {
+        font-size: 1.8rem;
+    }
+}
+
+@mixin text-link {
+    font-size: 1.4rem;
+    line-height: 1;
+    font-weight: 400;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    @media (min-width: $md-width) {
+        font-size: 1.8rem;
+    }
+}
+
+@mixin title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    font-weight: 700;
+    font-family: "EBGaramond", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, serif;
+    font-style: normal;
+
+    @media (min-width: $md-width) {
+        font-size: 2.0rem;
+    }
+}
+
+@mixin text-normal {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+@mixin text-12 {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    font-weight: 400;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+@mixin text-14 {
+    font-size: 1.4rem;
+    line-height: 1.29;
+    font-weight: 400;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+@mixin text-bold-caps {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    font-weight: 600;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+@mixin text-medium {
+    font-size: 1.6rem;
+    line-height: 1.1;
+    font-weight: 600;
+    font-family: "EBGaramond", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, serif;
+    font-style: normal;
+}
+
+@mixin text-logo {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    font-weight: 600;
+    font-family: "EBGaramond", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, serif;
+    font-style: normal;
+}
+
+
+/*@include container;*/
+@mixin container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: $xl-width) {
+        width: 80%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/*@include mp;*/
+@mixin mp($list-margin: 0, $list-padding: 0) {
+    margin: $list-margin;
+    padding: $list-padding;
+}
+
+/*@include list;*/
+@mixin list($list-margin: 0, $list-padding: 0, $list-style: none) {
+    margin: $list-margin;
+    padding: $list-padding;
+    list-style: $list-style;
+}
+
+/*@include btn-reset;*/
+@mixin btn-reset {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}

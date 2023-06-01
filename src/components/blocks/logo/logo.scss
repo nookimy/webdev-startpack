@@ -1,0 +1,72 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  gap: 20px;
+
+  @media (min-width: $lg-width) {
+    gap: 23px;
+  }
+
+
+}
+
+.main-header .logo {
+  position: relative;
+  z-index: 5;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    width: 66.47px;
+    height: 66.47px;
+    background: $status;
+    filter: blur(30px);
+    transform-origin: center;
+    transform: rotate(-45deg) translateY(-46px);
+    z-index: -1;
+
+
+    @media (min-width: $lg-width) {
+      width: 116px;
+      height: 116px;
+      top: -25px;
+      left: 50%;
+      transform: rotate(-45deg) translateY(-80px);
+    }
+  }
+
+  & .icon {
+    width: 39px;
+    height: 35px;
+
+    @media (min-width: $lg-width) {
+      width: 78px;
+      height: 70px;
+    }
+  }
+
+  & use.icon__symbol {
+    fill: $dark;
+  }
+
+  &:hover,
+  &:focus {
+    & use.icon__symbol {
+      fill: $main-dark;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @media (min-width: $lg-width) {
+      @include text-logo;
+      width: 180px;
+      display: block;
+    }
+  }
+}

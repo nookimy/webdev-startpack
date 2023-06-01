@@ -1,6 +1,10 @@
-@import "fonts";
-@import "scaffolding";
 @import "variables";
 @import "mixins";
+@import "fonts";
+@import "scaffolding";
+
 @import "blocks/icons/icons";
-@import "blocks/section/section";
+@import "blocks/page/page";
+@import "blocks/main-header/main-header";
+@import "blocks/burger/burger";
+@import "blocks/logo/logo";

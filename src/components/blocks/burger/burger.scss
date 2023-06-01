@@ -1,0 +1,42 @@
+.burger-button {
+  @include btn-reset;
+
+  width: 30px;
+  height: 30px;
+  min-width: unset;
+  padding: 0;
+  border: none;
+  transition: $transition;
+
+  @media (min-width: $lg-width) {
+    width: 45px;
+    height: 45px;
+  }
+
+  &--down {
+    transform: rotate(90deg);
+  }
+
+  &:hover,
+  &:focus {
+    & use.icon__symbol {
+      stroke: $main-dark;
+    }
+  }
+
+  & .icon {
+    width: 30px;
+    height: 30px;
+
+    @media (min-width: $lg-width) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  & use.icon__symbol {
+    stroke: $dark-gray;
+  }
+
+
+}

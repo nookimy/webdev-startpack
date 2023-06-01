@@ -1,23 +1,24 @@
-$mobile-content-width: 290px;
-$mobile-content-width-a: 90.62%;
-$tablet-content-width: 720px;
-$tablet-content-width-a: 96%;
-$desktop-content-width: 1140px;
-$desktop-content-width-a: 97.43%;
+//breakpoints
+$sm-width: 320px;/*Экстрамалые девайсы («телефоны», < 576px)*/
+$md-width: 576px;/*Малые девайсы («ландшафтные телефоны», >= 576px)*/
+$mobile-width-only: 767.98px;/*Только для мобилок*/
+$md-width: 768px;/*Средние девайсы («таблетки», >= 768px)*/
+$lg-width: 992px;/*Большие девайсы (десктопы, >= 992px)*/
+$xl-width: 1200px;/*Экстрабольшие девайсы (большие десктопы, >= 1200px)*/
 
-$mobile-width: 320px;
-$tablet-width: 750px;
-$desktop-width: 1170px;
+//color
+$main: #EB3E2B;
+$main-dark: #D13726;
+$secondary: #1175D0;
+$light: #ffffff;
+$light-gray: #EAEBEC;
+$gray: #B5B5B5;
+$dark-gray: #4E4E4E;
+$dark: #000000;
+$status: #FFE69A;
+
+$text-main: $dark;
+$bg-body: $light-gray;
+$text-color: $dark;
 
 $transition: 0.4s;
-
-
-$black: #000000;
-$company-color: #ee334f;
-$company-color--pressing: #d01d37;
-$company-color2: #0086ce;
-$company-color2--pressing: #0074b2;
-
-$btn-hover: $company-color--pressing;
-$btn-active: $company-color--pressing;
-
