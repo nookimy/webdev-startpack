@@ -43,16 +43,6 @@
 	font-display: swap;
 	src:
 		local("EBGaramond"),
-		url("./src/fonts/EBGaramond-MediumItalic.woff2") format("woff2"),
-		url("./src/fonts/EBGaramond-MediumItalic.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: "EBGaramond";
-	font-display: swap;
-	src:
-		local("EBGaramond"),
 		url("./src/fonts/EBGaramond-Italic.woff2") format("woff2"),
 		url("./src/fonts/EBGaramond-Italic.woff") format("woff");
 	font-weight: 400;
@@ -63,8 +53,8 @@
 	font-display: swap;
 	src:
 		local("EBGaramond"),
-		url("./src/fonts/EBGaramond-Regular.woff2") format("woff2"),
-		url("./src/fonts/EBGaramond-Regular.woff") format("woff");
+		url("./src/fonts/EBGaramond-MediumItalic.woff2") format("woff2"),
+		url("./src/fonts/EBGaramond-MediumItalic.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
@@ -76,6 +66,16 @@
 		url("./src/fonts/EBGaramond-Medium.woff2") format("woff2"),
 		url("./src/fonts/EBGaramond-Medium.woff") format("woff");
 	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "EBGaramond";
+	font-display: swap;
+	src:
+		local("EBGaramond"),
+		url("./src/fonts/EBGaramond-Regular.woff2") format("woff2"),
+		url("./src/fonts/EBGaramond-Regular.woff") format("woff");
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
@@ -103,9 +103,9 @@
 	font-display: swap;
 	src:
 		local("Inter"),
-		url("./src/fonts/Inter-Black.woff2") format("woff2"),
-		url("./src/fonts/Inter-Black.woff") format("woff");
-	font-weight: 900;
+		url("./src/fonts/Inter-Bold.woff2") format("woff2"),
+		url("./src/fonts/Inter-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
@@ -113,9 +113,9 @@
 	font-display: swap;
 	src:
 		local("Inter"),
-		url("./src/fonts/Inter-Bold.woff2") format("woff2"),
-		url("./src/fonts/Inter-Bold.woff") format("woff");
-	font-weight: 700;
+		url("./src/fonts/Inter-Black.woff2") format("woff2"),
+		url("./src/fonts/Inter-Black.woff") format("woff");
+	font-weight: 900;
 	font-style: normal;
 }
 @font-face {
@@ -143,9 +143,9 @@
 	font-display: swap;
 	src:
 		local("Inter"),
-		url("./src/fonts/Inter-Medium.woff2") format("woff2"),
-		url("./src/fonts/Inter-Medium.woff") format("woff");
-	font-weight: 500;
+		url("./src/fonts/Inter-Light.woff2") format("woff2"),
+		url("./src/fonts/Inter-Light.woff") format("woff");
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
@@ -153,9 +153,9 @@
 	font-display: swap;
 	src:
 		local("Inter"),
-		url("./src/fonts/Inter-Light.woff2") format("woff2"),
-		url("./src/fonts/Inter-Light.woff") format("woff");
-	font-weight: 300;
+		url("./src/fonts/Inter-Medium.woff2") format("woff2"),
+		url("./src/fonts/Inter-Medium.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
