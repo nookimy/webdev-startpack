@@ -4,15 +4,9 @@
 3. Десктопное при скролле: с бургером, активно с момента скрытия из вьюпорта статичного меню, скрывается при скролле вниз, показывается при скролле вверх*/
 
 .main-header {
+  position: relative;
   width: 100%; /* Полная ширина */
-  position: fixed; /* Сделайте его липким/фиксированным */
-  top: 0; /* Оставайтесь на вершине */
-  transition: all 0.3s ease-in-out;
 
-  @media (min-width: $lg-width) {
-    position: static;
-    top: unset;
-  }
 
   &__nav {
     padding: 2rem 0 2.5rem;
