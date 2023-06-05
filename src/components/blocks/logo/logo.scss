@@ -1,41 +1,25 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  color: inherit;
-  text-decoration: none;
   gap: 20px;
 
   @media (min-width: $lg-width) {
     gap: 23px;
   }
 
-
-}
-
-.main-header .logo {
-  position: relative;
-  z-index: 5;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -26px;
-    left: 50%;
-    width: 66.47px;
-    height: 66.47px;
-    background: $status;
-    filter: blur(30px);
-    transform-origin: center;
-    transform: rotate(-45deg) translateY(-46px);
-    z-index: -1;
+  &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    outline-color: $main;
 
 
-    @media (min-width: $lg-width) {
-      width: 116px;
-      height: 116px;
-      top: -25px;
-      left: 50%;
-      transform: rotate(-45deg) translateY(-80px);
+    &:hover,
+    &:focus {
+      & use.icon__symbol {
+        fill: $main-dark;
+      }
     }
   }
 
@@ -52,11 +36,33 @@
   & use.icon__symbol {
     fill: $dark;
   }
+}
 
-  &:hover,
-  &:focus {
-    & use.icon__symbol {
-      fill: $main-dark;
+.main-header .logo {
+  position: relative;
+  z-index: 5;
+  margin-left: 3rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -58px;
+    left: -14px;
+    width: 66.47px;
+    height: 66.47px;
+    background: $status;
+    filter: blur(30px);
+    transform-origin: center;
+    transform: rotate(-45deg) translateY(0);
+    z-index: -1;
+
+
+    @media (min-width: $lg-width) {
+      width: 116px;
+      height: 116px;
+      top: -94px;
+      left: -20px;
+      transform: rotate(-45deg) translateY(0);
     }
   }
 
@@ -64,6 +70,8 @@
     display: none;
 
     @media (min-width: $lg-width) {
+      position: relative;
+      z-index: 5;
       @include text-logo;
       width: 180px;
       display: block;

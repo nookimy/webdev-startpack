@@ -1,18 +1,21 @@
 <nav class="main-nav">
-    <div class="page__wrap">
-        <!--<include src="./source/less/blocks/burger-button/burger-button.html"></include>
-        <include src="./source/less/blocks/logo/logo.html"></include>-->
-        <div class="main-nav__btn-wrap">
-            <!--<include src="./source/less/blocks/search/search.html"></include>-->
-            <button class="visually-impaired__btn">
-                <svg class="icon" width="20px" height="20px">
-                    <use class="icon__symbol" xlink:href="#icon-eye"></use>
-                </svg>
-            </button>
-        </div>
-        <div class="main-header__button-wrap">
-            <a class="btn btn--buyticket" href="#">Купить билет</a>
-            <!--<include src="./source/less/blocks/languages/languages.html"></include>-->
-        </div>
+    <include src="./src/components/blocks/burger/burger.html"></include>
+    <include src="./src/components/blocks/logo/logo.html"></include>
+    <div class="main-nav__btn-wrap">
+        <button class="main-nav__search-btn">
+            <svg class="icon" width="20px" height="20px">
+                <use class="icon__symbol" xlink:href="#icons-search"></use>
+            </svg>
+        </button>
+        <include src="./src/components/blocks/visually-impaired/visually-impaired.html"></include>
     </div>
+    <!--Строка поиска-->
+    <div class="main-header__search">
+        <include src="./src/components/blocks/search/search.html"></include>
+    </div>
+    <div class="main-header__button-wrap">
+        <a class="btn btn--buyticket" href="#">Купить билет</a>
+        <include src="./src/components/blocks/languages/languages.html"></include>
+    </div>
+
 </nav>

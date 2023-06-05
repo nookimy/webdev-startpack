@@ -56,11 +56,11 @@ export { test };
 
 // основные задачи
 
-const mainTasks = gulp.series(svg, fonts, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(svg, gulp.parallel(copy, html, scss, js, images));
 const mainTasksProd = gulp.parallel(htmlProd, jsProd);
 
 // Построение сценариев выполнения задач
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const dev = gulp.series(mainTasks, gulp.parallel(watcher, server));
 const prod = gulp.series(reset, mainTasksProd);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);

@@ -1,0 +1,30 @@
+.select {
+  @include text-12;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  color: rgba($dark, 0.5);
+  height: 40px;
+  padding: 1rem 4rem 1rem 2rem;
+  border: 1px solid #DDDDDD;
+  appearance: none;
+  background: url("../img/form/chevron-down.svg") no-repeat right 20px center;
+  background-size: 20px 20px;
+  transition: $transition;
+
+  @media (min-width: $md-width) {
+    @include text-normal;
+    height: 4.5rem;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $secondary;
+  }
+
+  &--languages {
+    width: 40%;
+    flex-grow: 1;
+  }
+}

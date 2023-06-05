@@ -1,0 +1,29 @@
+.site-nav {
+  &__list {
+    @include list();
+    & > li {
+      & > a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.main-header__menu .site-nav {
+  &__list {
+    @include text-normal;
+    color: $dark;
+    font-variation-settings: "slnt" 0;
+
+    & > li {
+      position: relative;
+      border-bottom: 1px solid $light-gray;
+      & > a {
+        display: inline-block;
+        width: 100%;
+        padding: 1.2rem;
+      }
+    }
+  }
+}

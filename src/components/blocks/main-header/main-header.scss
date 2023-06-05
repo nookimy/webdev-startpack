@@ -1,28 +1,98 @@
+/*Три состояния меню:
+1. Мобильное: фиксированное с бургером, скрывается при скролле вниз, показывается при скролле вверх
+2. Десктопное: Статичное полностью раскрытое, показывается до момента своего скрытия из вьюпорта
+3. Десктопное при скролле: с бургером, активно с момента скрытия из вьюпорта статичного меню, скрывается при скролле вниз, показывается при скролле вверх*/
+
 .main-header {
+  width: 100%; /* Полная ширина */
   position: fixed; /* Сделайте его липким/фиксированным */
   top: 0; /* Оставайтесь на вершине */
-  width: 100%; /* Полная ширина */
-  transition: top 0.3s; /* Эффект перехода при скольжении вниз (и вверх) */
+  transition: all 0.3s ease-in-out;
+
+  @media (min-width: $lg-width) {
+    position: static;
+    top: unset;
+  }
 
   &__nav {
     padding: 2rem 0 2.5rem;
     background-color: $light;
     box-shadow: 0px 10px 50px rgba(181, 181, 181, 0.5);
+
+    & .main-header__button-wrap {
+      display: none;
+
+      @media (min-width: $lg-width) {
+        display: flex;
+      }
+    }
   }
+
+
 
   &__menu {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: 150px;
-    border: 1px solid;
     transition: $transition;
     z-index: -1;
-    background-color: #EAEBEC;
+    background-color: $light;
+    padding: 2rem 0 2.5rem;
 
     &--opened {
       transform: translateY(100%);
     }
+
+    @media (min-width: $lg-width) {
+      position: static;
+      bottom: unset;
+      left: unset;
+      z-index: unset;
+      transform: unset;
+
+      &--opened {
+        transform: unset;
+      }
+    }
+
+    & .main-header__button-wrap {
+      margin-bottom: 0.8rem;
+      @media (min-width: $lg-width) {
+        display: none;
+      }
+    }
+  }
+
+  &__search {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: $transition;
+    z-index: -1;
+    padding: 23px 0;
+    background-color: $light;
+
+    &--opened {
+      transform: translateY(100%);
+    }
+
+    @media (min-width: $lg-width) {
+      position: static;
+      bottom: unset;
+      left: unset;
+      z-index: unset;
+      transform: unset;
+
+      &--opened {
+        transform: unset;
+      }
+    }
+  }
+
+  &__button-wrap {
+    display: flex;
+    gap: 2rem;
   }
 }
