@@ -43,3 +43,9 @@
 
 
 }
+
+.main-header .burger-button {
+  @media (min-width: $lg-width) {
+    display: none;
+  }
+}

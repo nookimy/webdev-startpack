@@ -36,6 +36,18 @@ searchOpenButton.onclick = function () {
     search.classList.toggle("main-header__search--opened");
 };
 
+let windowWidth = document.documentElement.clientWidth;
+function checkScreen() {
+    if (windowWidth < 992) {
+        mainHeader.classList.add('main-header--mobile');
+    } else {
+        mainHeader.classList.add('main-header--desktop');
+        mainHeader.classList.remove('main-header--mobile');
+    }
+};
+
+checkScreen();
+
 /*function checkScreen() {
     let windowWidth = document.documentElement.clientWidth; // ширина окна за вычетом полосы прокрутки
 

@@ -4,14 +4,45 @@
 3. Десктопное при скролле: с бургером, активно с момента скрытия из вьюпорта статичного меню, скрывается при скролле вниз, показывается при скролле вверх*/
 
 .main-header {
-  position: relative;
-  width: 100%; /* Полная ширина */
+  &--mobile {
+    position: relative;
 
+    & .main-header__nav {
+      position: relative;
+      z-index: 10;
+      box-shadow: 0px 10px 50px rgba(181, 181, 181, 0.5);
+    }
+
+    & .main-header__menu,
+    & .main-header__search {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transition: $transition;
+
+      &--opened {
+        transform: translateY(100%);
+      }
+    }
+  }
+
+  &--desktop {
+
+  }
+
+  &--desktop-sticky {
+
+  }
+}
+
+.main-header {
+  position: relative;
+  width: 100%;
 
   &__nav {
     padding: 2rem 0 2.5rem;
     background-color: $light;
-    box-shadow: 0px 10px 50px rgba(181, 181, 181, 0.5);
 
     & .main-header__button-wrap {
       display: none;
@@ -22,33 +53,9 @@
     }
   }
 
-
-
   &__menu {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transition: $transition;
-    z-index: -1;
     background-color: $light;
     padding: 2rem 0 2.5rem;
-
-    &--opened {
-      transform: translateY(100%);
-    }
-
-    @media (min-width: $lg-width) {
-      position: static;
-      bottom: unset;
-      left: unset;
-      z-index: unset;
-      transform: unset;
-
-      &--opened {
-        transform: unset;
-      }
-    }
 
     & .main-header__button-wrap {
       margin-bottom: 0.8rem;
@@ -59,34 +66,21 @@
   }
 
   &__search {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transition: $transition;
-    z-index: -1;
     padding: 23px 0;
     background-color: $light;
 
-    &--opened {
-      transform: translateY(100%);
-    }
-
     @media (min-width: $lg-width) {
-      position: static;
-      bottom: unset;
-      left: unset;
-      z-index: unset;
-      transform: unset;
-
-      &--opened {
-        transform: unset;
-      }
+      display: none;
     }
   }
 
   &__button-wrap {
     display: flex;
     gap: 2rem;
+
+
+    @media (min-width: $lg-width) {
+      gap: 3rem;
+    }
   }
 }

@@ -26,5 +26,10 @@
   &--languages {
     width: 40%;
     flex-grow: 1;
+
+    @media (min-width: $lg-width) {
+      order: 1;
+      width: 19rem;
+    }
   }
 }

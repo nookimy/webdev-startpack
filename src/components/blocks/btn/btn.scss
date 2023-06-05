@@ -35,6 +35,11 @@
       height: 4.5rem;
     }
 
+    @media (min-width: $lg-width) {
+      order: 2;
+      min-width: 17rem;
+    }
+
     &:hover,
     &:focus {
       background-color: $main-dark;

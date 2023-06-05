@@ -12,17 +12,46 @@
 
 .main-header__menu .site-nav {
   &__list {
+    display: flex;
+    flex-direction: column;
     @include text-normal;
     color: $dark;
     font-variation-settings: "slnt" 0;
 
+    @media (min-width: $lg-width) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    @media (min-width: $xl-width) {
+      justify-content: space-between;
+    }
+
     & > li {
       position: relative;
       border-bottom: 1px solid $light-gray;
+
+      @media (min-width: $lg-width) {
+        border-bottom: none;
+      }
+
       & > a {
+        outline-color: $secondary;
         display: inline-block;
         width: 100%;
         padding: 1.2rem;
+        transition: $transition;
+
+        @media (min-width: $lg-width) {
+          outline: none;
+          padding: 0;
+        }
+
+        &:hover,
+        &:focus {
+          color: $secondary;
+        }
 
         @media (min-width: $md-width) {
           text-align: center;

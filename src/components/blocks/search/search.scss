@@ -53,29 +53,17 @@
     }
 
   }
-
 }
 
 .main-header__search {
   & .search {
-    @include container;
-
-    &__form {
-      display: none;
-    }
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 
     @media (min-width: $lg-width) {
-      &__form {
-        display: block;
-      }
-    }
-  }
-
-  &--opened {
-    & .search {
-      &__form {
-        display: block;
-      }
+      padding: 0;
     }
   }
 }

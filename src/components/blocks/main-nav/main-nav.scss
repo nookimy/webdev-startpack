@@ -3,6 +3,20 @@
   align-items: center;
   justify-content: space-between;
 
+  @media (min-width: $lg-width) {
+    gap: 2rem;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $lg-width) {
+      margin-left: auto;
+      gap: 1rem;
+    }
+  }
+
   &__search-btn {
     @include btn-reset;
     display: inline-flex;
@@ -12,6 +26,10 @@
     height: 30px;
     transition: $transition;
     outline-color: $main;
+
+    @media (min-width: $lg-width) {
+      display: none;
+    }
 
     & .icon {
       width: 20px;
@@ -27,6 +45,14 @@
       & use.icon__symbol {
         stroke: $main-dark;
       }
+    }
+  }
+
+  &__search {
+    display: none;
+
+    @media (min-width: $lg-width) {
+      display: block;
     }
   }
 }
