@@ -1,6 +1,7 @@
 import svgSprite from "gulp-svg-sprite";
+import svgo from "gulp-svgo";
 
-export const svg = () => {
+export const svgSprive = () => {
     let config = {
         svg: {
             namespaceClassnames: false,
@@ -88,6 +89,20 @@ export const svg = () => {
             }
         },
     };
+    return app.gulp.src(app.path.src.svgicons, {})
+
+        .pipe(app.plugins.plumber(
+            app.plugins.notify.onError({
+                title: "SPRITE",
+                message: "Error: <%= error.message %>"
+            }))
+        )
+
+        .pipe(svgSprite(config))
+        .pipe(app.gulp.dest(app.path.build.images))
+}
+
+export const svg = () => {
     return app.gulp.src(app.path.src.svg, {})
 
         .pipe(app.plugins.plumber(
@@ -97,6 +112,14 @@ export const svg = () => {
             }))
         )
 
-        .pipe(svgSprite(config))
+        .pipe(svgo(
+            {
+                plugins: [
+                    {removeUselessStrokeAndFill: true}
+                ]
+            }
+        ))
         .pipe(app.gulp.dest(app.path.build.images))
 }
+
+

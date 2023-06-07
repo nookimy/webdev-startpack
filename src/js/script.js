@@ -11,7 +11,6 @@ testWebP(function (support) {
     document.documentElement.classList.add(className);
 });
 
-
 /*Мобильное меню*/
 
 let mainHeader = document.querySelector(".main-header");
@@ -80,4 +79,5 @@ window.onscroll = menuPosition;
 
 window.addEventListener('resize', (e) => {
     checkScreen();
-});*/
+
+

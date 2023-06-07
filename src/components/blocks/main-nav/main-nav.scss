@@ -25,7 +25,6 @@
     width: 30px;
     height: 30px;
     transition: $transition;
-    outline-color: $main;
 
     @media (min-width: $lg-width) {
       display: none;
@@ -43,7 +42,7 @@
     &:hover,
     &:focus {
       & use.icon__symbol {
-        stroke: $main-dark;
+        stroke: $secondary;
       }
     }
   }
@@ -54,5 +53,15 @@
     @media (min-width: $lg-width) {
       display: block;
     }
+  }
+}
+
+.main-header--desktop-sticky .main-nav {
+  gap: 3rem;
+
+  &__btn-wrap {
+    margin-right: auto;
+    margin-left: 0;
+    order: 2;
   }
 }

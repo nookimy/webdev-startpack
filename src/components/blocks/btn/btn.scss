@@ -46,5 +46,56 @@
       border-color: $main-dark;
     }
   }
+
+  &--main {
+    background-color: $main;
+    border-color: $main;
+    color: $light;
+
+    &:hover,
+    &:focus {
+      background-color: $main-dark;
+      border-color: $main-dark;
+    }
+  }
+
+  &--secondary {
+    background-color: $light;
+    border-color: $light;
+    color: $dark;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($dark-gray, 0.5);
+      color: $light;
+
+      & use.icon__symbol {
+        stroke: $light;
+      }
+    }
+
+    & use.icon__symbol {
+      stroke: $dark;
+    }
+  }
+}
+
+.main-slider .btn {
+  @include text-12;
+
+  min-width: 115px;
+  min-height: 35px;
+  gap: 6px;
+
+  @media (min-width: $md-width) {
+    @include text-normal;
+    min-width: 185px;
+    min-height: 45px;
+
+    & .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 

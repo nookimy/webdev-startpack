@@ -9,7 +9,6 @@
   padding: 0;
   border: none;
   transition: $transition;
-  outline-color: $main;
 
   @media (min-width: $lg-width) {
     width: 45px;
@@ -23,7 +22,7 @@
   &:hover,
   &:focus {
     & use.icon__symbol {
-      stroke: $main-dark;
+      stroke: $secondary;
     }
   }
 
@@ -44,8 +43,10 @@
 
 }
 
-.main-header .burger-button {
-  @media (min-width: $lg-width) {
+.main-header--desktop .burger-button {
     display: none;
-  }
+}
+
+.main-header--desktop-sticky .burger-button {
+  display: inline-flex;
 }

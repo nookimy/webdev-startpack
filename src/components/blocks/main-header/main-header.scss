@@ -32,13 +32,30 @@
   }
 
   &--desktop-sticky {
+    & .main-header__nav {
+      position: relative;
+      z-index: 10;
+      box-shadow: 0px 10px 50px rgba(181, 181, 181, 0.5);
+    }
 
+    & .main-header__menu {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transition: $transition;
+
+      &--opened {
+        transform: translateY(100%);
+      }
+    }
   }
 }
 
 .main-header {
   position: relative;
   width: 100%;
+  z-index: 10;
 
   &__nav {
     padding: 2rem 0 2.5rem;
@@ -82,5 +99,11 @@
     @media (min-width: $lg-width) {
       gap: 3rem;
     }
+  }
+}
+
+.main-header--desktop-sticky .main-header {
+  &__button-wrap {
+    order: 4;
   }
 }

@@ -23,9 +23,12 @@ import  { html } from "./gulp/tasks/html.js";
 import  { htmlProd } from "./gulp/tasks/html.js";
 import  { server } from "./gulp/tasks/server.js";
 import  { scss } from "./gulp/tasks/scss.js";
+import  { copycss } from "./gulp/tasks/copy.js";
 import  { js } from "./gulp/tasks/js.js";
+import  { copyjs } from "./gulp/tasks/copy.js";
 import  { jsProd } from "./gulp/tasks/js.js";
 import  { images } from "./gulp/tasks/images.js";
+import  { svgSprive } from "./gulp/tasks/svg.js";
 import  { svg } from "./gulp/tasks/svg.js";
 import {otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle} from "./gulp/tasks/fonts.js";
 import  { zip } from "./gulp/tasks/zip.js";
@@ -41,7 +44,7 @@ function watcher() {
 }
 
 // Создание svg-спрайта
-export { svg };
+export { svgSprive };
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle);
@@ -56,7 +59,7 @@ export { test };
 
 // основные задачи
 
-const mainTasks = gulp.series(svg, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(svgSprive, gulp.parallel(copy, copycss, copyjs, html, scss, js, images, svg));
 const mainTasksProd = gulp.parallel(htmlProd, jsProd);
 
 // Построение сценариев выполнения задач

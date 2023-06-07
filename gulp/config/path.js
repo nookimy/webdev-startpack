@@ -27,9 +27,12 @@ export const path = {
     src: {
         html: basePath.src + '/*.html',
         scss: basePath.components + '/style.scss',
+        csslib: basePath.src + '/css-lib/*.*',
         js: basePath.src + '/js/*.js',
+        jslib: basePath.src + '/js-lib/*.*',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
         fonts: basePath.src + '/fonts/',
+        svgicons: basePath.blocks + '/icons/icons-*.svg',
         svg: basePath.blocks + '/**/*.svg',
         files: basePath.files + '/**/*.*',
     },

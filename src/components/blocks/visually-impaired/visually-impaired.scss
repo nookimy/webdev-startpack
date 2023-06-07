@@ -7,7 +7,6 @@
     width: 30px;
     height: 30px;
     transition: $transition;
-    outline-color: $main;
 
     & .icon {
       width: 20px;
@@ -21,7 +20,7 @@
     &:hover,
     &:focus {
       & use.icon__symbol {
-        stroke: $main-dark;
+        stroke: $secondary;
       }
     }
   }
