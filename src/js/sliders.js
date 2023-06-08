@@ -23,6 +23,7 @@ new Swiper('.topical-links__wrap.swiper', {
 
     breakpoints: {
         320: {
+            spaceBetween: 15,
             slidesPerView: 1,
         },
 

@@ -68,10 +68,6 @@
     &:focus {
       background-color: rgba($dark-gray, 0.5);
       color: $light;
-
-      & use.icon__symbol {
-        stroke: $light;
-      }
     }
 
     & use.icon__symbol {
@@ -87,15 +83,21 @@
   min-height: 35px;
   gap: 6px;
 
+  & .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  & use.icon__symbol {
+    stroke: $dark;
+  }
+
   @media (min-width: $md-width) {
     @include text-normal;
     min-width: 185px;
     min-height: 45px;
 
-    & .icon {
-      width: 20px;
-      height: 20px;
-    }
+
   }
 }
 

@@ -32,8 +32,7 @@ export const path = {
         jslib: basePath.src + '/js-lib/*.*',
         images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
         fonts: basePath.src + '/fonts/',
-        svgicons: basePath.blocks + '/icons/icons-*.svg',
-        svg: basePath.blocks + '/**/*.svg',
+        svg: basePath.blocks + '/icons/*.svg',
         files: basePath.files + '/**/*.*',
     },
 

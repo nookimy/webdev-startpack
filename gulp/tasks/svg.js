@@ -1,16 +1,20 @@
 import svgSprite from "gulp-svg-sprite";
 import svgo from "gulp-svgo";
 
-export const svgSprive = () => {
+
+export const svg = () => {
     let config = {
+        mode: {
+            symbol: {
+                dest : '../../src/components/',
+                sprite: './sprite.svg',
+            }
+        },
         svg: {
             namespaceClassnames: false,
             xmlDeclaration: true,
         },
         shape: {
-            id: {
-                separator: '-',
-            },
             spacing: {
                 padding: 0
             },
@@ -18,13 +22,19 @@ export const svgSprive = () => {
                 "svgo": {
                     "plugins": [
                         {
-                            name: 'moveGroupAttrsToElems',
+                            name: 'removeXMLNS',
                             params: {
                                 opationName: 'true'
                             }
                         },
                         {
-                            name: 'removeXMLNS',
+                            name: 'removeUselessStrokeAndFill',
+                            params: {
+                                opationName: 'false'
+                            }
+                        },
+                        {
+                            name: 'convertColors',
                             params: {
                                 opationName: 'true'
                             }
@@ -32,7 +42,7 @@ export const svgSprive = () => {
                         {
                             name: 'removeAttrs',
                             params: {
-                                attrs: '(style)'
+                                opationName: '(style)'
                             }
                         },
                         {
@@ -42,67 +52,17 @@ export const svgSprive = () => {
                             }
                         },
                         {
-                            name: 'removeUnusedNS',
-                            params: {
-                                opationName: 'false'
-                            }
-                        },
-                        {
-                            name: 'cleanupIDs',
-                            params: {
-                                opationName: 'false'
-                            }
-                        },
-                        {
-                            name: 'removeComments',
+                            name: 'sortAttrs',
                             params: {
                                 opationName: 'true'
                             }
                         },
-                        {
-                            name: 'removeEmptyAttrs',
-                            params: {
-                                opationName: 'true'
-                            }
-                        },
-                        {
-                            name: 'removeEmptyText',
-                            params: {
-                                opationName: 'true'
-                            }
-                        },
-                        {
-                            name: 'collapseGroups',
-                            params: {
-                                opationName: 'true'
-                            }
-                        },
+
                     ]
                 }
             }]
         },
-
-        mode: {
-            symbol: {
-                dest : '../../src/components/',
-                sprite: './sprite.svg',
-            }
-        },
     };
-    return app.gulp.src(app.path.src.svgicons, {})
-
-        .pipe(app.plugins.plumber(
-            app.plugins.notify.onError({
-                title: "SPRITE",
-                message: "Error: <%= error.message %>"
-            }))
-        )
-
-        .pipe(svgSprite(config))
-        .pipe(app.gulp.dest(app.path.build.images))
-}
-
-export const svg = () => {
     return app.gulp.src(app.path.src.svg, {})
 
         .pipe(app.plugins.plumber(
@@ -112,14 +72,14 @@ export const svg = () => {
             }))
         )
 
-        .pipe(svgo(
-            {
-                plugins: [
-                    {removeUselessStrokeAndFill: true}
-                ]
-            }
-        ))
-        .pipe(app.gulp.dest(app.path.build.images))
+        .pipe(app.plugins.replace('fill="none" ', ''))
+
+        .pipe(svgSprite(config))
+        // Подмена путей до изображений
+
+
+        .pipe(app.gulp.dest(app.basePath.components))
 }
+
 
 
