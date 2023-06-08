@@ -1,0 +1,64 @@
+.topical-links {
+  padding-top: 30px;
+  padding-bottom: 10px;
+
+  @media (min-width: $xl-width) {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  & .page__wrap {
+    position: relative;
+  }
+
+  &__list {
+    @include list();
+  }
+
+  &__item {
+    & a {
+      display: block;
+      border: 1px solid #DDDDDD;
+      padding: 15px 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: $transition;
+
+      &:hover,
+      &:focus {
+        border-color: $secondary;
+      }
+    }
+  }
+
+  & .swiper-button-next,
+  & .swiper-button-prev {
+    @include btn-reset;
+    width: 32px;
+    height: 32px;
+
+    &::after {
+      display: none;
+    }
+
+    & .icon {
+      width: 32px;
+      height: 16px;
+    }
+
+    & use.icon__symbol {
+      fill: $secondary;
+    }
+  }
+
+  & .swiper-button-prev {
+    left: 10px;
+    & .icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  & .swiper-button-next {
+    right: 10px;
+  }
+}

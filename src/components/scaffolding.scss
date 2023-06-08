@@ -17,7 +17,7 @@ body {
   @include text-12;
   @include mp();
   color: $text-color;
-  background-color: $bg-body;
+  background-color: $light;
   min-height: 1500px;
 
   @media (min-width: $md-width) {
