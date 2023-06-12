@@ -42,7 +42,7 @@
     font-style: normal;
 
     @media (min-width: $md-width) {
-        font-size: 2.30px;
+        font-size: 23px;
     }
 }
 
@@ -167,8 +167,6 @@
     font-style: normal;
 }
 
-
-/*@include container;*/
 @mixin container {
     width: 100%;
     margin: 0 auto;
@@ -182,20 +180,17 @@
     }
 }
 
-/*@include mp;*/
 @mixin mp($list-margin: 0, $list-padding: 0) {
     margin: $list-margin;
     padding: $list-padding;
 }
 
-/*@include list;*/
 @mixin list($list-margin: 0, $list-padding: 0, $list-style: none) {
     margin: $list-margin;
     padding: $list-padding;
     list-style: $list-style;
 }
 
-/*@include btn-reset;*/
 @mixin btn-reset {
     padding: 0;
     border: none;

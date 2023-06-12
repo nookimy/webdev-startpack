@@ -29,7 +29,8 @@ import  { copyjs } from "./gulp/tasks/copy.js";
 import  { jsProd } from "./gulp/tasks/js.js";
 import  { img } from "./gulp/tasks/images.js";
 import  { imgopt } from "./gulp/tasks/images.js";
-import  { svg } from "./gulp/tasks/svg.js";
+import  { svgOpt } from "./gulp/tasks/svg.js";
+import  { svgSprive } from "./gulp/tasks/svg.js";
 import {otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle} from "./gulp/tasks/fonts.js";
 import  { zip } from "./gulp/tasks/zip.js";
 import  { ftp } from "./gulp/tasks/ftp.js";
@@ -49,9 +50,9 @@ export { svg };
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle);
+const svg = gulp.series( svgOpt, svgSprive);
 
-
-const test = gulp.series(imgopt);
+const test = gulp.series(svgOpt, svgSprive);
 
 // Тестовая задача
 export { test };

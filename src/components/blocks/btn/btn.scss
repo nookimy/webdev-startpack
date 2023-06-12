@@ -1,5 +1,5 @@
 .btn {
-  @include btn-reset();
+  @include btn-reset;
   @include text-10;
   box-sizing: border-box;
   display: inline-flex;
