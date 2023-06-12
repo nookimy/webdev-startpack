@@ -3,11 +3,11 @@
     @include mp();
     @include text-medium;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 
     @media (min-width: $md-width) {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
   }
 }

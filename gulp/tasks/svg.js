@@ -42,7 +42,7 @@ export const svg = () => {
                         {
                             name: 'removeAttrs',
                             params: {
-                                opationName: '(style)'
+                                attrs: '(style)'
                             }
                         },
                         {

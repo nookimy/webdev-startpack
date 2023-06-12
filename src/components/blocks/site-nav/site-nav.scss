@@ -1,6 +1,6 @@
 .site-nav {
   &__list {
-    $include list();
+    @include list();
     & > li {
       & > a {
         color: inherit;
@@ -10,7 +10,7 @@
   }
 
   &__submenu-list {
-    $include list();
+    @include list();
 
     & > li {
       & > a {
@@ -25,14 +25,14 @@
   &__list {
     display: flex;
     flex-direction: column;
-    $include text-normal;
+    @include text-normal;
     color: $dark;
     font-variation-settings: "slnt" 0;
 
     @media (min-width: $lg-width) {
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 20px;
     }
 
     @media (min-width: $xl-width) {
@@ -52,7 +52,7 @@
       outline-color: $secondary;
       display: inline-block;
       width: 100%;
-      padding: 1.2rem 0;
+      padding: 1.20px 0;
       transition: $transition;
 
       @media (min-width: $lg-width) {
@@ -76,7 +76,7 @@
     flex-direction: column;
     color: $dark-gray;
     margin-left: 20px;
-    $include text-normal;
+    @include text-normal;
     margin-bottom: 6px;
 
     & > li {

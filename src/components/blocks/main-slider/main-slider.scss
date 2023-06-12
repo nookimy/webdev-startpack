@@ -2,7 +2,7 @@
   width: 100%;
 
   &__list {
-    $include list;
+    @include list;
   }
 
   &__item-wrap {
@@ -44,7 +44,7 @@
 
 
   &__content {
-    $include container;
+    @include container;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -67,8 +67,8 @@
   }
 
   &__title {
-    $include mp();
-    $include h1;
+    @include mp();
+    @include h1;
 
     @media (min-width: $md-width) {
       position: relative;
@@ -91,8 +91,8 @@
   }
 
   &__text {
-    $include mp();
-    $include title;
+    @include mp();
+    @include title;
 
     @media (min-width: $md-width) {
       position: relative;

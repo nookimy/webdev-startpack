@@ -4,7 +4,7 @@
   justify-content: space-between;
 
   @media (min-width: $lg-width) {
-    gap: 2rem;
+    gap: 20px;
   }
 
   &__btn-wrap {
@@ -13,12 +13,12 @@
 
     @media (min-width: $lg-width) {
       margin-left: auto;
-      gap: 1rem;
+      gap: 10px;
     }
   }
 
   &__search-btn {
-    $include btn-reset;
+    @include btn-reset;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +57,7 @@
 }
 
 .main-header--desktop-sticky .main-nav {
-  gap: 3rem;
+  gap: 30px;
 
   &__btn-wrap {
     margin-right: auto;

@@ -30,7 +30,8 @@ export const path = {
         csslib: basePath.src + '/css-lib/*.*',
         js: basePath.src + '/js/*.js',
         jslib: basePath.src + '/js-lib/*.*',
-        images: basePath.src + '/img/**/*.{jpg,jpeg,png,gif,webp}',
+        images: basePath.src + '/img/**/*.{jpg,jpeg,png}',
+        imgOpt: basePath.src + '/img-optimized/', // Оптимизированные изображения (jpg,jpeg,png}
         fonts: basePath.src + '/fonts/',
         svg: basePath.blocks + '/icons/*.svg',
         files: basePath.files + '/**/*.*',

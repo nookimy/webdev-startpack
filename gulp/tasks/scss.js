@@ -1,10 +1,12 @@
-import dartSass from 'sass'; // Препроцессор Sass
-import gulpSass from 'gulp-sass'; // Плагин для запуска Sass
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename'; // Переименование файла
 import cleanCss from 'gulp-clean-css'; // Сжатие CSS-файла
-import webpCss from 'gulp-webpcss'; // Вывод webp-изображений
+/*import webpCss from 'gulp-webpcss'; // Вывод webp-изображений*/
 import autoprefixer from 'gulp-autoprefixer'; // Добавление вендорных префиксов
 import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Группировка медиа-запросов
+
+
 
 const sass = gulpSass(dartSass);
 
@@ -21,12 +23,12 @@ export const scss = () => {
         ))
 
         // webp-изображения, если они поддерживаются
-        .pipe(webpCss(
+/*        .pipe(webpCss(
             {
                 webpClass: ".webp",
                 noWebpClass: ".no-webp"
             }
-        ))
+        ))*/
 
 
 

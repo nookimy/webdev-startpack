@@ -25,9 +25,9 @@
     }
   }
   &__title {
-    $include mp();
+    @include mp();
     @include text-status;
-    font-size: 2rem;
+    font-size: 20px;
     text-transform: none;
     padding-top: 60px;
     text-align: center;
@@ -38,7 +38,7 @@
     @media (min-width: $md-width) {
       display: inline-flex;
       align-items: center;
-      font-size: 3rem;
+      font-size: 30px;
       padding-top: 0;
       padding-left: 180px;
       background-position: left center;

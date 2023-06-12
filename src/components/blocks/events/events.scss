@@ -151,10 +151,10 @@
           top: 0;
           right: 0;
           @include h1;
-          font-size: 1.8rem;
+          font-size: 18px;
 
           @media (min-width: $md-width) {
-            font-size: 1.8rem;
+            font-size: 18px;
             margin-top: 5px;
           }
         }
@@ -166,7 +166,7 @@
         margin-bottom: -5px;
 
         @media (min-width: $md-width) {
-          font-size: 3.5rem;
+          font-size: 35px;
         }
       }
 
@@ -178,7 +178,7 @@
         text-transform: capitalize;
 
         @media (min-width: $md-width) {
-          font-size: 1.6rem;
+          font-size: 16px;
         }
       }
 
@@ -187,7 +187,8 @@
         bottom: 7px;
         right: 10px;
         @include mp();
-        .text-normal-caps(2rem);
+        @include text-normal-caps;
+        font-size: 20px;
         color: $main;
 
         &::after {
@@ -195,7 +196,7 @@
         }
 
         @media (min-width: $lg-width) {
-          font-size: 2.4rem;
+          font-size: 24px;
           bottom: 20px;
           right: 20px;
         }
@@ -310,7 +311,7 @@
 
         @media (min-width: $xl-width) {
           width: 170px;
-          font-size: 1.6rem;
+          font-size: 16px;
           min-height: 45px;
         }
       }
@@ -326,7 +327,7 @@
 
         @media (min-width: $xl-width) {
           width: 170px;
-          font-size: 1.6rem;
+          font-size: 16px;
           min-height: 45px;
         }
       }

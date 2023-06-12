@@ -1,6 +1,6 @@
 .btn {
-  $include btn-reset;
-  $include text-10;
+  @include btn-reset();
+  @include text-10;
   box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
@@ -11,9 +11,9 @@
   text-align: center;
 
   @media (min-width: $md-width) {
-    $include text-12;
+    @include text-12;
     min-height: 30px;
-    padding: 0.75rem 2rem;
+    padding: 7.5px 20px;
   }
 
   & use.icon__symbol {
@@ -21,23 +21,23 @@
   }
 
   &--buyticket {
-    $include text-12;
+    @include text-12;
     background-color: $main;
     border-color: $main;
     color: $light;
-    padding: 1rem;
-    min-height: 4rem;
+    padding: 10px;
+    min-height: 40px;
     width: 40%;
     flex-grow: 1;
 
     @media (min-width: $md-width) {
-      $include text-normal;
-      height: 4.5rem;
+      @include text-normal;
+      height: 45px;
     }
 
     @media (min-width: $lg-width) {
       order: 2;
-      min-width: 17rem;
+      min-width: 170px;
     }
 
     &:hover,
@@ -77,7 +77,7 @@
 }
 
 .main-slider .btn {
-  $include text-12;
+  @include text-12;
 
   min-width: 115px;
   min-height: 35px;
@@ -93,7 +93,7 @@
   }
 
   @media (min-width: $md-width) {
-    $include text-normal;
+    @include text-normal;
     min-width: 185px;
     min-height: 45px;
 

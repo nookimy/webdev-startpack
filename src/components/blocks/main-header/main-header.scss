@@ -58,7 +58,7 @@
   z-index: 10;
 
   &__nav {
-    padding: 2rem 0 2.5rem;
+    padding: 20px 0 25px;
     background-color: $light;
 
     & .main-header__button-wrap {
@@ -72,10 +72,10 @@
 
   &__menu {
     background-color: $light;
-    padding: 2rem 0 2.5rem;
+    padding: 20px 0 25px;
 
     & .main-header__button-wrap {
-      margin-bottom: 0.8rem;
+      margin-bottom: 8px;
       @media (min-width: $lg-width) {
         display: none;
       }
@@ -93,11 +93,11 @@
 
   &__button-wrap {
     display: flex;
-    gap: 2rem;
+    gap: 20px;
 
 
     @media (min-width: $lg-width) {
-      gap: 3rem;
+      gap: 30px;
     }
   }
 }

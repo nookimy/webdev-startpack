@@ -44,11 +44,11 @@
   &__title {
     @include mp();
     @include text-medium;
-    font-size: 1.4rem;
+    font-size: 14px;
     text-transform: uppercase;
 
     @media (min-width: $md-width) {
-      font-size: 1.8rem;
+      font-size: 18px;
     }
   }
 

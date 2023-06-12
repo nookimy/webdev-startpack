@@ -27,7 +27,8 @@ import  { copycss } from "./gulp/tasks/copy.js";
 import  { js } from "./gulp/tasks/js.js";
 import  { copyjs } from "./gulp/tasks/copy.js";
 import  { jsProd } from "./gulp/tasks/js.js";
-import  { images } from "./gulp/tasks/images.js";
+import  { img } from "./gulp/tasks/images.js";
+import  { imgopt } from "./gulp/tasks/images.js";
 import  { svg } from "./gulp/tasks/svg.js";
 import {otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle} from "./gulp/tasks/fonts.js";
 import  { zip } from "./gulp/tasks/zip.js";
@@ -39,17 +40,18 @@ function watcher() {
     gulp.watch(path.watch.html, html);
     gulp.watch(path.watch.scss, scss);
     gulp.watch(path.watch.js, js);
-    gulp.watch(path.watch.images, images);
+    gulp.watch(path.watch.images, img);
 }
 
 // Создание svg-спрайта
 export { svg };
 
+
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle);
 
 
-const test = gulp.series( otfToTtf, ttfToWoff, fontsStyle);
+const test = gulp.series(imgopt);
 
 // Тестовая задача
 export { test };
@@ -58,7 +60,7 @@ export { test };
 
 // основные задачи
 
-const mainTasks = gulp.series(svg, gulp.parallel(copy, copycss, copyjs, html, scss, js, images));
+const mainTasks = gulp.series(svg, gulp.parallel(copy, copycss, copyjs, html, scss, js, img));
 const mainTasksProd = gulp.parallel(htmlProd, jsProd);
 
 // Построение сценариев выполнения задач
