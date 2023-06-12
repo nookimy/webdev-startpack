@@ -2,13 +2,14 @@
 @import "mixins";
 @import "fonts";
 @import "scaffolding";
-
 @import "blocks/icons/icons";
 @import "blocks/btn/btn";
 @import "blocks/select/select";
 @import "blocks/page/page";
+@import "blocks/link/link";
+@import "blocks/form/form";
+@import "blocks/social/social";
 @import "blocks/img/img";
-
 @import "blocks/main-header/main-header";
 @import "blocks/main-nav/main-nav";
 @import "blocks/burger/burger";
@@ -17,6 +18,16 @@
 @import "blocks/visually-impaired/visually-impaired";
 @import "blocks/languages/languages";
 @import "blocks/site-nav/site-nav";
-
 @import "blocks/main-slider/main-slider";
 @import "blocks/topical-links/topical-links";
+@import "blocks/expositions/expositions";
+@import "blocks/exposition/exposition";
+@import "blocks/events/events";
+@import "blocks/event/event";
+@import "blocks/excursions/excursions";
+@import "blocks/application/application";
+@import "blocks/news/news";
+@import "blocks/banner/banner";
+@import "blocks/museum-areas/museum-areas";
+@import "blocks/main-footer/main-footer";
+@import "blocks/subscription/subscription";

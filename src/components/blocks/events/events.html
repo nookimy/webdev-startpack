@@ -1,0 +1,93 @@
+<section class="events page__section">
+  <div class="page__wrap">
+    <h2 class="page__subtitle">События</h2>
+    <select class="events__time-filter" form="events-filters">
+      <option>Все</option>
+      <option>Текущие</option>
+      <option>Будущие</option>
+      <option>Прошедшие</option>
+    </select>
+    <select class="events__place-filter" form="events-filters">
+      <option label="Музейный комплекс">Все музейные комплексы</option>
+      <option>Национальный музей Республики Марий Эл им. Т. Евсеева</option>
+      <option>Музей истории Православия </option>
+      <option>Музей народно-прикладного искусства</option>
+      <option>Музей ...</option>
+    </select>
+    <form class="events__filters visually-hidden" id="events-filters"></form>
+    <ul class="events__list">
+      <li class="events__item event event--pushkincard">
+        <picture>
+            <source type="image/webp" srcset="
+            ../events/image1-767@1x.webp 1x,
+            ../events/image1-767@2x.webp 2x,
+            ../events/image1-767@3x.webp 3x">
+            <source type="image/jpeg" srcset="
+            ../events/image1-767@1x.jpg 1x,
+            ../events/image1-767@2x.jpg 2x,
+            ../events/image1-767@3x.jpg 3x">
+            <img class="event__img" src="../events/image1.jpg" alt="Воркшоп Вам пора в музей">
+        </picture>
+        <div class="event__info">
+          <p class="event__days">
+            <time class="event__time-start" datetime="2022-03-21"><span class="event__day-month">21</span> марта <span class="event__weekday">ср</span></time>
+            <time class="event__time-end" datetime="2022-03-31"><span class="event__day-month">31</span> марта <span class="event__weekday">чт</span></time>
+          </p>
+          <p class="event__age">6</p>
+        </div>
+        <div class="event__wrap-content">
+          <h3 class="event__title">Воркшоп «Вам пора в музей»</h3>
+          <div class="event__pushkincard">
+            <p class="visually-hidden">Действует программа Пушкинская карта</p>
+          </div>
+          <p class="event__advt">С 21 по 31 марта 2022 года наш музей приглашает школьников на воркшоп «Вам пора в музей»! Мы проведём для вас интерактивные программы и игры на базе нашего музея!</p>
+          <p class="event__place">Национальный музей Республики Марий Эл им. Т. Евсеева</p>
+          <div class="event__link-wrap">
+            <a class="btn btn--main-invert event__link-buy" href="#">Купить билет</a>
+            <a class="btn btn--secondary event__link-detail" href="#">Подробнее
+              <svg class="icon" width="20px" height="20px">
+                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="events__item event">
+        <picture>
+          <source type="image/webp" srcset="
+            ../events/image2-767@1x.webp 1x,
+            ../events/image2-767@2x.webp 2x,
+            ../events/image2-767@3x.webp 3x">
+          <source type="image/jpeg" srcset="
+            ../events/image2-767@1x.jpg 1x,
+            ../events/image2-767@2x.jpg 2x,
+            ../events/image2-767@3x.jpg 3x">
+          <img class="event__img" src="../events/image2.jpg" alt="Евсеевский день каждую среду">
+        </picture>
+        <div class="event__info">
+          <p class="event__days">
+            <time class="event__time-end" datetime="2022-03-31"><span class="event__day-month">30</span> марта <span class="event__weekday">ср</span></time>
+          </p>
+          <p class="event__age">6</p>
+        </div>
+        <div class="event__wrap-content">
+          <h3 class="event__title">Евсеевский день каждую среду</h3>
+          <div class="event__pushkincard">
+            <p class="visually-hidden">Действует программа Пушкинская карта</p>
+          </div>
+          <p class="event__advt">Дорогие друзья! В связи с проведением в музее акции «Евсеевский день» с 1 по 31 марта по средам мы приглашаем учащихся 1–4 классов школ республики посетить наши площадки бесплатно!</p>
+          <p class="event__place">Национальный музей Республики Марий Эл им. Т. Евсеева</p>
+          <div class="event__link-wrap">
+            <a class="btn btn--secondary event__link-detail" href="#">Подробнее
+              <svg class="icon" width="20px" height="20px">
+                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <a class="link link--more" href="#">Все выставки</a>
+  </div>
+</section>
+

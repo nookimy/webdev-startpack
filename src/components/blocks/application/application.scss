@@ -1,0 +1,100 @@
+.application {
+  padding-bottom: 40px;
+
+  @media (min-width: $md-width) {
+    padding-bottom: 0;
+  }
+
+  & .page__wrap {
+    max-width: 965px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+    grid-template-areas:
+      "img title"
+      "text text";
+    align-items: center;
+
+    @media (min-width: $md-width) {
+      grid-template-areas:
+      "img title"
+      "img text";
+      align-items: flex-start;
+      column-gap: 60px;
+      row-gap: 0;
+    }
+  }
+  &__title {
+    $include mp();
+    @include text-status;
+    font-size: 2rem;
+    text-transform: none;
+    padding-top: 60px;
+    text-align: center;
+    background: url("../img/application/gerb.png") no-repeat center top;
+    background-size: 60px 60px;
+    grid-area: title;
+
+    @media (min-width: $md-width) {
+      display: inline-flex;
+      align-items: center;
+      font-size: 3rem;
+      padding-top: 0;
+      padding-left: 180px;
+      background-position: left center;
+      background-size: 150px 150px;
+      min-height: 150px;
+      align-self: flex-end;
+    }
+  }
+
+  &__text {
+    @include text-12;
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      align-items: flex-start;
+    }
+  }
+
+  &__download-link {
+    @include text-12;
+    min-height: 40px;
+    width: 100%;
+    max-width: 300px;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      min-height: 45px;
+      max-width: 255px;
+    }
+  }
+
+  &__img-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 156%;
+    grid-area: img;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+
+    &--screen1 {
+      width: 67%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    &--screen2 {
+      width: 68%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

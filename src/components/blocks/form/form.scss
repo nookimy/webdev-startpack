@@ -1,0 +1,36 @@
+.subscription .form {
+  &__field {
+    position: relative;
+  }
+
+  & input[type="email"] {
+    @include mp();
+    width: 100%;
+    @include text-12;
+    padding: 12px 40px 12px 20px;
+    background-color: $light;
+    border: 1px solid #DDDDDD;
+
+    &::placeholder {
+      color: rgba($dark, 0.5);
+    }
+  }
+
+  & button[type="submit"] {
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    & .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+

@@ -1,0 +1,28 @@
+.link {
+  @include text-link;
+  text-decoration: none;
+
+  &--more {
+    display: block;
+    color: $secondary;
+    text-transform: uppercase;
+    padding: 5px 70px 5px 0;
+    width: 190px;
+    margin: 0 auto;
+    background: url("../img/link/link-arrow-mobile.svg") no-repeat center right 10px;
+    background-size: 52px 16px;
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+      background-position: center right 0px;
+    }
+
+    @media (min-width: $md-width) {
+      width: 290px;
+      background: url("../img/link/link-arrow-desktop.svg") no-repeat center right 10px;
+      background-size: 105px 16px;
+      padding: 0 130px 0 0;
+    }
+  }
+}

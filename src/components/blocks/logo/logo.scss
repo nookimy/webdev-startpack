@@ -77,7 +77,7 @@
   &__text {
     position: relative;
     z-index: 5;
-    @include text-logo;
+    $include text-logo;
     width: 180px;
   }
 }

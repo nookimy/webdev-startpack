@@ -1,0 +1,48 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+
+  & .page__wrap {
+
+  }
+  &__img {
+    width: 100%;
+  }
+
+  &__line {
+    position: absolute;
+    height: 7px;
+    border-radius: 3.5px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    &--black {
+      background-color: $dark;
+      width: 99%;
+      max-width: 1320px;
+      transform: translateX(-53%) translateY(0px);
+    }
+
+    &--blue {
+      background-color: $secondary;
+      width: 99%;
+      max-width: 1287px;
+      transform: translateX(-53%) translateY(33px);
+    }
+
+    &--red {
+      background-color: $main;
+      width: 99%;
+      max-width: 1287px;
+      transform: translateX(-53%) translateY(66px);
+    }
+
+    &--yellow {
+      background-color: $status;
+      width: 89%;
+      max-width: 1287px;
+      transform: translateX(-38%) translateY(100px);
+    }
+  }
+}

@@ -4,12 +4,12 @@
     padding-bottom: 40px;
   }
   &__wrap {
-    @include container;
+    $include container;
   }
 
   & .page__subtitle {
-    @include mp;
-    @include h2;
+    $include mp;
+    $include h2;
     margin-bottom: 1.36em;
   }
 }

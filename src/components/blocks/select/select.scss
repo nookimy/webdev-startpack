@@ -1,5 +1,5 @@
 .select {
-  @include text-12;
+  $include text-12;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -13,7 +13,7 @@
   transition: $transition;
 
   @media (min-width: $md-width) {
-    @include text-normal;
+    $include text-normal;
     height: 4.5rem;
   }
 

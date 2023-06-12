@@ -1,1 +1,72 @@
-<footer class="main-footer"></footer>
+<footer class="main-footer">
+  <div class="main-footer__container">
+    <include src="./source/less/blocks/logo/logo.html"></include>
+    <include src="./source/less/blocks/subscription/subscription.html"></include>
+    <div class="social">
+      <h2 class="social__title">Давайте дружить</h2>
+      <include src="./source/less/blocks/social/social.html"></include>
+    </div>
+    <ul class="main-footer__partners-list">
+      <li class="mincult-rf">
+        <a href="#">
+          <picture>
+            <source type="image/webp" media="(min-width: 768px)" srcset="
+              ../main-footer/gerb-mincult-rf-170.webp,
+              ../main-footer/gerb-mincult-rf-170@2x.webp 2x,
+              ../main-footer/gerb-mincult-rf-170@3x.webp 3x">
+            <source type="image/webp" srcset="
+              ../main-footer/gerb-mincult-rf-130@1x.webp 1x,
+              ../main-footer/gerb-mincult-rf-130@2x.webp 2x,
+              ../main-footer/gerb-mincult-rf-130@3x.webp 3x">
+            <source type="image/jpeg" media="(min-width: 768px)" srcset="
+              ../main-footer/gerb-mincult-rf-170.png 1x,
+              ../main-footer/gerb-mincult-rf-170@2x.png 2x,
+              ../main-footer/gerb-mincult-rf-170@3x.png 3x">
+            <source type="image/jpeg" srcset="
+              ../main-footer/gerb-mincult-rf-130@1x.png 1x,
+              ../main-footer/gerb-mincult-rf-130@2x.png 2x,
+              ../main-footer/gerb-mincult-rf-130@3x.png 3x">
+            <img src="/img/main-footer/gerb-mincult-rf.png" alt="Герб Министерства культуры Российской Федерации">
+          </picture>
+        </a>
+
+      </li>
+      <li class="mincult-mariel">
+        <a href="#">
+          <picture>
+            <source type="image/webp" media="(min-width: 768px)" srcset="
+              ../main-footer/gerb-mariel-36.webp,
+              ../main-footer/gerb-mariel-36@2x.webp 2x,
+              ../main-footer/gerb-mariel-36@3x.webp 3x">
+            <source type="image/webp" srcset="
+              ../main-footer/gerb-mariel-22@1x.webp 1x,
+              ../main-footer/gerb-mariel-22@2x.webp 2x,
+              ../main-footer/gerb-mariel-22@3x.webp 3x">
+            <source type="image/jpeg" media="(min-width: 768px)" srcset="
+              ../main-footer/gerb-mariel-36.png 1x,
+              ../main-footer/gerb-mariel-36@2x.png 2x,
+              ../main-footer/gerb-mariel-36@3x.png 3x">
+            <source type="image/jpeg" srcset="
+              ../main-footer/gerb-mariel-22@1x.png 1x,
+              ../main-footer/gerb-mariel-22@2x.png 2x,
+              ../main-footer/gerb-mariel-22@3x.png 3x">
+            <img src="/img/main-footer/gerb-mariel.png" alt="Герб Министерства культуры Российской Федерации">
+          </picture>
+          <span>Министерство культуры, печати и по делам национальностей Республики Марий Эл</span>
+        </a>
+      </li>
+    </ul>
+    <p class="main-footer__copyright">
+      © <script type="text/javascript">document.write(new Date().getFullYear());</script> Национальный музей Республики Марий Эл им. Т. Евсеева.
+    </p>
+    <div class="main-footer__site-developer">
+      <a href="#" target="_blank" rel="noopener noreferrer nofollow">
+        <p>Сделано в <span class="visually-hidden">onmaster.ru</span></p>
+        <svg class="icon" width="15px" height="15px">
+          <use class="icon__symbol" xlink:href="#icon-logo-developer"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="main-footer__site-menu"></div>
+  </div>
+</footer>

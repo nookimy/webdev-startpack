@@ -8,6 +8,7 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Группи
 
 const sass = gulpSass(dartSass);
 
+
 export const scss = () => {
     return app.gulp.src(app.path.src.scss, { sourcemaps: true }) // либо app.isDev вместо true при использовании плагина if
 

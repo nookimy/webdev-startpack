@@ -38,11 +38,11 @@ p {
   background-image: url("../section/sangel-250.jpg");
 
   @media (-webkit-min-device-pixel-ratio: 1.02), (min-resolution: 97.92dpi), (min-resolution: 1.02dppx) {
-      background-image: url("../section/sangel-250@2.jpg");
+      background-image: url("../section/sangel-250$2.jpg");
       background-size: 100% auto;
   }
   @media (-webkit-min-device-pixel-ratio: 2.02), (min-resolution: 193.92dpi), (min-resolution: 2.02dppx) {
-      background-image: url("../section/sangel-250@3.jpg");
+      background-image: url("../section/sangel-250$3.jpg");
       background-size: 100% auto;
   }
   @media (min-width: 750px) {
@@ -50,13 +50,13 @@ p {
       background-image: url("../section/sangel-350.jpg");
   }
   @media (min-width: 750px) and (-webkit-min-device-pixel-ratio: 1.02), (min-width: 750px) and (min-resolution: 97.92dpi), (min-width: 750px) and (min-resolution: 1.02dppx) {
-      background-image: url("../section/sangel-350@2.jpg");
+      background-image: url("../section/sangel-350$2.jpg");
       background-size: 100% auto;
 
   }
 
   @media (min-width: 750px) and (-webkit-min-device-pixel-ratio: 2.02), (min-width: 750px) and (min-resolution: 193.92dpi), (min-width: 750px) and (min-resolution: 2.02dppx) {
-      background-image: url("../section/sangel-350@3.jpg");
+      background-image: url("../section/sangel-350$3.jpg");
       background-size: 100% auto;
   }
 }

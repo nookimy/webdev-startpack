@@ -1,0 +1,287 @@
+.excursions {
+  & .page__wrap {
+    display: grid;
+    grid-template-columns: calc(100% - 125px) 100px;
+    grid-gap: 25px;
+    grid-template-areas:
+      "title title"
+      "type-filter type-filter"
+      "list list"
+      "link-more link-more";
+    align-items: center;
+
+    @media (min-width: $lg-width) {
+      grid-row-gap: 50px;
+      grid-column-gap: 110px;
+      grid-template-columns: 195px 250px auto;
+      grid-template-areas:
+      "title title type-filter"
+      "list list list"
+      "link-more link-more link-more";
+      justify-content: space-between;
+    }
+
+    @media (min-width: $xl-width) {
+      grid-template-columns: 190px auto 400px;
+      grid-column-gap: auto;
+    }
+  }
+
+  & .page__subtitle {
+    grid-area: title;
+    margin-bottom: 0;
+  }
+
+  &__type-filter {
+    @include text-12;
+    color: rgba($dark, 0.5);
+    grid-area: type-filter;
+    height: 40px;
+    padding: 10px 50px 10px 20px;
+    border: 1px solid #DDDDDD;
+    appearance: none;
+    background: url("../img/form/chevron-down.svg") no-repeat right 20px center;
+    background-size: 20px 20px;
+    transition: $transition;
+
+    @media (min-width: $lg-width) {
+      @include text-normal;
+      width: 250px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $secondary;
+    }
+  }
+
+  &__list {
+    @include list();
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-area: list;
+
+    @media (min-width: $md-width) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    @media (min-width: $xl-width) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 50px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    background-color: rgba($dark, 0.4);
+    color: $light;
+    width: 100%;
+    min-height: 100px;
+    aspect-ratio: 1 / 1;
+    display: none;
+    overflow: hidden;
+
+    &:nth-child(-n+3) {
+      display: block;
+    }
+
+    @media (min-width: $md-width) {
+      &:nth-child(-n+4) {
+        display: block;
+      }
+    }
+
+    @media (min-width: $xl-width) {
+      &:nth-child(-n+6) {
+        display: block;
+      }
+    }
+
+    &:hover {
+      & .excursion__img {
+        transform: scale(1.05);
+      }
+    }
+
+    &.excursion {
+      &--pushkincard {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          width: 20px;
+          height: 20px;
+          background: url("../img/excursions/pushkin-card.png") no-repeat center;
+          background-size: contain;
+          border-radius: 50%;
+          border: 1px solid $gray;
+
+          @media (min-width: $md-width) {
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+        & .excursions__pushkincard {
+          display: block;
+        }
+      }
+    }
+
+    & .excursion {
+      position: relative;
+
+      &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+        transition: 2s;
+      }
+
+      &__wrap-content {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        display: grid;
+        grid-template-areas:
+      "title title"
+      "place days"
+      "btn-wrap btn-wrap";
+        grid-template-columns: 1.35fr 1fr;
+        align-content: end;
+        align-items: center;
+        column-gap: 15px;
+        row-gap: 10px;
+
+        @media (min-width: $lg-width) {
+          grid-template-columns: auto 120px;
+          padding: 20px;
+        }
+      }
+
+      &__title {
+        position: relative;
+        @include mp();
+        @include h3;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $gray;
+        grid-area: title;
+      }
+
+      &__pushkincard {
+        display: none;
+      }
+
+      &__age {
+        &::after {
+          content: "+";
+        }
+      }
+
+      &__place {
+        position: relative;
+        @include mp();
+        @include text-10;
+        padding-left: 25px;
+        grid-area: place;
+        min-height: 15px;
+
+        @media (min-width: $md-width) {
+          @include text-12;
+          padding-left: 30px;
+          min-height: 20px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 15px;
+          height: 15px;
+          background: url("../img/excursion/pin.svg") no-repeat center;
+          background-size: contain;
+          transform: translateY(-50%);
+
+          @media (min-width: $md-width) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      &__days {
+        @include mp();
+        @include text-accent;
+        grid-area: days;
+        text-align: center;
+      }
+
+      &__btn-wrap {
+        display: flex;
+        gap: 20px;
+        grid-area: btn-wrap;
+
+        & .btn {
+          width: auto;
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+
+  &__item-type {
+    position: absolute;
+    @include mp();
+    @include text-status;
+    color: $status;
+    margin-top: 15px;
+    width: calc(100% - 50px);
+
+    @media (min-width: $md-width) {
+      margin-top: 20px;
+    }
+
+    & span {
+      display: inline-block;
+      position: relative;
+      padding-left: 20px;
+
+      @media (min-width: $md-width) {
+        padding-left: 30px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 10px;
+        height: 2px;
+        background-color: $status;
+        transform: translateY(-50%);
+
+        @media (min-width: $md-width) {
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  & .link--more {
+    grid-area: link-more;
+  }
+}
