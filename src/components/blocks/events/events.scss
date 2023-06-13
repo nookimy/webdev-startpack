@@ -29,44 +29,33 @@
     margin-bottom: 0;
   }
 
-  &__time-filter {
-    width: 100px;
-    @include text-normal-caps;
-    color: $secondary;
-    margin-left: auto;
-    text-align: right;
-    appearance: none;
-    height: 40px;
-    border: none;
-    grid-area: time-filter;
-    background-color: transparent;
+  &__select-name {
+    display: none;
 
     @media (min-width: $lg-width) {
-      width: 100%;
+      display: block;
+    }
+  }
+
+  &__time-filter {
+    width: 100%;
+    grid-area: time-filter;
+
+    @media (min-width: $lg-width) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: auto;
+      margin-left: auto;
     }
   }
 
   &__place-filter {
-    @include text-12;
-    color: rgba($dark, 0.5);
     grid-area: place-filter;
-    height: 40px;
-    padding: 10px 50px 10px 20px;
-    border: 1px solid #DDDDDD;
-    appearance: none;
-    background: url("../img/form/chevron-down.svg") no-repeat right 20px center;
-    background-size: 20px 20px;
-    transition: $transition;
+    width: 100%;
 
     @media (min-width: $lg-width) {
-      @include text-normal;
-      width: 355px;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      border-color: $secondary;
+      width: 250px;
     }
   }
 
@@ -232,7 +221,7 @@
         display: none;
         width: 20px;
         height: 20px;
-        background: url("../img/events/pushkin-card.png") no-repeat center;
+        background: url("../events/pushkin-card.png") no-repeat center;
         background-size: contain;
         border-radius: 50%;
         border: 1px solid $gray;
@@ -280,7 +269,7 @@
           left: 0;
           width: 15px;
           height: 15px;
-          background: url("../img/events/thin-pin.svg") no-repeat center;
+          background: url("../events/map-pin-gray.svg") no-repeat center;
           background-size: contain;
 
           @media (min-width: $md-width) {

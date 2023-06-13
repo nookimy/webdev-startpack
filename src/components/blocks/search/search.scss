@@ -14,6 +14,10 @@
     transition: $transition;
     outline: none;
 
+    @media (min-width: $md-width) {
+      height: 45px;
+    }
+
     &:hover,
     &:focus {
       border-bottom: 1px solid $secondary;

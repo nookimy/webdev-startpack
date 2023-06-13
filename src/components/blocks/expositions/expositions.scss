@@ -33,61 +33,33 @@
     margin-bottom: 0;
   }
 
-  & select.expositions__time-filter {
-    @media (min-width: $xl-width) {
-      display: none;
-    }
-  }
-
-  & ul.expositions__time-filter {
+  &__select-name {
     display: none;
 
-    @media (min-width: $xl-width) {
-      display: flex;
-      @include list();
-      align-items: center;
-      gap: 20px;
+    @media (min-width: $lg-width) {
+      display: block;
     }
   }
 
   &__time-filter {
-    width: 100px;
-    @include text-normal-caps;
-    color: $secondary;
-    margin-left: auto;
-    text-align: right;
-    appearance: none;
-    height: 40px;
-    border: none;
+    width: 100%;
     grid-area: time-filter;
-    background-color: transparent;
 
     @media (min-width: $lg-width) {
-      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: auto;
+      margin-left: auto;
     }
   }
 
   &__place-filter {
-    @include text-12;
-    color: rgba($dark, 0.5);
     grid-area: place-filter;
-    height: 40px;
-    padding: 10px 50px 10px 20px;
-    border: 1px solid #DDDDDD;
-    appearance: none;
-    background: url("../img/form/chevron-down.svg") no-repeat right 20px center;
-    background-size: 20px 20px;
-    transition: $transition;
+    width: 100%;
 
     @media (min-width: $lg-width) {
-      @include text-normal;
       width: 250px;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      border-color: $secondary;
     }
   }
 
@@ -150,7 +122,7 @@
           right: 15px;
           width: 20px;
           height: 20px;
-          background: url("../img/expositions/pushkin-card.png") no-repeat center;
+          background: url("../expositions/pushkin-card.png") no-repeat center;
           background-size: contain;
           border-radius: 50%;
           border: 1px solid $gray;
@@ -245,7 +217,7 @@
           left: 0;
           width: 15px;
           height: 15px;
-          background: url("../img/exposition/pin.svg") no-repeat center;
+          background: url("../expositions/map-pin-light.svg") no-repeat center;
           background-size: contain;
           transform: translateY(-50%);
 

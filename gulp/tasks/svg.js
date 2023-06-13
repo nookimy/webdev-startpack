@@ -58,7 +58,7 @@ export const svgSprive = () => {
         },
     };
 
-    return app.gulp.src(app.path.src.svgOpt + '/' +'*.svg', {})
+    return app.gulp.src(app.path.src.svgIcons, {})
 
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({

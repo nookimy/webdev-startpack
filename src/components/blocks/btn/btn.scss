@@ -13,7 +13,7 @@
   @media (min-width: $md-width) {
     @include text-12;
     min-height: 30px;
-    padding: 7.5px 20px;
+    padding: 7px 18px;
   }
 
   & use.icon__symbol {
@@ -64,21 +64,26 @@
     border-color: $light;
     color: $dark;
 
+    & use.icon__symbol {
+      stroke: $dark;
+    }
+
     &:hover,
     &:focus {
       background-color: rgba($dark-gray, 0.5);
       color: $light;
+
+      & use.icon__symbol {
+        stroke: $light;
+      }
     }
 
-    & use.icon__symbol {
-      stroke: $dark;
-    }
+
   }
 }
 
 .main-slider .btn {
   @include text-12;
-
   min-width: 115px;
   min-height: 35px;
   gap: 6px;
@@ -88,16 +93,10 @@
     height: 20px;
   }
 
-  & use.icon__symbol {
-    stroke: $dark;
-  }
-
   @media (min-width: $md-width) {
     @include text-normal;
     min-width: 185px;
     min-height: 45px;
-
-
   }
 }
 

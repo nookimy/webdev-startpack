@@ -29,6 +29,7 @@ import  { copyjs } from "./gulp/tasks/copy.js";
 import  { jsProd } from "./gulp/tasks/js.js";
 import  { img } from "./gulp/tasks/images.js";
 import  { imgopt } from "./gulp/tasks/images.js";
+import  { copysvg } from "./gulp/tasks/images.js";
 import  { svgOpt } from "./gulp/tasks/svg.js";
 import  { svgSprive } from "./gulp/tasks/svg.js";
 import {otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle} from "./gulp/tasks/fonts.js";
@@ -50,9 +51,9 @@ export { svg };
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series( otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle);
-const svg = gulp.series( svgOpt, svgSprive);
+const svg = gulp.series(svgOpt, svgSprive);
 
-const test = gulp.series(svgOpt, svgSprive);
+const test = gulp.series(svgOpt);
 
 // Тестовая задача
 export { test };
@@ -61,7 +62,7 @@ export { test };
 
 // основные задачи
 
-const mainTasks = gulp.series(svg, gulp.parallel(copy, copycss, copyjs, html, scss, js, img));
+const mainTasks = gulp.series(svg, gulp.parallel(copy, copycss, copyjs, html, scss, js, img, copysvg));
 const mainTasksProd = gulp.parallel(htmlProd, jsProd);
 
 // Построение сценариев выполнения задач

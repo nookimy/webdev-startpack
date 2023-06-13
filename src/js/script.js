@@ -78,6 +78,6 @@ function menuPosition() {
 window.onscroll = menuPosition;
 
 window.addEventListener('resize', (e) => {
-    checkScreen();
+    checkScreen();*/
 
 

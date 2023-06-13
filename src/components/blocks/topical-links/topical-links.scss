@@ -53,12 +53,17 @@
 
   & .swiper-button-prev {
     left: 10px;
-    & .icon {
-      transform: rotate(180deg);
+
+    @media (min-width: $lg-width) {
+      left: -10px;
     }
   }
 
   & .swiper-button-next {
     right: 10px;
+
+    @media (min-width: $lg-width) {
+      right: -10px;
+    }
   }
 }

@@ -4,6 +4,7 @@ import responsiveConfig from "gulp-responsive-config";
 import webp from "gulp-webp";
 import gulpAvif from "gulp-avif";
 import newer from "gulp-newer";
+import svgo from "gulp-svgo";
 
 import tinypng from "gulp-tinypng-extended";
 
@@ -58,7 +59,7 @@ export const img = (done) => {
             }))
 
             .pipe(app.gulp.dest(app.path.build.images + '/' + block + '/'))
-            .pipe(webp({quality: 80}))
+            .pipe(webp())
             .pipe(app.gulp.dest(app.path.build.images + '/' + block + '/'))
 
         /*.pipe(gulpAvif({quality: 30}))
@@ -66,6 +67,13 @@ export const img = (done) => {
 
     });
     done();
+}
+
+
+
+export const copysvg = () => {
+    return app.gulp.src([app.path.src.svgOpt + '**/*.svg', '!src/img-optimized/**/icon-*.svg'])
+        .pipe(app.gulp.dest(app.path.build.images))
 }
 
 

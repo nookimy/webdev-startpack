@@ -7,7 +7,7 @@
     @include container;
   }
 
-  & .page__subtitle {
+  &__subtitle {
     @include mp;
     @include h2;
     margin-bottom: 1.36em;
