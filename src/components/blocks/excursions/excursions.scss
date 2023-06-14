@@ -33,27 +33,16 @@
   }
 
   &__type-filter {
-    @include text-12;
-    color: rgba($dark, 0.5);
     grid-area: type-filter;
-    height: 40px;
-    padding: 10px 50px 10px 20px;
-    border: 1px solid #DDDDDD;
-    appearance: none;
-    background: url("../img/form/chevron-down-gray.svg") no-repeat right 20px center;
-    background-size: 20px 20px;
-    transition: $transition;
 
     @media (min-width: $lg-width) {
-      @include text-normal;
       width: 250px;
+      margin-left: auto;
     }
+  }
 
-    &:hover,
-    &:focus,
-    &:active {
-      border-color: $secondary;
-    }
+  & .select {
+    width: 100%;
   }
 
   &__list {
@@ -117,7 +106,7 @@
           right: 15px;
           width: 20px;
           height: 20px;
-          background: url("../img/excursions/pushkin-card.png") no-repeat center;
+          background: url("../expositions/pushkin-card.png") no-repeat center;
           background-size: contain;
           border-radius: 50%;
           border: 1px solid $gray;
@@ -212,7 +201,7 @@
           left: 0;
           width: 15px;
           height: 15px;
-          background: url("../img/excursion/pin.svg") no-repeat center;
+          background: url("../expositions/map-pin-light.svg") no-repeat center;
           background-size: contain;
           transform: translateY(-50%);
 
