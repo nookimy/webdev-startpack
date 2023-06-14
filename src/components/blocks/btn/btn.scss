@@ -59,6 +59,20 @@
     }
   }
 
+  &--main-invert {
+    background-color: transparent;
+    border-color: $main;
+    color: $main;
+
+    &:hover,
+    &:focus {
+      background-color: $main-dark;
+      border-color: $main-dark;
+      color: $light;
+    }
+
+  }
+
   &--secondary {
     background-color: $light;
     border-color: $light;
@@ -80,6 +94,8 @@
 
 
   }
+
+
 }
 
 .main-slider .btn {
