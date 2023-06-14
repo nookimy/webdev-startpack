@@ -15,23 +15,55 @@
 
     & .main-header__menu,
     & .main-header__search {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      transform: translateY(-100%);
       width: 100%;
       transition: $transition;
-
+      position: absolute;
+      top: 80px;
+      left: 0;
       &--opened {
-        transform: translateY(100%);
+        transform: translateY(0);
       }
     }
   }
 
   &--desktop {
+    position: relative;
+    & .main-header__nav {
+      overflow: hidden;
+      & > .page__wrap {
+        position: relative;
 
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -25px;
+          left: 0;
+          background-color: $secondary;
+          width: 100vw;
+          height: 1px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -25px;
+          left: 1px;
+          background-color: $secondary;
+          width: 38px;
+          height: 38px;
+          clip-path: polygon(0 0, 0 100%, 100% 100%);
+          transform: translateX(-100%);
+        }
+      }
+
+    }
   }
 
   &--desktop-sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
     & .main-header__nav {
       position: relative;
       z-index: 10;
@@ -53,7 +85,7 @@
 }
 
 .main-header {
-  position: relative;
+
   width: 100%;
   z-index: 10;
 

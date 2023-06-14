@@ -1,10 +1,6 @@
 .application {
   padding-bottom: 40px;
 
-  @media (min-width: $md-width) {
-    padding-bottom: 0;
-  }
-
   & .page__wrap {
     position: relative;
     max-width: 965px;

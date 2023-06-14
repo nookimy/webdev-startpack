@@ -52,8 +52,9 @@
       outline-color: $secondary;
       display: inline-block;
       width: 100%;
-      padding: 1.20px 0;
+      padding: 12px 0;
       transition: $transition;
+
 
       @media (min-width: $lg-width) {
         outline: none;
@@ -71,6 +72,12 @@
     }
   }
 
+  &__item--from-submenu {
+    @media (min-width: $lg-width) {
+      position: relative;
+    }
+  }
+
   &__submenu-list {
     display: flex;
     flex-direction: column;
@@ -78,6 +85,15 @@
     margin-left: 20px;
     @include text-normal;
     margin-bottom: 6px;
+
+    @media (min-width: $lg-width) {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $light;
+    }
+
 
     & > li {
       & > a {
@@ -94,3 +110,70 @@
     }
   }
 }
+
+.main-header--mobile .site-nav {
+  & .open-submenu {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      content: "";
+      background-color: $dark-gray;
+
+    }
+
+    &::before {
+      right: 0;
+      width: 18px;
+      height: 2px;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(-50%) rotate(-90deg);
+      opacity: 1;
+    }
+
+    &::after {
+      right: 8px;
+      width: 2px;
+      height: 18px;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::before,
+      &::after {
+        transition: $transition;
+        background-color: $secondary;
+      }
+    }
+
+    &--in {
+      color: $main;
+
+      &::before,
+      &::after {
+        background-color: $main;
+      }
+
+      &::before {
+        transition: all 0.5s ease-in-out;
+        transform:  translateY(-50%) rotate(90deg);
+        opacity: 0;
+      }
+
+      &::after {
+        transition: all 0.5s ease-in-out;
+        transform:  translateY(-50%) rotate(90deg);
+      }
+    }
+  }
+
+  & .submenu {
+    display: none;
+  }
+}
+

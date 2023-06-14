@@ -11,11 +11,13 @@ testWebP(function (support) {
     document.documentElement.classList.add(className);
 });
 
-/*Мобильное меню*/
 
+
+/*Мобильное меню*/
 let mainHeader = document.querySelector(".main-header");
 let burgerButton = document.querySelector(".burger-button");
 let siteNav = document.querySelector(".main-header__menu");
+
 
 
 /*Открытие меню по клику на бургер*/
@@ -25,20 +27,26 @@ burgerButton.onclick = function () {
     search.classList.remove("main-header__search--opened");
 };
 
+
+
+/*Открытие поиска в мобильном меню*/
 let searchOpenButton = document.querySelector(".main-nav__search-btn");
 let search = document.querySelector(".main-header__search");
 
-/*Открытие поиска в мобильном меню*/
 searchOpenButton.onclick = function () {
     burgerButton.classList.remove("burger-button--down");
     siteNav.classList.remove("main-header__menu--opened");
     search.classList.toggle("main-header__search--opened");
 };
 
-let windowWidth = document.documentElement.clientWidth;
+
+
 function checkScreen() {
-    if (windowWidth < 992) {
+    let windowWidth = document.documentElement.clientWidth;
+
+    if (windowWidth < 1024) {
         mainHeader.classList.add('main-header--mobile');
+        mainHeader.classList.remove('main-header--desktop');
     } else {
         mainHeader.classList.add('main-header--desktop');
         mainHeader.classList.remove('main-header--mobile');
@@ -46,6 +54,24 @@ function checkScreen() {
 };
 
 checkScreen();
+
+let mainHeaderFixed = document.querySelector(".main-header--desktop-sticky");
+
+function menuPosition() {
+    var currentScrollPos = window.pageYOffset;
+
+    if (prevScrollpos > currentScrollPos) {
+        siteNav.classList.remove("main-header__menu--opened");
+    } else {
+        mainHeaderFixed.style.transform = "translateY(-100%)";
+        siteNav.classList.remove("main-header__menu--opened");
+    }
+    prevScrollpos = currentScrollPos;
+}
+
+window.onscroll = menuPosition;
+
+
 
 /*function checkScreen() {
     let windowWidth = document.documentElement.clientWidth; // ширина окна за вычетом полосы прокрутки
@@ -66,7 +92,6 @@ function menuPosition() {
     var currentScrollPos = window.pageYOffset;
 
     if (prevScrollpos > currentScrollPos) {
-        mainHeaderFixed.style.transform = "none";
         siteNav.classList.remove("main-header__menu--opened");
     } else {
         mainHeaderFixed.style.transform = "translateY(-100%)";
@@ -77,7 +102,6 @@ function menuPosition() {
 
 window.onscroll = menuPosition;
 
-window.addEventListener('resize', (e) => {
-    checkScreen();*/
+;*/
 
 
