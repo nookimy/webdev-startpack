@@ -6,6 +6,7 @@
   }
 
   & .page__wrap {
+    position: relative;
     max-width: 965px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -22,8 +23,59 @@
       align-items: flex-start;
       column-gap: 60px;
       row-gap: 0;
+      max-width: 1200px;
+      padding: 0 115px;
+    }
+
+  }
+
+  & .line-vertical,
+  & .line-horizontal,
+  & .triangle-small-blue,
+  & .triangle-big-gray {
+    display: none;
+    position: absolute;
+    background: $secondary;
+
+    @media (min-width: $lg-width) {
+      display: block;
     }
   }
+
+  & .line-vertical {
+    width: 3px;
+    height: 560px;
+    top: 0;
+    left: -60px;
+    transform: translateY(-50%);
+  }
+
+  & .line-horizontal {
+    width: 300px;
+    height: 3px;
+    top: 0;
+    left: -60px;
+    transform: translateX(-50%);
+  }
+
+  & .triangle-small-blue {
+    width: 33px;
+    height: 33px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    top: 9px;
+    left: -66px;
+    transform: translateY(-0%) translateX(-100%);
+  }
+
+  & .triangle-big-gray {
+    width: 211px;
+    height: 211px;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    background-color: $light-gray;
+    bottom: 70px;
+    right: 20px;
+  }
+
   &__title {
     @include mp();
     @include text-status;
@@ -31,7 +83,7 @@
     text-transform: none;
     padding-top: 60px;
     text-align: center;
-    background: url("../img/application/gerb.png") no-repeat center top;
+    background: url("../application/gerb.png") no-repeat center top;
     background-size: 60px 60px;
     grid-area: title;
 
