@@ -95,6 +95,26 @@
 
   }
 
+  &--white-bg {
+    background-color: $light;
+    border: none;
+    border-color: transparent;
+
+
+    &:hover,
+    &:focus {
+      background-color: $gray;
+
+      & use.icon__symbol {
+        stroke: $light;
+      }
+    }
+
+    & use.icon__symbol {
+      stroke: $dark;
+    }
+  }
+
   &--transparent {
     background-color: transparent;
     border-color: $light;

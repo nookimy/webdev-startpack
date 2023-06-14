@@ -94,12 +94,29 @@
   }
 }
 
-
 .main-header--desktop-sticky .logo {
   margin-right: auto;
   margin-left: 39px;
   order: 3;
   &__text {
     display: none;
+  }
+}
+
+.main-footer .logo {
+
+
+  &__text {
+    @include text-medium;
+    font-size: 16px;
+    width: 164px;
+  }
+  & .icon {
+    width: 71px;
+    height: 66px;
+  }
+
+  & use.icon__symbol {
+    fill: $light;
   }
 }
