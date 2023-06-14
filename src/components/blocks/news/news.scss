@@ -73,6 +73,10 @@
   }
 
   & .link--more {
-    margin-top: 25px;
+    margin-top: 30px;
+
+    @media (min-width: $md-width) {
+      margin-top: 50px;
+    }
   }
 }

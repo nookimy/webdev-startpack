@@ -26,7 +26,7 @@
     }
 
     @media (min-width: $xl-width) {
-      grid-template-columns: 190px auto 450px;
+      grid-template-columns: 190px auto 250px;
       grid-column-gap: 10px;
     }
   }
@@ -36,34 +36,18 @@
     margin-bottom: 0;
   }
 
-  & select.museum-areas__areas-filter {
-    @media (min-width: $xl-width) {
-      display: none;
+  & div.museum-areas__areas-filter {
+    & .select {
+      width: 100%;
     }
   }
 
-  & ul.museum-areas__areas-filter {
-    display: none;
 
-    @media (min-width: $xl-width) {
-      display: flex;
-      @include list();
-      align-items: center;
-      gap: 20px;
-    }
-  }
 
   &__areas-filter {
-    width: 100px;
-    @include text-normal-caps;
-    color: $secondary;
-    margin-left: auto;
-    text-align: right;
-    appearance: none;
-    height: 40px;
-    border: none;
     grid-area: areas-filter;
-    background-color: transparent;
+    width: 100px;
+    margin-left: auto;
 
     @media (min-width: $lg-width) {
       width: 100%;
@@ -161,6 +145,9 @@
           top: 0;
           left: 0;
           background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
 
           @media (min-width: $md-width) {
             width: 16px;
@@ -170,14 +157,14 @@
 
         &--time {
           &::before {
-            background: url("../img/museum-areas/clock.svg") no-repeat center;
+            background-image: url("../icons/clock.svg");
           }
 
         }
 
         &--address {
           &::before {
-            background: url("../img/museum-areas/thin-pin.svg") no-repeat center;
+            background-image: url("../icons/thin-pin.svg");
           }
 
         }
