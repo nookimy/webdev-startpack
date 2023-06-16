@@ -1,0 +1,107 @@
+.exposition__head .museum-area {
+  &__title {
+    @include mp(0 0 10px);
+    @include h3;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 20px;
+    }
+
+    & a {
+      color: inherit;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover,
+      &:focus {
+        color: $secondary;
+
+        & use.icon__symbol {
+          stroke: $secondary;
+        }
+      }
+
+      & .icon {
+        width: 14px;
+        height: 14px;
+        transform: translateY(2px);
+
+        @media (min-width: $md-width) {
+          width: 20px;
+          height: 20px;
+          transform: translateY(5px);
+        }
+      }
+
+      & use.icon__symbol {
+        stroke: $dark;
+      }
+    }
+  }
+
+  &__info-list {
+    @include list();
+    @include mp();
+    @include text-10;
+    color: $dark-gray;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      row-gap: 10px;
+    }
+  }
+
+  &__info-item--time {
+    & a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      color: $secondary;
+      margin-left: 14px;
+      text-decoration: none;
+      min-height: 30px;
+
+      @media (min-width: $md-width) {
+        min-height: unset;
+        font-size: 14px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: $secondary;
+        bottom: 7px;
+        left: 0;
+        transition: $transition;
+        opacity: 1;
+
+        @media (min-width: $md-width) {
+          bottom: 0;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__btn-wrap {
+
+  }
+
+  & .btn {
+    &--buyticket {
+
+    }
+  }
+}
+

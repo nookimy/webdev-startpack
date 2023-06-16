@@ -204,3 +204,39 @@
 @mixin main-sh {
     box-shadow: 0px 10px 50px rgba(181, 181, 181, 0.5);
 }
+
+@mixin btn-main {
+    background-color: $main;
+    border-color: $main;
+    color: $light;
+
+    & use.icon__symbol {
+        stroke: $light;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $main-dark;
+        border-color: $main-dark;
+    }
+}
+
+@mixin btn-secondary {
+    background-color: $light;
+    border-color: $light;
+    color: $dark;
+
+    & use.icon__symbol {
+        stroke: $dark;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: rgba($dark-gray, 0.5);
+        color: $light;
+
+        & use.icon__symbol {
+            stroke: $light;
+        }
+    }
+}

@@ -8,7 +8,7 @@
   padding: 10px 40px 10px 20px;
   border: 1px solid #DDDDDD;
   appearance: none;
-  background-image: url("../select/chevron-down-gray.svg");
+  background-image: url("../icons/chevron-down-gray.svg");
   background-repeat: no-repeat;
   background-position: right 20px center;
   background-size: 20px 20px;
@@ -23,7 +23,7 @@
   &:focus,
   &:active {
     color: $dark;
-    background-image: url("../select/chevron-down-blue.svg");
+    background-image: url("../icons/chevron-down-blue.svg");
     border-color: $secondary;
     outline: none;
     cursor: pointer;

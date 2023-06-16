@@ -1,0 +1,70 @@
+.breadcrumbs {
+  @include container;
+  @include text-10;
+  color: $dark-gray;
+  overflow: hidden;
+  margin-bottom: 11px;
+
+  @media (min-width: $md-width) {
+    @include text-14;
+    margin-top: 11px;
+  }
+
+  & ul {
+    @include list();
+    display: inline;
+
+  }
+
+  & li {
+    position: relative;
+    display: inline;
+    margin-right: 14px;
+
+
+    @media (min-width: $md-width) {
+      margin-right: 25px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "/";
+      right: -7px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @media (min-width: $md-width) {
+        right: -14px;
+      }
+    }
+
+    &:nth-last-child(-n+2) {
+      &::after {
+        display: none;
+      }
+    }
+
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  & li a {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    min-height: 30px;
+    transition: $transition;
+
+    @media (min-width: $md-width) {
+      min-height: unset;
+    }
+
+    &:hover,
+    &:focus {
+      color: $secondary;
+    }
+  }
+}
