@@ -221,8 +221,12 @@
 
       &__btn-wrap {
         display: flex;
-        gap: 20px;
+        gap: 10px;
         grid-area: btn-wrap;
+
+        @media (min-width: $md-width) {
+          gap: 20px;
+        }
 
         & .btn {
           width: auto;

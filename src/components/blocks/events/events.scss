@@ -347,35 +347,6 @@
           margin-top: auto;
         }
       }
-
-      &__link-detail {
-        gap: 6px;
-        padding-top: 0;
-        padding-bottom: 0;
-
-        @media (min-width: $xl-width) {
-          width: 170px;
-          font-size: 16px;
-          min-height: 45px;
-        }
-      }
-
-      &__link-buy {
-        min-width: 100px;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-right: auto;
-
-        @media (min-width: $md-width) {
-          margin-right: 0;
-        }
-
-        @media (min-width: $xl-width) {
-          width: 170px;
-          font-size: 16px;
-          min-height: 45px;
-        }
-      }
     }
 
   }
