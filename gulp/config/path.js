@@ -75,6 +75,8 @@ export const path = {
 // Массив для списка папок блоков, заполнится сам чуть ниже по коду
 export const blocks = [];
 
+
+
 // Получаем список блоков и записываем их в массив blocks
 if (basePath.blocks) {
     fs.readdirSync(basePath.blocks).forEach(function (directory) {
@@ -91,6 +93,8 @@ blocks.forEach (function (block) {
 blocks.forEach (function (block) {
     path.watch.html.push(basePath.components + '/blocks/' + block + '/*.html');
 });
+
+console.log(blocks);
 
 
 

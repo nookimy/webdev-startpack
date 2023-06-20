@@ -57,9 +57,6 @@
     }
   }
 
-
-
-
   &__type {
     @include mp(0 0 10px);
     @include text-normal-caps;
@@ -164,5 +161,377 @@
     }
   }
 
+  &__info {
+    background-color: $light;
+    padding-top: 10px;
+    padding-bottom: 30px;
 
+    @media (min-width: $md-width) {
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+
+    @media (min-width: $lg-width) {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      column-gap: 50px;
+      grid-template-areas:
+              "text price"
+              "text rules"
+              "text ."
+              "gallery gallery";
+    }
+
+    @media (min-width: $xl-width) {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  &__text {
+    @include text-10;
+    @include container;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+    }
+
+    @media (min-width: $lg-width) {
+      padding-right: 0;
+      grid-area: text;
+    }
+
+    @media (min-width: $xl-width) {
+      margin: 0;
+      justify-self: end;
+      width: 690px;
+    }
+  }
+
+  &__text p {
+    margin-top: 0;
+  }
+
+  &__gallery {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    @media (min-width: $lg-width) {
+      grid-area: gallery;
+      margin-top: 60px;
+    }
+  }
+
+  &__gallery-buttons {
+    @media (min-width: $md-width) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 35px;
+    }
+  }
+
+  &__gallery-wrap {
+    @include container;
+
+    &.swiper {
+      overflow: visible;
+    }
+
+    & .swiper-button-next,
+    & .swiper-button-prev {
+      @include btn-reset;
+      display: flex;
+      width: 32px;
+      height: 32px;
+
+      &--mobile {
+        @media (min-width: $md-width) {
+          display: none;
+        }
+      }
+
+      &--desktop {
+        display: none;
+
+        @media (min-width: $md-width) {
+          display: block;
+        }
+      }
+
+      @media (min-width: $md-width) {
+        position: static;
+        top: unset;
+        right: unset;
+        left: unset;
+        bottom: unset;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      & .icon {
+        width: 32px;
+        height: 16px;
+
+        @media (min-width: $md-width) {
+          width: 102px;
+        }
+      }
+
+      & use.icon__symbol {
+        fill: $secondary;
+      }
+    }
+
+    & .swiper-button-prev {
+      left: 10px;
+    }
+
+    & .swiper-button-next {
+      right: 10px;
+    }
+  }
+
+  &__gallery-list {
+    @include list();
+    @include mp();
+
+    & > li > a {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+
+      }
+      &:hover,
+      &:focus {
+        .img {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    & > li > a .img {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($dark, 0.5);
+        background-image: url("../icons/search.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50 50;
+        z-index: 5;
+        transition: $transition;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__price {
+    @include container;
+    margin-bottom: 15px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $lg-width) {
+      grid-area: price;
+      padding-left: 0;
+    }
+
+    @media (min-width: $xl-width) {
+      margin: 0 0 40px 0;
+      width: 460px;
+      justify-self: start;
+    }
+  }
+
+  &__price ul {
+    position: relative;
+    @include list();
+    @include mp();
+    padding-left: 30px;
+    @include text-10;
+    color: $dark-gray;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      padding-left: 40px;
+    }
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      background-image: url("../icons/tabler-ticket.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @media (min-width: $md-width) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__price li {
+    & span {
+      color: $dark;
+    }
+  }
+
+  &__price-title {
+    @include mp();
+    @include h3;
+    margin-bottom: 10px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 25px;
+    }
+
+    & a {
+      color: inherit;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover,
+      &:focus {
+        color: $secondary;
+
+        & use.icon__symbol {
+          stroke: $secondary;
+        }
+      }
+
+      & .icon {
+        width: 14px;
+        height: 14px;
+        transform: translateY(2px);
+
+        @media (min-width: $md-width) {
+          width: 20px;
+          height: 20px;
+          transform: translateY(5px);
+        }
+      }
+
+      & use.icon__symbol {
+        stroke: $dark;
+      }
+    }
+  }
+
+  &__visiting-rules {
+    @include container;
+
+    @media (min-width: $lg-width) {
+      grid-area: rules;
+      padding-left: 0;
+    }
+
+    @media (min-width: $xl-width) {
+      margin: 0;
+      width: 460px;
+      justify-self: start;
+    }
+  }
+
+  &__visiting-rules-title {
+    @include mp();
+    @include h3;
+    margin-bottom: 10px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 25px;
+    }
+
+    & a {
+      color: inherit;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover,
+      &:focus {
+        color: $secondary;
+
+        & use.icon__symbol {
+          stroke: $secondary;
+        }
+      }
+
+      & .icon {
+        width: 14px;
+        height: 14px;
+        transform: translateY(2px);
+
+        @media (min-width: $md-width) {
+          width: 20px;
+          height: 20px;
+          transform: translateY(5px);
+        }
+      }
+
+      & use.icon__symbol {
+        stroke: $dark;
+      }
+    }
+  }
+
+  &__visiting-notes {
+    position: relative;
+    @include mp();
+    padding-left: 30px;
+    @include text-10;
+    color: $dark-gray;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      padding-left: 40px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      background-image: url("../icons/accessible.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @media (min-width: $md-width) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__visiting-notes p {
+    & span {
+      display: block;
+      @include title;
+      color: $dark;
+    }
+  }
 }

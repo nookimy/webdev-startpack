@@ -47,7 +47,7 @@
   }
 }
 
-.exposition .img {
+.exposition__cover .img {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -60,5 +60,9 @@
   & img {
     object-fit: cover;
   }
+}
+
+.exposition__gallery-list .img {
+  aspect-ratio: 28 / 20;
 }
 
