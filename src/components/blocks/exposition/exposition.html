@@ -184,6 +184,15 @@
 <section class="expositions page__section">
     <div class="page__wrap">
         <h2 class="page__subtitle">Другие выставки музея</h2>
+        <div class="expositions__time-filter">
+            <p class="expositions__select-name">Фильтр:</p>
+            <select class="select select--time-filter" form="expositions-filters">
+                <option>Все</option>
+                <option>Текущие</option>
+                <option>Будущие</option>
+                <option>Прошедшие</option>
+            </select>
+        </div>
         <div class="expositions__place-filter">
             <select class="select select--place-filter" form="expositions-filters">
                 <option label="Музейный комплекс">Все музейные комплексы</option>
@@ -333,6 +342,5 @@
 
             </li>
         </ul>
-        <a class="link link--more" href="#">Все выставки</a>
     </div>
 </section>
