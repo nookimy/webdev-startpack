@@ -1,3 +1,10 @@
+.museum-area {
+  &__working-list {
+    @include list();
+
+  }
+}
+
 .exposition__head .museum-area {
   &__title {
     @include mp(0 0 10px);
@@ -106,6 +113,44 @@
     @media (min-width: $md-width) {
       gap: 30px;
       margin-bottom: 0;
+    }
+  }
+
+}
+
+
+
+.museum-area {
+  &__working-mode {
+    &--modal {
+      & .modal__content {
+        width: auto;
+      }
+      & .modal__title {
+        @include h3;
+      }
+
+      & .museum-area__working-list {
+        position: relative;
+        @include text-10;
+        padding-left: 36px;
+        display: flex;
+        gap: 20px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 18px;
+          height: 18px;
+          background-image: url("../icons/calendar-heart.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transform: translateY(-50%);
+        }
+      }
     }
   }
 }

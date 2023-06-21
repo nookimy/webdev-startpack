@@ -82,6 +82,7 @@
   }
 
   &__item {
+    position: relative;
     background-color: rgba($dark, 0.4);
     color: $light;
     width: 100%;
