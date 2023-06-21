@@ -19,7 +19,7 @@ if (modalLinks.length > 0) {
 }
 
 // Закрытие модального окна при клике
-const modalCloseIcon = document.querySelectorAll('.close-modal');
+const modalCloseIcon = document.querySelectorAll('.modal__close-btn');
 if (modalCloseIcon.length > 0) {
     for (let index = 0; index < modalCloseIcon.length; index++) {
         const el = modalCloseIcon[index];
@@ -33,13 +33,13 @@ if (modalCloseIcon.length > 0) {
 // Открытие модального окна
 function modalOpen(curentModal) {
     if (curentModal && unlock) {
-        const modalActive = document.querySelector('.modal.open');
+        const modalActive = document.querySelector('.modal--open');
         if (modalActive) {
             modalClose(modalActive, false);
         } else {
             bodyLock();
         }
-        curentModal.classList.add('open');
+        curentModal.classList.add('modal--open');
         curentModal.addEventListener("click", function (e) {
             if (!e.target.closest('.modal__content')) {
                 modalClose(e.target.closest('.modal'));
@@ -50,7 +50,7 @@ function modalOpen(curentModal) {
 
 function modalClose(modalActive, doUnlock = true) {
     if (unlock) {
-        modalActive.classList.remove('open');
+        modalActive.classList.remove('modal--open');
         if (doUnlock) {
             bodyUnLock();
         }
@@ -98,7 +98,7 @@ function bodyUnLock() {
 
 document.addEventListener('keydown', function (e) {
     if (e.which === 27) {
-        const modalActive = document.querySelector('.modal.open');
+        const modalActive = document.querySelector('.modal--open');
         modalClose(modalActive);
     }
 });

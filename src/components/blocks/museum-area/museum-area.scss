@@ -120,37 +120,26 @@
 
 
 
-.museum-area {
-  &__working-mode {
-    &--modal {
-      & .modal__content {
-        width: auto;
-      }
-      & .modal__title {
-        @include h3;
-      }
+.modal--museum-working-mode {
+  & .museum-area__working-list {
+    position: relative;
+    @include text-10;
+    padding-left: 36px;
+    display: flex;
+    gap: 20px;
 
-      & .museum-area__working-list {
-        position: relative;
-        @include text-10;
-        padding-left: 36px;
-        display: flex;
-        gap: 20px;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 0;
-          width: 18px;
-          height: 18px;
-          background-image: url("../icons/calendar-heart.svg");
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-          transform: translateY(-50%);
-        }
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      background-image: url("../icons/calendar-heart.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transform: translateY(-50%);
     }
   }
 }
