@@ -47,7 +47,8 @@
   }
 }
 
-.exposition__cover .img {
+.exposition__cover .img,
+.museum-area__cover .img {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -62,7 +63,8 @@
   }
 }
 
-.exposition__gallery-list .img {
+.exposition__gallery-list .img,
+.museum-area__gallery-list .img {
   aspect-ratio: 28 / 20;
 }
 

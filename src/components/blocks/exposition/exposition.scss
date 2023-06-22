@@ -124,6 +124,7 @@
     @include list();
     @include mp();
     display: flex;
+    flex-wrap: wrap;
     @include text-bold-caps;
     color: $dark-gray;
     gap: 20px;
@@ -451,21 +452,6 @@
     }
   }
 
-  &__visiting-rules {
-    @include container;
-
-    @media (min-width: $lg-width) {
-      grid-area: rules;
-      padding-left: 0;
-    }
-
-    @media (min-width: $xl-width) {
-      margin: 0;
-      width: 460px;
-      justify-self: start;
-    }
-  }
-
   &__visiting-rules-title {
     @include mp();
     @include h3;
@@ -504,6 +490,21 @@
       & use.icon__symbol {
         stroke: $dark;
       }
+    }
+  }
+
+  &__visiting-rules {
+    @include container;
+
+    @media (min-width: $lg-width) {
+      grid-area: rules;
+      padding-left: 0;
+    }
+
+    @media (min-width: $xl-width) {
+      margin: 0;
+      width: 460px;
+      justify-self: start;
     }
   }
 
