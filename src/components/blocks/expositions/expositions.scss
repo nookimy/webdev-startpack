@@ -14,7 +14,7 @@
     @media (min-width: $lg-width) {
       grid-row-gap: 50px;
       grid-column-gap: 110px;
-      grid-template-columns: 195px 250px auto;
+      grid-template-columns: auto 250px 200px;
       grid-template-areas:
       "title place-filter time-filter"
       "list list list"
@@ -23,8 +23,8 @@
     }
 
     @media (min-width: $xl-width) {
-      grid-template-columns: 190px auto 400px;
-      grid-column-gap: auto;
+      grid-template-columns: auto 250px 200px;
+      grid-column-gap: 50px;
     }
   }
 

@@ -111,6 +111,10 @@
     margin-bottom: 35px;
 
     @media (min-width: $md-width) {
+      margin: 0 0 35px;
+    }
+
+    @media (min-width: $lg-width) {
       gap: 30px;
       margin-bottom: 0;
     }
