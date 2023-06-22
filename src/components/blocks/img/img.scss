@@ -66,3 +66,18 @@
   aspect-ratio: 28 / 20;
 }
 
+.news-detail__img .img {
+  width: 100%;
+  aspect-ratio: 32 / 20;
+
+  @media (min-width: $md-width) {
+    aspect-ratio: 46 / 36;
+  }
+
+  & img {
+    object-fit: cover;
+
+
+  }
+}
+
