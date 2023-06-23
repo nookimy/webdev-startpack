@@ -44,6 +44,7 @@
 
 
   &__content {
+    box-sizing: border-box;
     @include container;
     display: flex;
     flex-direction: column;

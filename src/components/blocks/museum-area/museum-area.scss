@@ -46,7 +46,7 @@
               "title contacts"
               ". buttons"
               "links buttons";
-      column-gap: 50px;
+      column-gap: 40px;
     }
   }
 
@@ -242,6 +242,10 @@
       width: 32px;
       height: 32px;
 
+      @media (min-width: $lg-width) {
+        width: 102px;
+      }
+
       &--mobile {
         @media (min-width: $md-width) {
           display: none;
@@ -352,7 +356,7 @@
 
     @media (min-width: $xl-width) {
       margin: 0 0 40px 0;
-      width: 460px;
+      width: 475px;
       justify-self: start;
     }
   }
@@ -515,6 +519,7 @@
 
     @media (min-width: $xl-width) {
       margin: 0;
+      padding-right: 0;
       width: 460px;
       justify-self: start;
     }

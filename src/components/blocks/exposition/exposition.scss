@@ -48,7 +48,7 @@
               "title period"
               "title place"
               "links place";
-      column-gap: 50px;
+      column-gap: 40px;
     }
   }
 
@@ -176,7 +176,7 @@
     @media (min-width: $lg-width) {
       display: grid;
       grid-template-columns: 1fr 480px;
-      column-gap: 50px;
+      column-gap: 40px;
       grid-template-areas:
               "text price"
               "text rules"
@@ -205,7 +205,7 @@
     @media (min-width: $xl-width) {
       margin: 0;
       justify-self: end;
-      width: 690px;
+      width: 700px;
     }
   }
 
@@ -246,6 +246,10 @@
       display: flex;
       width: 32px;
       height: 32px;
+
+      @media (min-width: $lg-width) {
+        width: 102px;
+      }
 
       &--mobile {
         @media (min-width: $md-width) {
@@ -357,7 +361,7 @@
 
     @media (min-width: $xl-width) {
       margin: 0 0 40px 0;
-      width: 460px;
+      width: 475px;
       justify-self: start;
     }
   }

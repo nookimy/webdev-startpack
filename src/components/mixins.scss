@@ -173,11 +173,11 @@
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
+    max-width: 1200px;
 
-    @media (min-width: $xl-width) {
-        width: 1200px;
-        padding-left: 0;
-        padding-right: 0;
+    @media (min-width: $md-width) {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
