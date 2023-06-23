@@ -10,6 +10,21 @@
     margin-top: 11px;
   }
 
+  &--hide-last {
+    & li {
+      &:nth-last-child(-n+2) {
+        &::after {
+          display: none;
+        }
+      }
+
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
   & ul {
     @include list();
     display: inline;
@@ -38,16 +53,12 @@
       }
     }
 
-    &:nth-last-child(-n+2) {
+    &:last-child {
       &::after {
         display: none;
       }
     }
 
-
-    &:last-child {
-      display: none;
-    }
   }
 
   & li a {

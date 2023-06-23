@@ -104,15 +104,13 @@
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    margin-bottom: 35px;
 
     @media (min-width: $md-width) {
-      margin: 0 0 35px;
+      margin: 0;
     }
 
     @media (min-width: $lg-width) {
       gap: 30px;
-      margin-bottom: 0;
       grid-area: buttons;
     }
   }
@@ -200,7 +198,7 @@
     @media (min-width: $xl-width) {
       margin: 0;
       justify-self: end;
-      width: 690px;
+      width: 680px;
     }
   }
 
@@ -601,7 +599,7 @@
   }
 }
 
-.exposition__head .museum-area {
+.page__head .museum-area {
   &__title {
     @include mp(0 0 10px);
     @include h3;
@@ -641,6 +639,10 @@
       }
     }
   }
+}
+
+.exposition__head .museum-area {
+
 
   &__info-list {
     @include text-10;
@@ -706,19 +708,19 @@
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    margin-bottom: 35px;
 
     @media (min-width: $md-width) {
-      margin: 0 0 35px;
+      margin: 0;
     }
 
     @media (min-width: $lg-width) {
       gap: 30px;
-      margin-bottom: 0;
     }
   }
 
 }
+
+
 
 .modal--museum-working-mode {
   & .museum-area__working-list {

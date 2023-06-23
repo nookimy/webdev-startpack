@@ -1,75 +1,7 @@
 .exposition {
 
-  &__cover {
-    position: relative;
+  & .page__cover {
     background-image: url("../exposition/cover.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  & .blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(20px);
-  }
-
-  &__head {
-    background-color: $superlight;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    background-image: url("../exposition/logo-bg.png");
-    background-repeat: no-repeat;
-    background-size: 275px 268px;
-    background-position: right -120px center;
-
-    @media (min-width: $md-width) {
-      padding-top: 30px;
-      padding-bottom: 25px;
-    }
-
-    @media (min-width: $xl-width) {
-      background-position: right 10% center;
-    }
-
-  }
-
-  &__head .page__wrap {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    @media (min-width: $lg-width) {
-      grid-template-columns: 1fr 460px;
-      grid-template-areas:
-              "type type"
-              "title period"
-              "title place"
-              "links place";
-      column-gap: 40px;
-    }
-  }
-
-  &__type {
-    @include mp(0 0 10px);
-    @include text-normal-caps;
-
-    @media (min-width: $lg-width) {
-      margin-bottom: 30px;
-      grid-area: type;
-    }
-  }
-
-  &__title {
-    @include mp(0 0 30px);
-    @include h1;
-
-    @media (min-width: $lg-width) {
-      margin-bottom: 87px;
-      grid-area: title;
-    }
   }
 
   &__period {
@@ -86,10 +18,6 @@
       font-size: 30px;
       column-gap: 45px;
       margin-bottom: 30px;
-    }
-
-    @media (min-width: $lg-width) {
-      grid-area: period;
     }
 
     & time {
@@ -110,120 +38,6 @@
 
   }
 
-  &__place {
-    @media (min-width: $md-width) {
-      align-self: end;
-    }
-
-    @media (min-width: $lg-width) {
-      grid-area: place;
-    }
-  }
-
-  &__link-list {
-    @include list();
-    @include mp();
-    display: flex;
-    flex-wrap: wrap;
-    @include text-bold-caps;
-    color: $dark-gray;
-    gap: 20px;
-
-    @media (min-width: $lg-width) {
-      grid-area: links;
-    }
-
-    & li {
-      & > a {
-        display: inline-flex;
-        position: relative;
-        color: inherit;
-        text-decoration: none;
-        transition: $transition;
-
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background-color: transparent;
-          transition: $transition;
-        }
-
-        &:hover {
-          color: $secondary;
-
-          &::before {
-            background-color: $secondary;
-          }
-        }
-      }
-    }
-  }
-
-  &__info {
-    background-color: $light;
-    padding-top: 10px;
-    padding-bottom: 30px;
-
-    @media (min-width: $md-width) {
-      padding-top: 30px;
-      padding-bottom: 60px;
-    }
-
-    @media (min-width: $lg-width) {
-      display: grid;
-      grid-template-columns: 1fr 480px;
-      column-gap: 40px;
-      grid-template-areas:
-              "text price"
-              "text rules"
-              "text ."
-              "gallery gallery";
-    }
-
-    @media (min-width: $xl-width) {
-      grid-template-columns: auto auto;
-    }
-  }
-
-  &__text {
-    @include text-10;
-    @include container;
-
-    @media (min-width: $md-width) {
-      @include text-normal;
-    }
-
-    @media (min-width: $lg-width) {
-      padding-right: 0;
-      grid-area: text;
-    }
-
-    @media (min-width: $xl-width) {
-      margin: 0;
-      justify-self: end;
-      width: 700px;
-    }
-  }
-
-  &__text p {
-    margin-top: 0;
-  }
-
-  &__gallery {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 15px;
-
-    @media (min-width: $lg-width) {
-      grid-area: gallery;
-      margin-top: 60px;
-    }
-  }
-
   &__gallery-buttons {
     @media (min-width: $md-width) {
       display: flex;
@@ -234,70 +48,9 @@
   }
 
   &__gallery-wrap {
-    @include container;
 
-    &.swiper {
-      overflow: visible;
-    }
 
-    & .swiper-button-next,
-    & .swiper-button-prev {
-      @include btn-reset;
-      display: flex;
-      width: 32px;
-      height: 32px;
 
-      @media (min-width: $lg-width) {
-        width: 102px;
-      }
-
-      &--mobile {
-        @media (min-width: $md-width) {
-          display: none;
-        }
-      }
-
-      &--desktop {
-        display: none;
-
-        @media (min-width: $md-width) {
-          display: block;
-        }
-      }
-
-      @media (min-width: $md-width) {
-        position: static;
-        top: unset;
-        right: unset;
-        left: unset;
-        bottom: unset;
-      }
-
-      &::after {
-        display: none;
-      }
-
-      & .icon {
-        width: 32px;
-        height: 16px;
-
-        @media (min-width: $md-width) {
-          width: 102px;
-        }
-      }
-
-      & use.icon__symbol {
-        fill: $secondary;
-      }
-    }
-
-    & .swiper-button-prev {
-      left: 10px;
-    }
-
-    & .swiper-button-next {
-      right: 10px;
-    }
   }
 
   &__gallery-list {
@@ -347,22 +100,10 @@
   }
 
   &__price {
-    @include container;
     margin-bottom: 15px;
 
     @media (min-width: $md-width) {
       margin-bottom: 40px;
-    }
-
-    @media (min-width: $lg-width) {
-      grid-area: price;
-      padding-left: 0;
-    }
-
-    @media (min-width: $xl-width) {
-      margin: 0 0 40px 0;
-      width: 475px;
-      justify-self: start;
     }
   }
 
@@ -494,21 +235,6 @@
       & use.icon__symbol {
         stroke: $dark;
       }
-    }
-  }
-
-  &__visiting-rules {
-    @include container;
-
-    @media (min-width: $lg-width) {
-      grid-area: rules;
-      padding-left: 0;
-    }
-
-    @media (min-width: $xl-width) {
-      margin: 0;
-      width: 460px;
-      justify-self: start;
     }
   }
 

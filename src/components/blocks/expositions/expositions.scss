@@ -1,5 +1,9 @@
 .expositions {
 
+  &__head {
+
+  }
+
   & .page__wrap {
     display: grid;
     grid-template-columns: calc(100% - 125px) 100px;

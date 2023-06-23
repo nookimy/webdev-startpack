@@ -55,6 +55,12 @@ new Swiper('.exposition__gallery-wrap.swiper', {
             spaceBetween: 30,
             slidesPerView: 1.5,
         },
+
+        1440: {
+            centeredSlides: true,
+            spaceBetween: 30,
+            slidesPerView: 3,
+        },
     }
 });
 

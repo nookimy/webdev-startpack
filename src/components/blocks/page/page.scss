@@ -7,6 +7,7 @@ body.lock {
     padding-top: 30px;
     padding-bottom: 40px;
   }
+
   &__wrap {
     @include container;
   }
@@ -16,4 +17,275 @@ body.lock {
     @include h2;
     margin-bottom: 1.36em;
   }
+
+  &__cover {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    & .blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  &__head .page__wrap,
+  &__content .page__wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $lg-width) {
+      grid-template-columns: 1fr 460px;
+      column-gap: 50px;
+    }
+  }
+
+  &__head {
+    background-color: $superlight;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-image: url("../exposition/logo-bg.png");
+    background-repeat: no-repeat;
+    background-size: 275px 268px;
+    background-position: right -120px center;
+
+    @media (min-width: $md-width) {
+      padding-top: 30px;
+      padding-bottom: 25px;
+    }
+
+    @media (min-width: $xl-width) {
+      background-position: right 10% center;
+    }
+
+    & .page__wrap {
+      @media (min-width: $lg-width) {
+        grid-template-areas:
+              "title info"
+              ". info"
+              "nav info";
+      }
+    }
+  }
+
+  &__head-title {
+    @include mp(0 0 30px);
+    @include h1;
+
+    @media (min-width: $lg-width) {
+      margin-bottom: 87px;
+      grid-area: title;
+    }
+
+    & span {
+      display: block;
+      @include mp(0 0 10px);
+      @include text-normal-caps;
+
+      @media (min-width: $lg-width) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__head-info {
+    margin-bottom: 35px;
+
+    @media (min-width: $lg-width) {
+      margin-bottom: 0;
+      grid-area: info;
+    }
+  }
+
+  &__link-list {
+    @include list();
+    @include mp();
+    display: flex;
+    flex-wrap: wrap;
+    @include text-bold-caps;
+    color: $dark-gray;
+    gap: 20px;
+
+    @media (min-width: $lg-width) {
+      grid-area: nav;
+    }
+
+    & li {
+      & > a {
+        display: inline-flex;
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+        transition: $transition;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: transparent;
+          transition: $transition;
+        }
+
+        &:hover {
+          color: $secondary;
+
+          &::before {
+            background-color: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    background-color: $light;
+    padding-top: 10px;
+    padding-bottom: 30px;
+
+    @media (min-width: $md-width) {
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+
+    & .page__wrap {
+      @media (min-width: $lg-width) {
+        grid-template-areas:
+              "text info"
+              "slider slider";
+      }
+    }
+  }
+
+  &__text {
+    @include text-10;
+    margin-bottom: 15px;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+    }
+
+    @media (min-width: $lg-width) {
+      margin-bottom: 0;
+      grid-area: text;
+    }
+
+    & p {
+      margin-top: 0;
+    }
+  }
+
+  &__content-info {
+    @media (min-width: $lg-width) {
+      grid-area: info;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    @media (min-width: $lg-width) {
+      overflow: unset;
+      grid-area: slider;
+    }
+  }
+
+  &__slider-wrap {
+    overflow: hidden;
+    width: 100%;
+    min-height: 50px;
+    background-color: #D13726;
+    margin-bottom: 15px;
+
+
+
+    @media (min-width: $lg-width) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      overflow: hidden;
+      margin-top: 60px;
+    }
+
+    @media (min-width: $xl-width) {
+      width: 1760px;
+    }
+
+    &.swiper {
+      @media (min-width: $lg-width) {
+        overflow: visible;
+      }
+
+    }
+
+    & .swiper-button-next,
+    & .swiper-button-prev {
+      @include btn-reset;
+      display: flex;
+      width: 32px;
+      height: 32px;
+
+      @media (min-width: $lg-width) {
+        width: 102px;
+      }
+
+      &--mobile {
+        @media (min-width: $md-width) {
+          display: none;
+        }
+      }
+
+      &--desktop {
+        display: none;
+
+        @media (min-width: $md-width) {
+          display: block;
+        }
+      }
+
+      @media (min-width: $md-width) {
+        position: static;
+        top: unset;
+        right: unset;
+        left: unset;
+        bottom: unset;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      & .icon {
+        width: 32px;
+        height: 16px;
+
+        @media (min-width: $md-width) {
+          width: 102px;
+        }
+      }
+
+      & use.icon__symbol {
+        fill: $secondary;
+      }
+    }
+
+    & .swiper-button-prev {
+      left: 10px;
+    }
+
+    & .swiper-button-next {
+      right: 10px;
+    }
+  }
+
+
 }
