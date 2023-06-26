@@ -100,6 +100,9 @@ body.lock {
     @media (min-width: $lg-width) {
       margin-bottom: 0;
       grid-area: info;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
@@ -202,29 +205,31 @@ body.lock {
     overflow: hidden;
     width: 100%;
     min-height: 50px;
-    background-color: #D13726;
     margin-bottom: 15px;
-
-
 
     @media (min-width: $lg-width) {
       position: relative;
       left: 50%;
       transform: translateX(-50%);
       width: 100vw;
+      max-width: 1920px;
       overflow: hidden;
       margin-top: 60px;
-    }
-
-    @media (min-width: $xl-width) {
-      width: 1760px;
     }
 
     &.swiper {
       @media (min-width: $lg-width) {
         overflow: visible;
       }
+    }
+  }
 
+  &__slider-buttons {
+    @media (min-width: $md-width) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 35px;
     }
 
     & .swiper-button-next,
@@ -286,6 +291,7 @@ body.lock {
       right: 10px;
     }
   }
+
 
 
 }

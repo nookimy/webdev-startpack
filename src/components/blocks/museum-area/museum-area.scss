@@ -1,63 +1,6 @@
 .museum-area {
-  &__cover {
-    position: relative;
+  & .page__cover {
     background-image: url("../museum-area/cover.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  & .blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(20px);
-  }
-
-  &__head {
-    background-color: $superlight;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    background-image: url("../exposition/logo-bg.png");
-    background-repeat: no-repeat;
-    background-size: 275px 268px;
-    background-position: right -120px center;
-
-    @media (min-width: $md-width) {
-      padding-top: 30px;
-      padding-bottom: 25px;
-    }
-
-    @media (min-width: $xl-width) {
-      background-position: right 10% center;
-    }
-
-  }
-
-  &__head .page__wrap {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    @media (min-width: $lg-width) {
-      grid-template-columns: 1fr 460px;
-      grid-template-areas:
-              "title contacts"
-              ". buttons"
-              "links buttons";
-      column-gap: 40px;
-    }
-  }
-
-  &__title {
-    @include mp(0 0 30px);
-    @include h1;
-
-    @media (min-width: $lg-width) {
-      margin-bottom: 87px;
-      grid-area: title;
-    }
   }
 
   &__info-list {
@@ -111,50 +54,6 @@
 
     @media (min-width: $lg-width) {
       gap: 30px;
-      grid-area: buttons;
-    }
-  }
-
-  &__link-list {
-    @include list();
-    @include mp();
-    display: flex;
-    flex-wrap: wrap;
-    @include text-bold-caps;
-    color: $dark-gray;
-    gap: 20px;
-
-    @media (min-width: $lg-width) {
-      grid-area: links;
-    }
-
-    & li {
-      & > a {
-        display: inline-flex;
-        position: relative;
-        color: inherit;
-        text-decoration: none;
-        transition: $transition;
-
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background-color: transparent;
-          transition: $transition;
-        }
-
-        &:hover {
-          color: $secondary;
-
-          &::before {
-            background-color: $secondary;
-          }
-        }
-      }
     }
   }
 
@@ -179,117 +78,6 @@
 
     @media (min-width: $xl-width) {
       grid-template-columns: auto auto;
-    }
-  }
-
-  &__text {
-    @include text-10;
-    @include container;
-
-    @media (min-width: $md-width) {
-      @include text-normal;
-    }
-
-    @media (min-width: $lg-width) {
-      padding-right: 0;
-      grid-area: text;
-    }
-
-    @media (min-width: $xl-width) {
-      margin: 0;
-      justify-self: end;
-      width: 680px;
-    }
-  }
-
-  &__text p {
-    margin-top: 0;
-  }
-
-  &__gallery {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 15px;
-
-    @media (min-width: $lg-width) {
-      grid-area: gallery;
-      margin-top: 60px;
-    }
-  }
-
-  &__gallery-buttons {
-    @media (min-width: $md-width) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 35px;
-    }
-  }
-
-  &__gallery-wrap {
-    @include container;
-
-    &.swiper {
-      overflow: visible;
-    }
-
-    & .swiper-button-next,
-    & .swiper-button-prev {
-      @include btn-reset;
-      display: flex;
-      width: 32px;
-      height: 32px;
-
-      @media (min-width: $lg-width) {
-        width: 102px;
-      }
-
-      &--mobile {
-        @media (min-width: $md-width) {
-          display: none;
-        }
-      }
-
-      &--desktop {
-        display: none;
-
-        @media (min-width: $md-width) {
-          display: block;
-        }
-      }
-
-      @media (min-width: $md-width) {
-        position: static;
-        top: unset;
-        right: unset;
-        left: unset;
-        bottom: unset;
-      }
-
-      &::after {
-        display: none;
-      }
-
-      & .icon {
-        width: 32px;
-        height: 16px;
-
-        @media (min-width: $md-width) {
-          width: 102px;
-        }
-      }
-
-      & use.icon__symbol {
-        fill: $secondary;
-      }
-    }
-
-    & .swiper-button-prev {
-      left: 10px;
-    }
-
-    & .swiper-button-next {
-      right: 10px;
     }
   }
 
@@ -336,26 +124,6 @@
         transition: $transition;
         opacity: 0;
       }
-    }
-  }
-
-  &__detail {
-    @include container;
-    margin-bottom: 15px;
-
-    @media (min-width: $md-width) {
-      margin-bottom: 40px;
-    }
-
-    @media (min-width: $lg-width) {
-      grid-area: detail;
-      padding-left: 0;
-    }
-
-    @media (min-width: $xl-width) {
-      margin: 0 0 40px 0;
-      width: 475px;
-      justify-self: start;
     }
   }
 
@@ -639,10 +407,6 @@
       }
     }
   }
-}
-
-.exposition__head .museum-area {
-
 
   &__info-list {
     @include text-10;
@@ -717,7 +481,6 @@
       gap: 30px;
     }
   }
-
 }
 
 

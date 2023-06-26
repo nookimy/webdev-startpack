@@ -1,15 +1,16 @@
-<section class="museum-areas page__section">
+<section class="museum-areas museum-areas--section page__section">
   <div class="page__wrap">
     <h2 class="page__subtitle">Музейные площадки</h2>
-    <div class="museum-areas__areas-filter">
-      <select class="select" form="areas-filters">
+    <fieldset class="form__fieldset form__fieldset--museum-type">
+      <legend class="visually-hidden">Музейные комплексы</legend>
+      <select class="form__select" form="museum-type-filters">
         <option>Все</option>
         <option>Музей истории</option>
         <option>Башня</option>
         <option>Дом-музей</option>
       </select>
-    </div>
-    <form class="museum-areas__filters visually-hidden" id="areas-filters"></form>
+    </fieldset>
+    <form class="museum-areas__filters visually-hidden" id="museum-type-filters"></form>
 
     <ul class="museum-areas__list">
       <li class="museum-areas__item museum-area">

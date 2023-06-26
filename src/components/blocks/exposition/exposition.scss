@@ -38,21 +38,6 @@
 
   }
 
-  &__gallery-buttons {
-    @media (min-width: $md-width) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 35px;
-    }
-  }
-
-  &__gallery-wrap {
-
-
-
-  }
-
   &__gallery-list {
     @include list();
     @include mp();

@@ -1,34 +1,4 @@
 .select {
-  box-sizing: border-box;
-  @include text-12;
-  display: inline-flex;
-  align-items: center;
-  color: rgba($dark, 0.5);
-  height: 35px;
-  padding: 10px 40px 10px 20px;
-  border: 1px solid #DDDDDD;
-  appearance: none;
-  background-image: url("../icons/chevron-down-gray.svg");
-  background-repeat: no-repeat;
-  background-position: right 20px center;
-  background-size: 20px 20px;
-  transition: $transition;
-
-  @media (min-width: $md-width) {
-    @include text-normal;
-    height: 45px;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $dark;
-    background-image: url("../icons/chevron-down-blue.svg");
-    border-color: $secondary;
-    outline: none;
-    cursor: pointer;
-  }
-
   &--languages {
     width: 40%;
     flex-grow: 1;
@@ -37,10 +7,6 @@
       order: 1;
       width: 190px;
     }
-  }
-
-  &--place-filter {
-    width: 100%;
   }
 
   &--time-filter {
@@ -53,9 +19,6 @@
     background: none;
     border: none;
 
-    @media (min-width: $lg-width) {
-
-    }
 
     &:hover,
     &:focus {

@@ -1,3 +1,133 @@
+.form {
+  &__fieldset {
+    @include mp();
+    border: none;
+  }
+
+  &__select {
+    box-sizing: border-box;
+    @include text-12;
+    display: inline-flex;
+    align-items: center;
+    color: rgba($dark, 0.5);
+    height: 35px;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #DDDDDD;
+    appearance: none;
+    background-image: url("../icons/chevron-down-gray.svg");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 20px 20px;
+    transition: $transition;
+    width: 100%;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      height: 45px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $dark;
+      background-image: url("../icons/chevron-down-blue.svg");
+      border-color: $secondary;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+
+}
+
+.expositions--section,
+.events--section {
+  & .form {
+    &__fieldset {
+      &--time {
+        position: relative;
+        width: 100%;
+
+        @media (min-width: $lg-width) {
+          width: 100%;
+        }
+
+        & > legend {
+          @media (max-width: 1023px) {
+            position: absolute;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            margin: -1px;
+            padding: 0;
+            width: 1px;
+            height: 1px;
+            border: 0;
+            white-space: nowrap;
+            clip-path: inset(100%);
+          }
+
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+
+
+
+        & select {
+          width: 100%;
+          @include text-normal-caps;
+          color: $secondary;
+          @include mp();
+          border: none;
+          margin-left: auto;
+          background-image: none;
+          background-color: transparent;
+          text-align: right;
+        }
+      }
+
+      &--place {
+        grid-area: place-filter;
+        width: 100%;
+
+        @media (min-width: $lg-width) {
+          width: 250px;
+        }
+
+
+      }
+    }
+
+  }
+
+}
+
+.excursions--section {
+  & .form {
+    &__fieldset {
+      &--excursion-type {
+        grid-area: type-filter;
+      }
+    }
+  }
+}
+
+.museum-areas--section {
+  & .form {
+    &__fieldset {
+      &--type {
+        grid-area: type-filter;
+
+        @media (min-width: $lg-width) {
+          width: 250px;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
 .subscription .form {
   &__field {
     position: relative;
@@ -33,4 +163,108 @@
     }
   }
 }
+
+.expositions--page {
+  & .form {
+    &__fieldset {
+      min-height: 30px;
+
+      &--place,
+      &--audience,
+      &--date {
+        flex-grow: 1;
+        width: 200px;
+
+        @media (min-width: $lg-width) {
+          width: 250px;
+          flex-grow: unset;
+        }
+      }
+
+      &--pushkincard {
+        width: 50px;
+
+        & label {
+          position: relative;
+          display: inline-block;
+          width: 50px;
+          height: 30px;
+          border-radius: 30px;
+          border: 1px solid #D9D9D9;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            border: 1px solid #C4C4C4;
+            transform: translateX(-1px)translateY(-50%);
+            transition: $transition;
+            background-image: url("../expositions/pushkin-card.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+          }
+        }
+
+        & input[type="checkbox"] {
+          position: absolute;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+          margin: -1px;
+          padding: 0;
+          width: 1px;
+          height: 1px;
+          border: 0;
+          white-space: nowrap;
+          clip-path: inset(100%);
+
+          &:checked+label::before {
+            border-color: $secondary;
+            background-color: $secondary;
+            transform: translateX(19px)translateY(-50%);
+          }
+        }
+      }
+
+      & input[type="date"] {
+        @include mp();
+        box-sizing: border-box;
+        @include text-12;
+        display: inline-flex;
+        align-items: center;
+        color: rgba($dark, 0.5);
+        height: 35px;
+        padding: 10px 20px 10px 20px;
+        border: 1px solid #DDDDDD;
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+        background-size: 20px 20px;
+        transition: $transition;
+        width: 100%;
+
+        @media (min-width: $md-width) {
+          @include text-normal;
+          height: 45px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $dark;
+          border-color: $secondary;
+          outline: none;
+          cursor: pointer;
+        }
+
+      }
+
+    }
+  }
+}
+
 
