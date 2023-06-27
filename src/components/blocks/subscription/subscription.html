@@ -1,15 +1,4 @@
 <div class="subscription">
   <h2 class="subscription__title">Подписаться на новости</h2>
-  <form class="subscription__form form">
-    <div class="form__field">
-      <input id="email" type="email" placeholder="Ваш e-mail" name="email" value="" inputmode="email" required>
-      <label class="visually-hidden" for="email">Ваш e-mail</label>
-      <button class="btn btn--white-bg" type="submit">
-        <span class="visually-hidden">Подписаться</span>
-        <svg class="icon" width="20px" height="20px" fill="none">
-          <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
-        </svg>
-      </button>
-    </div>
-  </form>
+  <include src="./src/components/blocks/form/form--subscription.html"></include>
 </div>

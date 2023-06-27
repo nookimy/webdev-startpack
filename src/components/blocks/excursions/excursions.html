@@ -1,16 +1,13 @@
 <section class="excursions excursions--section page__section">
   <div class="page__wrap">
     <h2 class="page__subtitle">Популярные экскурсии</h2>
-    <fieldset class="form__fieldset form__fieldset--excursion-type">
+    <fieldset class="filter filter--select-excursion-type">
       <legend class="visually-hidden">Тип программы</legend>
-      <select class="form__select" form="excursions-filters">
-        <option>Все</option>
-        <option>Тип 1</option>
-        <option>Тип 2</option>
-        <option>Тип 3</option>
+      <select form="excursions-filters">
+        <include src="./src/components/blocks/filter/excursion-type-select-options.html"></include>
       </select>
     </fieldset>
-    <form class="excursions__filters visually-hidden" id="excursions-filters"></form>
+    <form class="visually-hidden" id="excursions-filters"></form>
     <ul class="excursions__list">
       <li class="excursions__item excursion">
         <p class="excursions__item-type"><span>Музейно-образовательная программа</span></p>

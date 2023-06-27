@@ -327,4 +327,54 @@
     grid-area: title;
     margin-bottom: 0;
   }
+
+  & .filter--select-status {
+    grid-area: time-filter;
+    position: relative;
+    width: 100%;
+
+    & select {
+      width: 100%;
+      @include text-normal-caps;
+      color: $secondary;
+      @include mp();
+      border: none;
+      margin-left: auto;
+      background-image: none;
+      background-color: transparent;
+      text-align: right;
+    }
+
+
+    & legend {
+      @media (max-width: 1023px) {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        border: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+      }
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  & .filter--select-place {
+    grid-area: place-filter;
+    width: 100%;
+
+    @media (min-width: $lg-width) {
+      width: 250px;
+    }
+  }
+
+
 }

@@ -6,30 +6,27 @@
                 <h3 class="expositions__filters-title expositions__filters-title--selected">Фильтр<span>(1)</span></h3>
                 <div class="expositions__filters-block">
                     <div class="expositions__filters-wrap">
-                        <fieldset class="form__fieldset form__fieldset--place">
-                            <legend class="visually-hidden">Место проведения</legend>
-                            <select class="form__select" form="expositions-filters">
-                                <option label="Музейный комплекс">Все музейные комплексы</option>
-                                <option>Национальный музей Республики Марий Эл им. Т. Евсеева</option>
-                                <option>Музей истории Православия </option>
-                                <option>Музей народно-прикладного искусства</option>
-                                <option>Музей ...</option>
+                        <fieldset class="filter filter--select-place">
+                            <legend class="visually-hidden">Музейные комплексы</legend>
+                            <select form="expositions-filters">
+                                <include src="./src/components/blocks/filter/place-select-options.html"></include>
+
                             </select>
                         </fieldset>
-                        <fieldset class="form__fieldset form__fieldset--audience">
+                        <fieldset class="filter filter--select-audience">
                             <legend class="visually-hidden">Аудитория</legend>
-                            <select class="form__select" form="expositions-filters">
+                            <select form="expositions-filters">
                                 <option>Все</option>
                                 <option>Вариант 1</option>
                                 <option>Вариант 2</option>
                                 <option>Вариант 3</option>
                             </select>
                         </fieldset>
-                        <fieldset class="form__fieldset form__fieldset--date">
+                        <fieldset class="filter filter--select-date">
                                 <label class="visually-hidden" for="date">Дата проведения</label>
                                 <input type="date" id="date" name="date"/>
                         </fieldset>
-                        <fieldset class="form__fieldset form__fieldset--pushkincard">
+                        <fieldset class="filter filter--check-pushkincard">
                             <input type="checkbox" id="pushkincard" name="pushkincard" checked>
                             <label for="pushkincard"><span class="visually-hidden">По пушкинской карте</span></label>
                         </fieldset>
@@ -38,14 +35,12 @@
                         <button class="btn btn--main">Применить</button>
                         <button class="btn btn--main-invert">Сбросить фильтр</button>
                     </div>
-
-
                 </div>
             </div>
             <form class="expositions__filters visually-hidden" id="expositions-filters"></form>
         </div>
         <div class="expositions__tabs-wrap">
-            <fieldset class="form__fieldset form__fieldset--status-tabs">
+            <fieldset class="filter filter--tabs-status">
                 <legend class="visually-hidden">Статус</legend>
                 <div class="form__field">
                     <input type="radio" id="current" name="status" checked>

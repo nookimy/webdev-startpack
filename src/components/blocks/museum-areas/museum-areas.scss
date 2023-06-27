@@ -162,4 +162,13 @@
     grid-area: title;
     margin-bottom: 0;
   }
+
+  & .filter--select-museum-type {
+    grid-area: areas-filter;
+
+    @media (min-width: $lg-width) {
+      width: 250px;
+      margin-left: auto;
+    }
+  }
 }

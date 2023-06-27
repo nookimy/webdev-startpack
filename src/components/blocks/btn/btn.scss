@@ -127,26 +127,6 @@
     }
   }
 
-  &--white-bg {
-    background-color: $light;
-    border: none;
-    border-color: transparent;
-
-
-    &:hover,
-    &:focus {
-      background-color: $gray;
-
-      & use.icon__symbol {
-        stroke: $light;
-      }
-    }
-
-    & use.icon__symbol {
-      stroke: $dark;
-    }
-  }
-
   &--link {
     @include text-10;
     padding: 5px 15px;

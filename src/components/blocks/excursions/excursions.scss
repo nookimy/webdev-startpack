@@ -267,4 +267,8 @@
     grid-area: title;
     margin-bottom: 0;
   }
+
+  & .filter--select-excursion-type {
+    grid-area: type-filter;
+  }
 }

@@ -1,204 +1,61 @@
-.form {
-  &__fieldset {
-    @include mp();
+.form--search {
+  position: relative;
+
+  & input[type="search"] {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 40px;
     border: none;
+    border-bottom: 1px solid #DDDDDD;
+    outline: none;
 
-    &--status-tabs {
-      display: flex;
-      gap: 15px;
-
-      & input[type="radio"] {
-        position: absolute;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        margin: -1px;
-        padding: 0;
-        width: 1px;
-        height: 1px;
-        border: 0;
-        white-space: nowrap;
-        clip-path: inset(100%);
-      }
-
-      & label {
-        display: inline-block;
-        position: relative;
-        @include text-bold-caps;
-        color: $dark-gray;
-        transition: $transition;
-        cursor: pointer;
-
-        &:before {
-          display: none;
-          content: "";
-          position: absolute;
-          bottom: -3px;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background-color: $secondary;
-
-          @media (min-width: $md-width) {
-            bottom: -6px;
-          }
-        }
-
-        &:hover,
-        &:focus {
-          color: $secondary;
-        }
-      }
-
-      & input[type="radio"]:checked+label {
-        color: $secondary;
-
-        &:before {
-          display: block;
-        }
-      }
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $secondary;
     }
   }
 
-  &__select {
-    box-sizing: border-box;
-    @include text-12;
+  & button[type="submit"] {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+
+    @include btn-reset;
     display: inline-flex;
     align-items: center;
-    color: rgba($dark, 0.5);
-    height: 35px;
-    padding: 10px 40px 10px 20px;
-    border: 1px solid #DDDDDD;
-    appearance: none;
-    background-image: url("../icons/chevron-down-gray.svg");
-    background-repeat: no-repeat;
-    background-position: right 20px center;
-    background-size: 20px 20px;
+    justify-content: center;
     transition: $transition;
-    width: 100%;
+    outline-color: $secondary;
 
-    @media (min-width: $md-width) {
-      @include text-normal;
-      height: 45px;
+    & .icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    & use.icon__symbol {
+      stroke: $dark-gray;
     }
 
     &:hover,
-    &:focus,
-    &:active {
-      color: $dark;
-      background-image: url("../icons/chevron-down-blue.svg");
-      border-color: $secondary;
-      outline: none;
-      cursor: pointer;
-    }
-  }
-
-
-}
-
-.expositions--section,
-.events--section {
-  & .form {
-    &__fieldset {
-      &--time {
-        position: relative;
-        width: 100%;
-
-        @media (min-width: $lg-width) {
-          width: 100%;
-        }
-
-        & > legend {
-          @media (max-width: 1023px) {
-            position: absolute;
-            overflow: hidden;
-            clip: rect(0 0 0 0);
-            margin: -1px;
-            padding: 0;
-            width: 1px;
-            height: 1px;
-            border: 0;
-            white-space: nowrap;
-            clip-path: inset(100%);
-          }
-
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-        }
-
-
-
-        & select {
-          width: 100%;
-          @include text-normal-caps;
-          color: $secondary;
-          @include mp();
-          border: none;
-          margin-left: auto;
-          background-image: none;
-          background-color: transparent;
-          text-align: right;
-        }
-      }
-
-      &--place {
-        grid-area: place-filter;
-        width: 100%;
-
-        @media (min-width: $lg-width) {
-          width: 250px;
-        }
-
-
-      }
-    }
-
-  }
-
-}
-
-.excursions--section {
-  & .form {
-    &__fieldset {
-      &--excursion-type {
-        grid-area: type-filter;
+    &:focus {
+      & use.icon__symbol {
+        stroke: $secondary;
       }
     }
   }
 }
 
-.museum-areas--section {
-  & .form {
-    &__fieldset {
-      &--type {
-        grid-area: type-filter;
-
-        @media (min-width: $lg-width) {
-          width: 250px;
-          margin-left: auto;
-        }
-      }
-    }
-  }
-}
-
-.subscription .form {
-  &__field {
-    position: relative;
-  }
+.form--subscription {
+  position: relative;
 
   & input[type="email"] {
-    @include mp();
     width: 100%;
-    @include text-12;
-    padding: 12px 40px 12px 20px;
+    padding-right: 40px;
     background-color: $light;
     border: 1px solid #DDDDDD;
-
-    &::placeholder {
-      color: rgba($dark, 0.5);
-    }
   }
 
   & button[type="submit"] {
@@ -212,114 +69,109 @@
     transform: translateY(-50%);
     z-index: 5;
 
+    background-color: $light;
+    border: none;
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: $gray;
+
+      & use.icon__symbol {
+        stroke: $light;
+      }
+    }
+
     & .icon {
       width: 20px;
       height: 20px;
     }
-  }
-}
 
-.expositions--page {
-  & .form {
-    &__fieldset {
-      min-height: 30px;
-
-      &--place,
-      &--audience,
-      &--date {
-        flex-grow: 1;
-        width: 200px;
-
-        @media (min-width: $lg-width) {
-          width: 250px;
-          flex-grow: unset;
-        }
-      }
-
-      &--pushkincard {
-        width: 50px;
-
-        & label {
-          position: relative;
-          display: inline-block;
-          width: 50px;
-          height: 30px;
-          border-radius: 30px;
-          border: 1px solid #D9D9D9;
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 30px;
-            height: 30px;
-            border-radius: 30px;
-            border: 1px solid #C4C4C4;
-            transform: translateX(-1px)translateY(-50%);
-            transition: $transition;
-            background-image: url("../expositions/pushkin-card.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-
-          }
-        }
-
-        & input[type="checkbox"] {
-          position: absolute;
-          overflow: hidden;
-          clip: rect(0 0 0 0);
-          margin: -1px;
-          padding: 0;
-          width: 1px;
-          height: 1px;
-          border: 0;
-          white-space: nowrap;
-          clip-path: inset(100%);
-
-          &:checked+label::before {
-            border-color: $secondary;
-            background-color: $secondary;
-            transform: translateX(19px)translateY(-50%);
-          }
-        }
-      }
-
-      & input[type="date"] {
-        @include mp();
-        box-sizing: border-box;
-        @include text-12;
-        display: inline-flex;
-        align-items: center;
-        color: rgba($dark, 0.5);
-        height: 35px;
-        padding: 10px 20px 10px 20px;
-        border: 1px solid #DDDDDD;
-        background-repeat: no-repeat;
-        background-position: right 20px center;
-        background-size: 20px 20px;
-        transition: $transition;
-        width: 100%;
-
-        @media (min-width: $md-width) {
-          @include text-normal;
-          height: 45px;
-        }
-
-        &:hover,
-        &:focus,
-        &:active {
-          color: $dark;
-          border-color: $secondary;
-          outline: none;
-          cursor: pointer;
-        }
-
-      }
-
+    & use.icon__symbol {
+      stroke: $dark;
     }
   }
 }
+
+fieldset {
+  @include mp();
+  border: none;
+}
+
+input[type="search"],
+input[type="email"],
+input[type="date"] {
+  box-sizing: border-box;
+  @include mp();
+  @include text-12;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  height: 44px;
+  color: $dark-gray;
+  transition: $transition;
+
+  @media (min-width: $md-width) {
+    @include text-normal;
+    height: 45px;
+  }
+
+  &::placeholder {
+    color: rgba($dark, 0.5);
+  }
+}
+
+input[type="date"] {
+  width: 100%;
+  color: rgba($dark, 0.5);
+  border: 1px solid #DDDDDD;
+  transition: $transition;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dark;
+    border-color: $secondary;
+    outline: none;
+    cursor: pointer;
+  }
+
+}
+
+select {
+  width: 100%;
+  box-sizing: border-box;
+  @include mp();
+  @include text-12;
+  display: inline-flex;
+  align-items: center;
+  color: rgba($dark, 0.5);
+  height: 45px;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #DDDDDD;
+  appearance: none;
+  background-image: url("../icons/chevron-down-gray.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px;
+  transition: $transition;
+
+  @media (min-width: $md-width) {
+    @include text-normal;
+    height: 45px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dark;
+    background-image: url("../icons/chevron-down-blue.svg");
+    border-color: $secondary;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+
 
 

@@ -118,7 +118,13 @@
     padding: 23px 0;
     background-color: $light;
 
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
     @media (min-width: $lg-width) {
+      padding: 0;
       display: none;
     }
   }

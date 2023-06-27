@@ -1,26 +1,20 @@
 <section class="events events--section page__section">
   <div class="page__wrap">
     <h2 class="page__subtitle">События</h2>
-    <fieldset class="form__fieldset form__fieldset--time">
+    <fieldset class="filter filter--select-status">
       <legend>Фильтр:</legend>
-      <select class="form__select" form="events-filters">
-        <option>Все</option>
-        <option>Текущие</option>
-        <option>Будущие</option>
-        <option>Прошедшие</option>
+      <select form="events-filters">
+        <include src="./src/components/blocks/filter/status-select-options.html"></include>
       </select>
     </fieldset>
-    <fieldset class="form__fieldset form__fieldset--place">
+    <fieldset class="filter filter--select-place">
       <legend class="visually-hidden">Музейные комплексы</legend>
-      <select class="form__select" form="events-filters">
-        <option label="Музейный комплекс">Все музейные комплексы</option>
-        <option>Национальный музей Республики Марий Эл им. Т. Евсеева</option>
-        <option>Музей истории Православия </option>
-        <option>Музей народно-прикладного искусства</option>
-        <option>Музей ...</option>
+      <select form="events-filters">
+        <include src="./src/components/blocks/filter/place-select-options.html"></include>
+
       </select>
     </fieldset>
-    <form class="events__filters visually-hidden" id="events-filters"></form>
+    <form class="visually-hidden" id="events-filters"></form>
     <ul class="events__list">
       <li class="events__item event event--pushkincard">
         <picture>
