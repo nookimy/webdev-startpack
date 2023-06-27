@@ -37,37 +37,49 @@
                     </div>
                 </div>
             </div>
-            <form class="expositions__filters visually-hidden" id="expositions-filters"></form>
+            <form class="visually-hidden" id="expositions-filters"></form>
         </div>
-        <div class="expositions__tabs-wrap">
-            <fieldset class="filter filter--tabs-status">
-                <legend class="visually-hidden">Статус</legend>
-                <div class="form__field">
-                    <input type="radio" id="current" name="status" checked>
-                    <label for="current">Текущие</label>
-                </div>
-                <div class="form__field">
-                    <input type="radio" id="future" name="status">
-                    <label for="future">Будущие</label>
-                </div>
-                <div class="form__field">
-                    <input type="radio" id="permanent" name="status">
-                    <label for="permanent">Постоянные</label>
-                </div>
-                <div class="form__field">
-                    <input type="radio" id="traveling" name="status">
-                    <label for="traveling">Передвижные</label>
-                </div>
-                <div class="form__field">
-                    <input type="radio" id="virtual" name="status">
-                    <label for="virtual">Виртуальные</label>
-                </div>
-                <div class="form__field">
-                    <input type="radio" id="archive" name="status">
-                    <label for="archive">Архив</label>
-                </div>
-            </fieldset>
+        <div class="expositions__status-filters">
+            <div class="expositions__tabs-wrap">
+                <fieldset class="filter filter--tabs-status">
+                    <legend class="visually-hidden">Статус</legend>
+                    <div class="form__field">
+                        <input type="radio" id="current" name="status" checked>
+                        <label for="current">Текущие</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="future" name="status">
+                        <label for="future">Будущие</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="permanent" name="status">
+                        <label for="permanent">Постоянные</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="traveling" name="status">
+                        <label for="traveling">Передвижные</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="virtual" name="status">
+                        <label for="virtual">Виртуальные</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="archive" name="status">
+                        <label for="archive">Архив</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <fieldset class="filter filter--select-age">
+                <select form="expositions-filters">
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                </select>
+            </fieldset><!--Показывать только при выборе пункта Архив-->
         </div>
+
 
     </div>
     <div class="page__wrap">
@@ -95,9 +107,9 @@
                     <p class="exposition__pushkincard visually-hidden">Действует программа Пушкинская карта</p>
                 </a>
             </li>
-            <li class="expositions__item  exposition exposition--pushkincard">
+            <li class="expositions__item exposition exposition--pushkincard exposition--archive">
                 <a href="./exposition.html" class="expositions__item-link">
-                    <p class="expositions__item-status"><span>Уже идёт</span></p>
+                    <p class="expositions__item-status"><span>Виртуальная выставка</span></p>
                     <picture>
                         <source type="image/webp" srcset="
             ../expositions/image2-767@1x.webp 1x,
@@ -117,9 +129,9 @@
                     </div>
                 </a>
             </li>
-            <li class="expositions__item  exposition exposition--pushkincard">
+            <li class="expositions__item exposition exposition--pushkincard">
                 <a href="./exposition.html" class="expositions__item-link">
-                    <p class="expositions__item-status"><span>Уже идёт</span></p>
+                    <p class="expositions__item-status"><span>Архив</span></p>
                     <picture>
                         <source type="image/webp" srcset="
             ../expositions/image3-767@1x.webp 1x,

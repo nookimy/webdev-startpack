@@ -71,6 +71,16 @@
           display: block;
         }
       }
+
+      &--archive {
+        & .exposition__img {
+          filter: grayscale(100%);
+        }
+
+        & .btn.btn--main {
+          display: none;
+        }
+      }
     }
 
     & .exposition {
@@ -354,6 +364,7 @@
 
       @media (min-width: $lg-width) {
         margin-bottom: 0;
+        width: 740px;
       }
     }
 
@@ -388,12 +399,24 @@
     }
 
 
+    &__status-filters {
+      @include container;
+      padding-right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
 
+      @media (min-width: $lg-width) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 15px;
+      }
+    }
 
     &__tabs-wrap {
       position: relative;
-      @include container;
-      padding-right: 0;
+      width: auto;
       overflow-x: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;
@@ -401,7 +424,13 @@
       &::-webkit-scrollbar {
         display: none;
       }
+
+      @media (min-width: $lg-width) {
+        flex-grow: 1;
+      }
     }
+
+
 
     &__list {
       margin-bottom: 30px;
@@ -412,18 +441,22 @@
     }
   }
 
+  & .filter--select-age {
+    display: none;
+    width: 100%;
+    margin-right: 15px;
 
+    @media (min-width: $lg-width) {
+      width: 180px;
+      margin-right: 0;
+    }
+  }
 
   & .filter--select-place,
   & .filter--select-audience,
   & .filter--select-date {
     flex-grow: 1;
     width: 200px;
-
-    @media (min-width: $lg-width) {
-      width: 250px;
-      flex-grow: unset;
-    }
   }
 
   & .filter--check-pushkincard {
