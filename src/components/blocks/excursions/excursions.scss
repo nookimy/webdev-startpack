@@ -1,13 +1,10 @@
 .excursions {
-
-
   &__list {
     @include list();
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 20px;
-    grid-area: list;
 
     @media (min-width: $md-width) {
       grid-template-columns: 1fr 1fr;
@@ -229,37 +226,41 @@
       }
     }
   }
-
-  & .link--more {
-    grid-area: link-more;
-  }
 }
 
 .excursions--section {
-  & .page__wrap {
-    display: grid;
-    grid-template-columns: calc(100% - 125px) 100px;
-    grid-gap: 25px;
+
+  & .excursions__head {
     grid-template-areas:
       "title title"
-      "type-filter type-filter"
-      "list list"
-      "link-more link-more";
+      "type-filter type-filter";
+    @include container;
+    margin-bottom: 25px;
+    display: grid;
     align-items: center;
+    grid-template-columns: calc(100% - 125px) 100px;
+    grid-gap: 25px;
 
     @media (min-width: $lg-width) {
+      grid-template-areas:
+      "title title type-filter";
       grid-row-gap: 50px;
       grid-column-gap: 110px;
-      grid-template-columns: 195px auto 250px;
-      grid-template-areas:
-      "title title type-filter"
-      "list list list"
-      "link-more link-more link-more";
-      justify-content: space-between;
+      grid-template-columns: auto 250px 200px;
+      margin-bottom: 60px;
     }
 
     @media (min-width: $xl-width) {
-      grid-column-gap: auto;
+      grid-column-gap: 50px;
+    }
+
+  }
+
+  & .excursions__list {
+    margin-bottom: 30px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 50px;
     }
   }
 

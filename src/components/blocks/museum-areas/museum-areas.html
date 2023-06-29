@@ -1,18 +1,37 @@
 <section class="museum-areas museum-areas--section page__section">
-  <div class="page__wrap">
+  <div class="museum-areas__head">
     <h2 class="page__subtitle">Музейные площадки</h2>
-    <fieldset class="filter filter--select-museum-type">
-      <legend class="visually-hidden">Музейные комплексы</legend>
+    <fieldset class="filter filter--select-museum-tags">
+      <legend class="visually-hidden">Фильтр музейных площадок</legend>
       <select form="museum-type-filters">
         <option>Все</option>
         <option>Музей истории</option>
         <option>Башня</option>
         <option>Дом-музей</option>
       </select>
-
+    </fieldset>
+    <fieldset class="filter filter--tabs-museum-tags">
+      <legend class="visually-hidden">Фильтр музейных площадок</legend>
+      <div class="form__field">
+        <input type="radio" id="all" name="museum-tags" checked="">
+        <label for="all">Все</label>
+      </div>
+      <div class="form__field">
+        <input type="radio" id="muzei-istorii" name="museum-tags">
+        <label for="muzei-istorii">Музей истории</label>
+      </div>
+      <div class="form__field">
+        <input type="radio" id="bashnya" name="museum-tags">
+        <label for="bashnya">Башня</label>
+      </div>
+      <div class="form__field">
+        <input type="radio" id="dom-muzei" name="museum-tags">
+        <label for="dom-muzei">Дом-музей</label>
+      </div>
     </fieldset>
     <form class="visually-hidden" id="museum-type-filters"></form>
-
+  </div>
+  <div class="page__wrap">
     <ul class="museum-areas__list">
       <li class="museum-areas__item museum-area">
         <a href="./museum-area.html" class="museum-areas__item-link">
@@ -36,6 +55,9 @@
             </ul>
 
           </div>
+          <svg class="icon" width="20px" height="20px" fill="none">
+            <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+          </svg>
         </a>
         
       </li>
@@ -61,6 +83,9 @@
             </ul>
 
           </div>
+          <svg class="icon" width="20px" height="20px" fill="none">
+            <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+          </svg>
         </a>
         
       </li>
@@ -86,6 +111,9 @@
             </ul>
 
           </div>
+          <svg class="icon" width="20px" height="20px" fill="none">
+            <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+          </svg>
         </a>        
       </li>
       <li class="museum-areas__item museum-area">
@@ -110,6 +138,9 @@
             </ul>
 
           </div>
+          <svg class="icon" width="20px" height="20px" fill="none">
+            <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+          </svg>
         </a>
         
       </li>
@@ -159,6 +190,9 @@
             </ul>
 
           </div>
+          <svg class="icon" width="20px" height="20px" fill="none">
+            <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+          </svg>
         </a>        
       </li>
     </ul>

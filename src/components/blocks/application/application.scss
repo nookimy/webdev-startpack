@@ -25,51 +25,42 @@
 
   }
 
-  & .line-vertical,
-  & .line-horizontal,
-  & .triangle-small-blue,
-  & .triangle-big-gray {
+  & .figure {
     display: none;
     position: absolute;
-    background: $secondary;
 
     @media (min-width: $lg-width) {
       display: block;
     }
   }
 
-  & .line-vertical {
-    width: 3px;
-    height: 560px;
-    top: 0;
-    left: -60px;
-    transform: translateY(-50%);
+  & .figure--cross-with-triangle {
+    position: absolute;
+    width: 341px;
+    height: 567px;
+    top: -282px;
+    left: 50%;
+    transform: translateX(-811px);
+    z-index: 100;
+
+    & use.icon__symbol {
+      stroke: $secondary;
+      fill: $secondary;
+    }
   }
 
-  & .line-horizontal {
-    width: 300px;
-    height: 3px;
-    top: 0;
-    left: -60px;
-    transform: translateX(-50%);
-  }
-
-  & .triangle-small-blue {
-    width: 33px;
-    height: 33px;
-    clip-path: polygon(100% 0, 0 0, 100% 100%);
-    top: 9px;
-    left: -66px;
-    transform: translateY(-0%) translateX(-100%);
-  }
-
-  & .triangle-big-gray {
-    width: 211px;
-    height: 211px;
+  & .figure--triangle-big-gray {
+    width: 18%;
+    max-width: 210px;
+    aspect-ratio: 1 / 1;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     background-color: $light-gray;
     bottom: 70px;
     right: 20px;
+
+    @media (min-width: $lg-width) {
+      display: block;
+    }
   }
 
   &__title {

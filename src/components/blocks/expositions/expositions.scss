@@ -4,11 +4,9 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
-    grid-area: list;
 
     @media (min-width: $md-width) {
       grid-template-columns: 1fr 1fr;
-
     }
 
     @media (min-width: $xl-width) {
@@ -414,6 +412,8 @@
       }
     }
 
+
+
     &__tabs-wrap {
       position: relative;
       width: auto;
@@ -426,6 +426,7 @@
       }
 
       @media (min-width: $lg-width) {
+        overflow: unset;
         flex-grow: 1;
       }
     }
@@ -513,30 +514,39 @@
 
 
 .expositions--section {
-  & .page__wrap {
-    display: grid;
-    grid-template-columns: calc(100% - 125px) 100px;
-    grid-gap: 25px;
+
+  & .expositions__head {
     grid-template-areas:
       "title time-filter"
-      "place-filter place-filter"
-      "list list"
-      "link-more link-more";
+      "place-filter place-filter";
+
+    @include container;
+    margin-bottom: 25px;
+    display: grid;
     align-items: center;
+    grid-template-columns: calc(100% - 125px) 100px;
+    grid-gap: 25px;
+
 
     @media (min-width: $lg-width) {
+      grid-template-areas:
+      "title place-filter time-filter";
       grid-row-gap: 50px;
       grid-column-gap: 110px;
       grid-template-columns: auto 250px 200px;
-      grid-template-areas:
-      "title place-filter time-filter"
-      "list list list"
-      "link-more link-more link-more";
-      justify-content: space-between;
+      margin-bottom: 60px;
     }
 
     @media (min-width: $xl-width) {
       grid-column-gap: 50px;
+    }
+  }
+
+  & .expositions__list {
+    margin-bottom: 30px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 50px;
     }
   }
 
@@ -591,9 +601,5 @@
   & .page__subtitle {
     grid-area: title;
     margin-bottom: 0;
-  }
-
-  & .link--more {
-    grid-area: link-more;
   }
 }

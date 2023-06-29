@@ -95,6 +95,7 @@
 
 fieldset {
   @include mp();
+  line-height: 0;
   border: none;
 }
 
@@ -107,7 +108,7 @@ input[type="date"] {
   display: inline-flex;
   align-items: center;
   padding: 10px;
-  height: 44px;
+  height: 45px;
   color: $dark-gray;
   transition: $transition;
 

@@ -77,8 +77,16 @@
 
   & img {
     object-fit: cover;
+  }
+}
 
+.news__list .img,
+.tickets-and-benefits__list .img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
 
+  & img {
+    object-fit: cover;
   }
 }
 

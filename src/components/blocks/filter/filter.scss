@@ -1,6 +1,11 @@
-.filter--tabs-status {
+.filter--tabs-status,
+.filter--tabs-museum-tags {
   display: inline-flex;
   gap: 15px;
+
+  @media (min-width: $md-width) {
+    padding-right: 0;
+  }
 
   & input[type="radio"] {
     position: absolute;
@@ -22,6 +27,7 @@
     color: $dark-gray;
     transition: $transition;
     cursor: pointer;
+    white-space: nowrap; /* Запрещаем перенос текста */
 
     &:before {
       display: none;
@@ -50,6 +56,12 @@
     &:before {
       display: block;
     }
+  }
+}
+
+.filter--check-pushkincard {
+  & label {
+    cursor: pointer;
   }
 }
 

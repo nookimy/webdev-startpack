@@ -29,13 +29,26 @@
 
   &--desktop {
     position: relative;
+    overflow: hidden;
+
+    & .figure__yellow-triangle {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      background-color: $status;
+      clip-path: polygon(0 0, 100% 100%, 100% 0);
+      transform: translateX(410px);
+    }
+
     & .main-header__nav {
       overflow: hidden;
       & > .page__wrap {
         position: relative;
 
-        &::before {
-          content: "";
+        & .figure__blue-triangle {
           position: absolute;
           bottom: -25px;
           left: 0;
@@ -44,8 +57,7 @@
           height: 1px;
         }
 
-        &::after {
-          content: "";
+        & .figure__blue-line {
           position: absolute;
           bottom: -25px;
           left: 1px;
@@ -56,7 +68,6 @@
           transform: translateX(-100%);
         }
       }
-
     }
   }
 
@@ -64,6 +75,7 @@
     position: sticky;
     top: 0;
     left: 0;
+
     & .main-header__nav {
       position: relative;
       z-index: 10;
@@ -88,6 +100,8 @@
 
   width: 100%;
   z-index: 10;
+
+
 
   &__nav {
     padding: 20px 0 25px;

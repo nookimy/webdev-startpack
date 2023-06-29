@@ -4,7 +4,6 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
-    grid-area: list;
 
     @media (min-width: $md-width) {
       grid-template-columns: 1fr 1fr;
@@ -18,15 +17,9 @@
 
   &__item {
     width: 100%;
-    display: none;
+    height: 100%;
     background-color: $light;
     border: 1px solid #DDDDDD;
-
-
-
-    &:nth-child(-n+6) {
-      display: block;
-    }
 
     & .museum-area {
       &__img {
@@ -36,13 +29,14 @@
       }
 
       &__info {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         gap: 10px;
         padding: 15px;
 
         @media (min-width: $md-width) {
-          padding: 20px;
+          padding: 20px 20px 50px;
           gap: 30px;
         }
       }
@@ -56,6 +50,7 @@
         @include mp();
         @include text-12;
         color: $dark-gray;
+        flex-grow: 1;
 
         @media (min-width: $md-width) {
           @include text-14;
@@ -119,10 +114,39 @@
   }
 
   &__item-link {
-    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
+    height: 100%;
     color: inherit;
     text-decoration: none;
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 10px 50px 0px rgba(181, 181, 181, 0.50);
+    }
+
+    & .icon {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      width: 15px;
+      height: 15px;
+
+      & use.icon__symbol {
+        stroke: $dark;
+      }
+
+      @media (min-width: $md-width) {
+        bottom: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
 
@@ -133,28 +157,27 @@
     padding-bottom: 60px;
   }
 
-  & .page__wrap {
+  & .museum-areas__head {
+    grid-template-areas:
+      "title areas-filter";
+    @include container;
+    margin-bottom: 25px;
     display: grid;
+    align-items: center;
     grid-template-columns: calc(100% - 125px) 100px;
     grid-gap: 25px;
-    grid-template-areas:
-      "title areas-filter"
-      "list list";
-    align-items: center;
 
     @media (min-width: $lg-width) {
+      grid-template-areas:
+      "title areas-filter areas-filter";
       grid-row-gap: 50px;
       grid-column-gap: 110px;
-      grid-template-columns: 195px auto 250px;
-      grid-template-areas:
-      "title title areas-filter"
-      "list list list";
-      justify-content: space-between;
+      grid-template-columns: auto 250px 200px;
+      margin-bottom: 60px;
     }
 
     @media (min-width: $xl-width) {
-      grid-template-columns: 190px auto 250px;
-      grid-column-gap: 10px;
+      grid-column-gap: 50px;
     }
   }
 
@@ -163,12 +186,126 @@
     margin-bottom: 0;
   }
 
-  & .filter--select-museum-type {
+  & .filter {
     grid-area: areas-filter;
+  }
+
+  & .filter--select-museum-tags {
+    display: block;
+
 
     @media (min-width: $lg-width) {
-      width: 250px;
-      margin-left: auto;
+      display: none;
+    }
+  }
+
+  .filter--tabs-museum-tags {
+    display: none;
+    @media (min-width: $lg-width) {
+      display: inline-flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.museum-areas--section-visitors {
+  margin-bottom: 30px;
+
+  @media (min-width: $md-width) {
+    margin-bottom: 70px;
+  }
+
+  & .museum-areas {
+    &__head {
+      background-color: $superlight;
+      padding-top: 15px;
+      padding-bottom: 65px;
+      margin-bottom: -40px;
+
+      @media (min-width: $md-width) {
+
+        padding-bottom: 170px;
+        margin-bottom: -100px;
+      }
+
+      & .page__subtitle {
+        @include container;
+        margin-bottom: 20px;
+
+        @media (min-width: $lg-width) {
+          @include mp();
+          width: auto;
+        }
+      }
+    }
+
+    &__head-wrap {
+      @media (min-width: $lg-width) {
+        @include container;
+        display: grid;
+        align-items: center;
+        grid-template-areas:
+      "title filter";
+        grid-row-gap: 50px;
+        grid-template-columns: auto 500px;
+      }
+    }
+
+    &__tag-filters {
+      @include container;
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (min-width: $lg-width) {
+        @include mp();
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+      }
+    }
+
+    &__tag-wrap {
+      position: relative;
+      width: auto;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media (min-width: $lg-width) {
+        margin-left: auto;
+        overflow: unset;
+        flex-grow: 0;
+      }
+    }
+
+    &__list {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  & .filter--tabs-museum-tags {
+    display: inline-flex;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @media (min-width: $lg-width) {
+      padding: 0;
+    }
+  }
+
+  & .link--more {
+    @media (min-width: $md-width) {
+      display: none;
     }
   }
 }
