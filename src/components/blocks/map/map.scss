@@ -53,9 +53,8 @@
     }
   }
 
-
-
   &__filter ul.radio-buttons {
+    color: $dark-gray;
     display: none;
     flex-direction: column;
     @include list();
@@ -87,6 +86,7 @@
 
       &:checked+label {
         font-weight: bold;
+        color: $dark;
       }
 
       &:hover:not(:checked)+label,

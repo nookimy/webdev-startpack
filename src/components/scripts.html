@@ -36,5 +36,19 @@
         }
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $(".question").click(function (event) {
+            if ($(".faq__list").hasClass("faq__list--showoneitem")) {
+                $(".question").not($(this)).removeClass("active");
+                $(".answer").not($(this).next()).slideUp(300);
+            }
+            $(this).toggleClass("active").next().slideToggle(300);
+        });
+    });
+</script>
+
+
+
 <script src="js/script.js"></script>
 <script src="js/modal.js"></script>

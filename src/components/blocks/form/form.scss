@@ -1,3 +1,95 @@
+fieldset {
+  @include mp();
+  line-height: 0;
+  border: none;
+}
+
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="date"] {
+  box-sizing: border-box;
+  @include mp();
+  @include text-12;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  min-height: 45px;
+  color: $dark-gray;
+  transition: $transition;
+  color: rgba($dark, 0.5);
+  border: 1px solid #DDDDDD;
+
+  @media (min-width: $md-width) {
+    @include text-normal;
+    min-height: 45px;
+  }
+
+  &::placeholder {
+    color: rgba($dark, 0.5);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dark;
+    border-color: $secondary;
+    outline: none;
+  }
+}
+
+input[type="date"] {
+  width: 100%;
+  color: rgba($dark, 0.5);
+  border: 1px solid #DDDDDD;
+  transition: $transition;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dark;
+    border-color: $secondary;
+    outline: none;
+    cursor: pointer;
+  }
+
+}
+
+select {
+  width: 100%;
+  box-sizing: border-box;
+  @include mp();
+  @include text-12;
+  display: inline-flex;
+  align-items: center;
+  color: rgba($dark, 0.5);
+  height: 45px;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #DDDDDD;
+  appearance: none;
+  background-image: url("../icons/chevron-down-gray.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px;
+  transition: $transition;
+
+  @media (min-width: $md-width) {
+    @include text-normal;
+    height: 45px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dark;
+    background-image: url("../icons/chevron-down-blue.svg");
+    border-color: $secondary;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
 .form--search {
   position: relative;
 
@@ -93,83 +185,66 @@
   }
 }
 
-fieldset {
-  @include mp();
-  line-height: 0;
-  border: none;
-}
-
-input[type="search"],
-input[type="email"],
-input[type="date"] {
-  box-sizing: border-box;
-  @include mp();
-  @include text-12;
-  display: inline-flex;
-  align-items: center;
-  padding: 10px;
-  height: 45px;
-  color: $dark-gray;
-  transition: $transition;
+.form--feedback {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 
   @media (min-width: $md-width) {
-    @include text-normal;
-    height: 45px;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 50px;
+    grid-template-areas:
+            "theme message"
+            "name message"
+            "email message"
+            ". button";
   }
 
-  &::placeholder {
-    color: rgba($dark, 0.5);
-  }
-}
+  & input,
+  & textarea {
+    width: 100%;
+    height: unset;
 
-input[type="date"] {
-  width: 100%;
-  color: rgba($dark, 0.5);
-  border: 1px solid #DDDDDD;
-  transition: $transition;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $dark;
-    border-color: $secondary;
-    outline: none;
-    cursor: pointer;
+    @media (min-width: $md-width) {
+      height: 100%;
+    }
   }
 
-}
+  & .form__field {
+    &--theme {
+      @media (min-width: $md-width) {
+        grid-area: theme;
+      }
+    }
 
-select {
-  width: 100%;
-  box-sizing: border-box;
-  @include mp();
-  @include text-12;
-  display: inline-flex;
-  align-items: center;
-  color: rgba($dark, 0.5);
-  height: 45px;
-  padding: 10px 40px 10px 10px;
-  border: 1px solid #DDDDDD;
-  appearance: none;
-  background-image: url("../icons/chevron-down-gray.svg");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 20px 20px;
-  transition: $transition;
+    &--name {
+      @media (min-width: $md-width) {
+        grid-area: name;
+      }
+    }
 
-  @media (min-width: $md-width) {
-    @include text-normal;
-    height: 45px;
+    &--message {
+      @media (min-width: $md-width) {
+        grid-area: message;
+      }
+    }
+
+
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: $dark;
-    background-image: url("../icons/chevron-down-blue.svg");
-    border-color: $secondary;
-    outline: none;
-    cursor: pointer;
+
+
+  & button[type="submit"] {
+    width: 100%;
+    min-height: 35px;
+
+    @media (min-width: $md-width) {
+      grid-area: button;
+      min-height: 45px;
+      max-width: 170px;
+    }
+
   }
 }
 

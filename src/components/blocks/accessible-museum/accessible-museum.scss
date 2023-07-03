@@ -1,0 +1,184 @@
+.accessible-museum {
+
+  & .page__wrap {
+    margin-bottom: 20px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__wrap {
+    @media (min-width: $lg-width) {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 40px;
+
+    }
+  }
+
+  &__filter {
+    & select {
+      width: 100%;
+
+      @media (min-width: $lg-width) {
+        display: none;
+      }
+    }
+
+    & ul.radio-buttons {
+
+      color: $dark-gray;
+      width: 356px;
+      display: none;
+      flex-direction: column;
+      @include list();
+
+      @media (min-width: $lg-width) {
+        display: flex;
+      }
+
+      & li {
+        padding: 20px 0;
+        border-bottom: 1px solid $light-gray;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      & input[type="radio"] {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        border: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+
+        &:checked+label {
+          color: $dark;
+          font-weight: bold;
+        }
+
+        &:hover:not(:checked)+label,
+        &:focus:not(:checked)+label {
+          color: $main;
+        }
+      }
+
+      & label {
+        cursor: pointer;
+        transition: $transition;
+      }
+    }
+  }
+
+  &__text {
+    width: 100%;
+    @include text-normal;
+    color: $dark-gray;
+
+    @media (min-width: $lg-width) {
+      width: 30%;
+      flex-grow: 1;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: $status;
+    color: $dark-gray;
+
+    @media (min-width: $md-width) {
+      padding: 30px 0;
+    }
+  }
+
+  &__info .page__wrap {
+    @media (min-width: $lg-width) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      column-gap: 55px;
+    }
+  }
+
+  &__subtitle {
+    @include mp();
+    @include h3;
+    margin-bottom: 20px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: $lg-width) {
+      width: 100%;
+    }
+  }
+
+  &__phone-list {
+    @include text-normal;
+    @include list();
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 20px;
+
+    @media (min-width: $lg-width) {
+      margin-bottom: 0;
+      flex-grow: 1;
+    }
+  }
+
+  &__phone-list > li {
+    display: flex;
+    column-gap: 10px;
+
+    & h4 {
+      font-weight: 400;
+      width: 45%;
+      flex-grow: 1;
+      @include mp();
+    }
+
+    & a {
+      width: 45%;
+      flex-grow: 1;
+      color: inherit;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover,
+      &:focus {
+        color: $secondary;
+      }
+    }
+  }
+
+  &__note {
+    padding: 20px 20px 20px 45px;
+    border: 1px dashed $dark-gray;
+    @include text-accent;
+    background-image: url("../icons/thumb-up-outline.svg");
+    background-repeat: no-repeat;
+    background-position: top 25px left 20px;
+    background-size: 18px 18px;
+
+    @media (min-width: $lg-width) {
+      padding: 20px 20px 20px 75px;
+      width: 415px;
+      font-size: 20px;
+      line-height: 28px;
+      background-size: 30px 30px;
+
+    }
+  }
+}
