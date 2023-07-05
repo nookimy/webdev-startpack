@@ -1,4 +1,4 @@
-.accessible-museum {
+.accessibility {
 
   & .page__wrap {
     margin-bottom: 20px;
@@ -179,6 +179,33 @@
       line-height: 28px;
       background-size: 30px 30px;
 
+    }
+  }
+}
+
+.accessibility--page {
+  & .accessibility {
+    &__head {
+      background-color: $superlight;
+      padding-top: 15px;
+      padding-bottom: 40px;
+      margin-bottom: -22px;
+
+      @media (min-width: $lg-width) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+      }
+
+      & .page__subtitle {
+        margin-bottom: 0;
+      }
+
+
+
+      & .page__wrap {
+        margin-bottom: 0;
+      }
     }
   }
 }
