@@ -48,6 +48,21 @@
     });
 </script>
 
+<script>
+    $(document).ready(function () {
+        if ($(window).width() < '1024'){
+            $("td.block__title").click(function (event) {
+                if ($("tbody.block").hasClass("block--showoneitem")) {
+                    $("td.block__title").not($(this)).removeClass("active");
+                    $("td.block__text").not($(this).next()).slideUp(300);
+                }
+                $(this).toggleClass("active").next().slideToggle(300);
+            });
+        }
+    });
+
+</script>
+
 
 
 <script src="js/script.js"></script>

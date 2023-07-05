@@ -1,0 +1,302 @@
+<section class="price">
+    <div class="page__cover">
+        <div class="blur"></div>
+        <div class="img">
+            <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="
+                            ../price/cover-1920.webp,
+                            ../price/cover-1920@2x.webp 2x,
+                            ../price/cover-1920@3x.webp 3x">
+                <source type="image/webp" srcset="
+                            ../price/cover-1023@1x.webp 1x,
+                            ../price/cover-1023@2x.webp 2x,
+                            ../price/cover-1023@3x.webp 3x">
+                <source type="image/jpeg" media="(min-width: 1024px)" srcset="
+                            ../price/cover-1920.jpg 1x,
+                            ../price/cover-1920@2x.jpg 2x,
+                            ../price/cover-1920@3x.jpg 3x">
+                <source type="image/jpeg" srcset="
+                            ../price/cover-1023@1x.jpg 1x,
+                            ../price/cover-1023@2x.jpg 2x,
+                            ../price/cover-1023@3x.jpg 3x">
+
+                <img src="/../price/cover.jpg" alt="Фото музея">
+            </picture>
+        </div>
+    </div>
+    <div class="price__head">
+        <div class="page__wrap">
+            <h1 class="page__subtitle">Цены и условия</h1>
+            <!--При выборе должен показываться соответствующий блок прайса-->
+            <fieldset class="filter filter--select-price-block">
+                <legend class="visually-hidden">Раздел прайса</legend>
+                <select form="price-block-filters">
+                    <option>Входная плата</option>
+                    <option>Музено-образовательные программы</option>
+                    <option>Доп. услуги</option>
+                    <option>Льготные категории</option>
+                </select>
+            </fieldset>
+            <fieldset class="filter filter--tabs-price-block">
+                <legend class="visually-hidden">Раздел прайса</legend>
+                <div class="form__field">
+                    <input type="radio" id="admission" name="price-blocks" checked="">
+                    <label for="admission">Входная плата</label>
+                </div>
+                <div class="form__field">
+                    <input type="radio" id="educational-programs" name="price-blocks">
+                    <label for="educational-programs">Музено-образовательные программы</label>
+                </div>
+                <div class="form__field">
+                    <input type="radio" id="additional-services" name="price-blocks">
+                    <label for="additional-services">Доп. услуги</label>
+                </div>
+                <div class="form__field">
+                    <input type="radio" id="privileges" name="price-blocks">
+                    <label for="privileges">Льготные категории</label>
+                </div>
+            </fieldset>
+            <form class="visually-hidden" id="price-block-filters"></form>
+        </div>
+    </div>
+    <div class="page__wrap">
+        <div class="price__block price__block--admission" style="display: none;">
+            <table class="table table--admission-in-museum">
+                <caption>Входная плата за музей</caption>
+                <thead class="block">
+                <tr class="block__item">
+                    <th class="block__title"></th>
+                    <th class="block__text">
+                        <div class="block__wrap">
+                            <p>Взрослые</p>
+                            <p>Школьники, пенсионеры, студенты</p>
+                            <p>Дошкольники (5+)</p>
+                        </div>
+
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="block block--showoneitem">
+                <tr class="block__item">
+                    <td class="block__title">Главное здание</td>
+                    <td class="block__text">
+                        <div class="block__wrap">
+                            <p>150 руб./чел.</p>
+                            <p>100 руб./чел.</p>
+                            <p>80 руб./чел.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="block__item">
+                    <td class="block__title">Музей истории и археологии</td>
+                    <td class="block__text">
+                        <div class="block__wrap">
+                            <p>150 руб./чел.</p>
+                            <p>100 руб./чел.</p>
+                            <p>80 руб./чел.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="block__item">
+                    <td class="block__title">КВЦ «Башня»</td>
+                    <td class="block__text">
+                        <div class="block__wrap">
+                            <p>200 руб./чел.</p>
+                            <p>150 руб./чел.</p>
+                            <p>100 руб./чел.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="block__item">
+                    <td class="block__title">Музей истории Православия</td>
+                    <td class="block__text">
+                        <div class="block__wrap">
+                            <p>100 руб./чел.</p>
+                            <p>80 руб./чел.</p>
+                            <p>50 руб./чел.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="block__item">
+                    <td class="block__title">Музей народно-прикладного искусства</td>
+                    <td class="block__text">
+                        <div class="block__wrap">
+                            <p>100 руб./чел.</p>
+                            <p>80 руб./чел.</p>
+                            <p>50 руб./чел.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="block__item">
+                    <td class="block__title">Дом-музей И. С. Ключникова-Палантая</td>
+                    <td class="block__text">
+                        <div class="block__wrap">
+                            <p>100 руб./чел.</p>
+                            <p>80 руб./чел.</p>
+                            <p>50 руб./чел.</p>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <table class="table table--single">
+                <caption>Входная плата по единому билету (действует 5 рабочих дней и включает посещение 6 музеев)</caption>
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                <p>Взрослые</p>
+                                <p>Дошкольники (5+), школьники, пенсионеры, студенты</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>
+                                <p>500 руб./чел.</p>
+                                <p>300 руб./чел.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table--excursion">
+                <caption>Входная плата в музей с экскурсией (для групп от 10 чел.)</caption>
+                <thead class="block">
+                <tr class="block__item">
+                    <th class="block__title"></th>
+                    <th class="block__text">
+                        <div class="block__wrap">
+                            <p>Взрослые</p>
+                            <p>Школьники, пенсионеры, студенты</p>
+                            <p>Дошкольники (5+)</p>
+                        </div>
+
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="block block--showoneitem">
+                    <tr class="block__item">
+                        <td class="block__title">Главное здание</td>
+                        <td class="block__text">
+                            <div class="block__wrap">
+                                <p>150 руб./чел.</p>
+                                <p>100 руб./чел.</p>
+                                <p>80 руб./чел.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="block__item">
+                        <td class="block__title">Музей истории и археологии</td>
+                        <td class="block__text">
+                            <div class="block__wrap">
+                                <p>150 руб./чел.</p>
+                                <p>100 руб./чел.</p>
+                                <p>80 руб./чел.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="block__item">
+                        <td class="block__title">КВЦ «Башня»</td>
+                        <td class="block__text">
+                            <div class="block__wrap">
+                                <p>200 руб./чел.</p>
+                                <p>150 руб./чел.</p>
+                                <p>100 руб./чел.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="block__item">
+                        <td class="block__title">Музей истории Православия</td>
+                        <td class="block__text">
+                            <div class="block__wrap">
+                                <p>100 руб./чел.</p>
+                                <p>80 руб./чел.</p>
+                                <p>50 руб./чел.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="block__item">
+                        <td class="block__title">Музей народно-прикладного искусства</td>
+                        <td class="block__text">
+                            <div class="block__wrap">
+                                <p>100 руб./чел.</p>
+                                <p>80 руб./чел.</p>
+                                <p>50 руб./чел.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="block__item">
+                        <td class="block__title">Дом-музей И. С. Ключникова-Палантая</td>
+                        <td class="block__text">
+                            <div class="block__wrap">
+                                <p>100 руб./чел.</p>
+                                <p>80 руб./чел.</p>
+                                <p>50 руб./чел.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">* Для детских групп на каждые 15 человек один сопровождающий бесплатно</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="price__block price__block--educational-programs" style="display: none;"></div>
+        <div class="price__block price__block--additional-services" style="display: none;"></div>
+        <div class="price__block price__block--privileges privileges">
+            <div class="privileges__text">
+                <h3 class="price__subtitle">Бесплатное обслуживание</h3>
+                <ul>
+                    <li>Герои Советского Союза,</li>
+                    <li>Герои Российской Федерации, полные кавалеры ордена Славы,</li>
+                    <li>участники Великой Отечественной войны,</li>
+                    <li>инвалиды,</li>
+                    <li>воспитанники детских домов, интернатов,</li>
+                    <li>дети из многодетных семей,</li>
+                    <li>дети-сироты,</li>
+                    <li>военнослужащие (солдаты),</li>
+                    <li>дети до 5 лет,</li>
+                    <li>сотрудники музеев, подведомственных учреждений Министерства культуры Российской Федерации,</li>
+                    <li>участники боевых действий,</li>
+                    <li>лица, сопровождающие организованные группы детей (в количестве не более 2 чел.)</li>
+                    <li>аккредитованные экскурсоводы (гиды), гиды-переводчики и инструктора-проводники, осуществляющие деятельность на территории Республики Марий Эл, при условии предъявления аккредитационной карты экскурсоводов (гидов), гидов-переводчиков и инструкторов-проводников, осуществляющие деятельность на территории Республики Марий Эл.</li>
+                </ul>
+
+            </div>
+            <div class="privileges__info">
+                <div class="privileges__price">
+                    <h2 class="visually-hidden">Билеты</h2>
+                    <p>
+                        Бесплатные билеты можно получить в кассах в предварительной продаже и в день посещения при предъявлении документов, подтверждающих право бесплатного посещения
+                    </p>
+                </div>
+                <div class="privileges__visiting-rules">
+                    <p class="privileges__visiting-rules-title">
+                        <a href="#">
+                            Правила посещения музея
+                            <svg class="icon" width="20px" height="20px" fill="none">
+                                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+                            </svg>
+                        </a>
+                    </p>
+                    <div class="privileges__visiting-notes">
+                        <p><span>Эта, а также другие выставки музея доступны для</span>
+                            <a href="#">
+                                людей с ограниченными возможностями здоровья&nbsp; <svg class="icon" width="20px" height="20px" fill="none">
+                                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+                            </svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

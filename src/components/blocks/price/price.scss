@@ -1,0 +1,502 @@
+.price {
+  & .page__cover {
+    background-image: url("../price/cover.jpg");
+  }
+
+  &__head {
+    background-color: $superlight;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    @media (min-width: $md-width) {
+      padding-top: 50px;
+      padding-bottom: 25px;
+      margin-bottom: 50px;
+    }
+
+    & .page__subtitle {
+      margin-bottom: 20px;
+
+      @media (min-width: $md-width) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__subtitle {
+    @include mp();
+    @include h3;
+    margin-bottom: 13px;
+    color: $dark;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 22px;
+    }
+  }
+
+  & .filter--select-price-block {
+    display: block;
+
+
+    @media (min-width: $lg-width) {
+      display: none;
+    }
+  }
+
+  & .filter--tabs-price-block {
+    display: none;
+
+    @media (min-width: $lg-width) {
+      display: inline-flex;
+      justify-content: flex-end;
+    }
+  }
+
+  & .table--admission-in-museum,
+  & .table--excursion{
+
+    & thead {
+      display: none;
+
+      @media (min-width: $lg-width) {
+        display: table-header-group;
+      }
+    }
+
+    & tbody {
+      & tr {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $lg-width) {
+          display: table-row;
+        }
+      }
+    }
+
+    & .block__item {
+      margin-bottom: 15px;
+    }
+
+    & .block__wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @media (min-width: $lg-width) {
+        flex-direction: row;
+        gap: 50px;
+      }
+    }
+
+    & .block__title {
+      text-align: center;
+      background-color: $light-gray;
+      color: $dark-gray;
+      transition: $transition;
+
+      @media (min-width: $lg-width) {
+        text-align: left;
+        width: 300px;
+        background-color: unset;
+        color: unset;
+      }
+    }
+
+    & .block__title.active {
+      background-color: $secondary;
+      color: $superlight;
+
+      @media (min-width: $lg-width) {
+        background-color: unset;
+        color: unset;
+      }
+    }
+
+    & .block__text {
+      display: none;
+      padding-right: 0;
+      padding-left: 0;
+
+      @media (min-width: $lg-width) {
+        display: table-cell;
+      }
+
+      & p {
+        @include mp();
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 10px;
+
+        @media (min-width: $lg-width) {
+          display: flex;
+          justify-content: center;
+          width: 10%;
+          flex-grow: 1;
+        }
+
+        &::before {
+          @media (min-width: $lg-width) {
+            display: none;
+          }
+        }
+
+        &:first-child::before {
+          content: "Взрослые";
+        }
+
+        &:nth-child(2)::before {
+          content: "Школьники, пенсионеры, студенты";
+        }
+
+        &:nth-child(3)::before {
+          content: "Дошкольники (5+)";
+        }
+      }
+    }
+  }
+
+  & .table--single {
+    & thead {
+      display: none;
+
+      @media (min-width: $lg-width) {
+        display: table-header-group;
+      }
+    }
+
+    & tbody {
+      & tr {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $lg-width) {
+          display: table-row;
+        }
+      }
+
+      & td {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    & tr {
+      margin-bottom: 15px;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @media (min-width: $lg-width) {
+        flex-direction: row;
+        gap: 50px;
+      }
+    }
+
+    & th,
+    & td {
+      padding-right: 0;
+      padding-left: 0;
+
+      & p {
+        @include mp();
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 10px;
+
+        @media (min-width: $lg-width) {
+          display: flex;
+          justify-content: center;
+          width: 10%;
+          flex-grow: 1;
+        }
+
+        &::before {
+          @media (min-width: $lg-width) {
+            display: none;
+          }
+        }
+
+        &:first-child::before {
+          content: "Взрослые";
+        }
+
+        &:nth-child(2)::before {
+          content: "Школьники, пенсионеры, студенты";
+        }
+
+        &:nth-child(3)::before {
+          content: "Дошкольники (5+)";
+        }
+      }
+    }
+
+  }
+
+  & .table {
+    width: 100%;
+    border-spacing: 0 14px;
+    @include text-12;
+    margin-bottom: 30px;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      margin-bottom: 40px;
+    }
+
+    & caption {
+      @include h3;
+      text-align: left;
+    }
+
+    & thead {
+      @media (min-width: $lg-width) {
+        margin-bottom: 14px;
+        & tr {
+          background-color: $secondary;
+          color: $superlight;
+        }
+      }
+    }
+
+    & tbody {
+      & tr {
+        @media (min-width: $lg-width) {
+          background-color: $light-gray;
+          color: $dark-gray;
+        }
+
+      }
+    }
+
+    & th {
+      font-weight: 400;
+    }
+
+    & td,
+    & th {
+      padding: 14px 12px;
+
+      @media (min-width: $md-width) {
+        padding: 14px 20px;
+      }
+    }
+  }
+
+  &__block--privileges {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: $dark-gray;
+
+    @media (min-width: $lg-width) {
+      grid-template-columns: 1fr 460px;
+      column-gap: 50px;
+    }
+
+
+  }
+
+  & .privileges {
+    @include text-10;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+    }
+    &__text {
+      margin-bottom: 10px;
+
+      @media (min-width: $lg-width) {
+        margin-bottom: 0;
+      }
+      & ul {
+        padding-left: 30px;
+      }
+    }
+    &__price {
+      margin-bottom: 18px;
+
+      @media (min-width: $md-width) {
+        margin-bottom: 60px;
+      }
+    }
+
+    &__price p {
+      position: relative;
+      @include mp();
+      padding-left: 30px;
+
+      color: $dark-gray;
+
+      @media (min-width: $md-width) {
+
+        padding-left: 40px;
+      }
+
+      @media (min-width: $lg-width) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("../icons/tabler-ticket.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @media (min-width: $md-width) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    &__visiting-rules-title {
+      @include mp();
+      @include h3;
+      margin-bottom: 10px;
+      color: $dark;
+
+      @media (min-width: $md-width) {
+        margin-bottom: 25px;
+      }
+
+      & a {
+        color: inherit;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover,
+        &:focus {
+          color: $secondary;
+
+          & use.icon__symbol {
+            stroke: $secondary;
+          }
+        }
+
+        & .icon {
+          width: 14px;
+          height: 14px;
+          transform: translateY(2px);
+
+          @media (min-width: $md-width) {
+            width: 20px;
+            height: 20px;
+            transform: translateY(5px);
+          }
+        }
+
+        & use.icon__symbol {
+          stroke: $dark;
+        }
+      }
+    }
+
+    &__visiting-rules {
+      @include container;
+      padding: 0;
+
+      @media (min-width: $lg-width) {
+        grid-area: rules;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @media (min-width: $xl-width) {
+        margin: 0;
+        padding-right: 0;
+        width: 460px;
+        justify-self: start;
+      }
+    }
+
+    &__visiting-notes {
+      position: relative;
+      @include mp();
+      padding-left: 30px;
+      @include text-10;
+      color: $dark-gray;
+
+      @media (min-width: $md-width) {
+        @include text-normal;
+        padding-left: 40px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("../icons/accessible.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @media (min-width: $md-width) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    &__visiting-notes p {
+      @include text-10;
+
+      @media (min-width: $md-width) {
+        @include text-normal;
+      }
+      & span {
+        display: block;
+      }
+      & a {
+        @include title;
+        color: $dark;
+        display: inline;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover,
+        &:focus {
+          color: $secondary;
+
+          & use.icon__symbol {
+            stroke: $secondary;
+          }
+        }
+
+        & .icon {
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          transform: translateY(4px);
+
+          @media (min-width: $md-width) {
+            width: 20px;
+            height: 20px;
+            transform: translateY(5px);
+          }
+        }
+
+        & use.icon__symbol {
+          stroke: $dark;
+        }
+      }
+    }
+  }
+}
