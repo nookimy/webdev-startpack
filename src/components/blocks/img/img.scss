@@ -61,10 +61,14 @@
     object-fit: cover;
   }
 }
-
+.event__gallery-list .img,
 .exposition__gallery-list .img,
 .museum-area__gallery-list .img {
   aspect-ratio: 28 / 20;
+
+  & img {
+    object-fit: cover;
+  }
 }
 
 .news-detail__img .img {
