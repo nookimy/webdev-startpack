@@ -86,6 +86,10 @@
     margin-bottom: 20px;
     border-bottom: 1px solid $gray;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     & .question {
       @include mp();
       @include text-accent;
@@ -134,4 +138,118 @@
   }
 
 
+}
+
+.faq--page {
+  & .faq {
+    &__head {
+      background-color: $superlight;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+
+      @media (min-width: $lg-width) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+      }
+
+      & .page__subtitle {
+        margin-bottom: 0;
+      }
+
+      & .page__wrap {
+        margin-bottom: 0;
+      }
+    }
+
+    &__content {
+      @include container;
+      display: grid;
+      grid-template-columns: 1fr;
+
+      @media (min-width: $lg-width) {
+        grid-template-columns: 1fr 460px;
+        column-gap: 50px;
+        align-items: flex-start;
+        grid-template-areas:
+                "list note"
+                "list form";
+      }
+    }
+
+    &__note {
+      margin: 0;
+      @include text-12;
+      padding-left: 30px;
+      background-image: url("../icons/faq.svg");
+      background-repeat: no-repeat;
+      background-size: 18px 18px;
+      background-position: top left;
+      margin-bottom: 20px;
+
+      @media (min-width: $lg-width) {
+        @include text-normal;
+        padding-left: 40px;
+        background-size: 24px 24px;
+        grid-area: note;
+      }
+
+      & a {
+        color: $main;
+        text-decoration: none;
+
+        @media (min-width: $lg-width) {
+          display: none;
+        }
+
+        &:hover,
+        &:focus {
+          color: $main-dark;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__list {
+      margin-bottom: 30px;
+
+      @media (min-width: $lg-width) {
+        grid-area: list;
+        margin-bottom: 0;
+      }
+    }
+
+    &__form {
+      @media (min-width: $lg-width) {
+        padding-left: 40px;
+        grid-area: form;
+      }
+
+      & .page__subtitle {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        border: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+      }
+    }
+  }
+
+  & .form--feedback {
+    @media (min-width: $lg-width) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+            "theme"
+            "name"
+            "email"
+            "message"
+            "button";
+    }
+  }
 }
