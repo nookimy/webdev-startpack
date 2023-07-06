@@ -1,0 +1,173 @@
+.rules {
+  @include text-12;
+  color: $dark-gray;
+
+  @media (min-width: $md-width) {
+    @include text-normal;
+  }
+
+  &__content-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (min-width: $lg-width) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+              "main secondary"
+              "video secondary";
+      align-items: flex-start;
+      column-gap: 50px;
+      @include container;
+    }
+  }
+
+  &__main-content {
+    @include container;
+
+    @media (min-width: $lg-width) {
+      grid-area: main;
+      @include mp();
+    }
+  }
+
+  &__secondary-content {
+    @include container;
+    background-color: $status;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media (min-width: $lg-width) {
+      grid-area: secondary;
+      @include mp();
+      padding: 30px;
+    }
+  }
+
+  &__video-content {
+    @include container;
+
+    @media (min-width: $lg-width) {
+      grid-area: video;
+      @include mp();
+    }
+
+    & .video {
+      width: 100%;
+      aspect-ratio: 28 / 16;
+      background-color: #b5b5b5;
+      margin-bottom: 20px;
+    }
+
+    & p {
+      @include mp();
+      @include title;
+    }
+  }
+
+  &__secondary-content h2 {
+    @include h3;
+
+    margin: 0 0 20px;
+    text-transform: uppercase;
+  }
+
+  &__visiting-notes {
+    position: relative;
+    @include mp();
+    padding-left: 30px;
+    @include text-10;
+    color: $dark-gray;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      padding-left: 40px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      background-image: url("../icons/accessible.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @media (min-width: $md-width) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__visiting-notes p {
+    @include text-10;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+    }
+    & span {
+      display: block;
+    }
+    & a {
+      @include title;
+      color: $dark;
+      display: inline;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover,
+      &:focus {
+        color: $secondary;
+
+        & use.icon__symbol {
+          stroke: $secondary;
+        }
+      }
+
+      & .icon {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        transform: translateY(4px);
+
+        @media (min-width: $md-width) {
+          width: 20px;
+          height: 20px;
+          transform: translateY(5px);
+        }
+      }
+
+      & use.icon__symbol {
+        stroke: $dark;
+      }
+    }
+  }
+}
+.rules--page {
+  & .rules {
+    &__head {
+      background-color: $superlight;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+
+      @media (min-width: $lg-width) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+      }
+
+      & .page__subtitle {
+        margin-bottom: 0;
+      }
+
+      & .page__wrap {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
