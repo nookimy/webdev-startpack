@@ -1,0 +1,287 @@
+<section class="events events--page">
+    <div class="events__head">
+        <div class="page__wrap">
+            <h1 class="page__subtitle">События</h1>
+            <div class="events__filters">
+                <h3 class="events__filters-title events__filters-title--selected">Фильтр<span>(1)</span></h3>
+                <div class="events__filters-block">
+                    <div class="events__filters-wrap">
+                        <fieldset class="filter filter--select-place">
+                            <legend class="visually-hidden">Музейные комплексы</legend>
+                            <select form="events-filters">
+                                <include src="./src/components/blocks/filter/place-select-options.html"></include>
+
+                            </select>
+                        </fieldset>
+                        <fieldset class="filter filter--select-audience">
+                            <legend class="visually-hidden">Аудитория</legend>
+                            <select form="events-filters">
+                                <option>Все</option>
+                                <option>Вариант 1</option>
+                                <option>Вариант 2</option>
+                                <option>Вариант 3</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="filter filter--select-date">
+                            <label class="visually-hidden" for="date">Дата проведения</label>
+                            <input type="date" id="date" name="date"/>
+                        </fieldset>
+                        <fieldset class="filter filter--check-pushkincard">
+                            <input type="checkbox" id="pushkincard" name="pushkincard" checked>
+                            <label for="pushkincard"><span class="visually-hidden">По пушкинской карте</span></label>
+                        </fieldset>
+                    </div>
+                    <div class="events__filters-btn-wrap">
+                        <button class="btn btn--main">Применить</button>
+                        <button class="btn btn--main-invert">Сбросить фильтр</button>
+                    </div>
+                </div>
+            </div>
+            <form class="visually-hidden" id="events-filters"></form>
+        </div>
+        <div class="events__status-filters">
+            <div class="events__tabs-wrap">
+                <fieldset class="filter filter--tabs-status">
+                    <legend class="visually-hidden">Период Проведения</legend>
+                    <div class="form__field">
+                        <input type="radio" id="today" name="period" checked>
+                        <label for="today">Сегодня</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="tomorrow" name="period">
+                        <label for="tomorrow">Завтра</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="weekend" name="period">
+                        <label for="weekend">В выходные</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="this-week" name="period">
+                        <label for="this-week">На этой неделе</label>
+                    </div>
+                    <div class="form__field">
+                        <input type="radio" id="coming-soon" name="period">
+                        <label for="coming-soon">Скоро будет</label>
+                    </div>
+                </fieldset>
+            </div>
+            <fieldset class="filter filter--select-age">
+                <select form="events-filters">
+                    <option>2022</option>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                </select>
+            </fieldset><!--Показывать только при выборе пункта Архив-->
+        </div>
+    </div>
+    <div class="page__wrap">
+        <ul class="events__list">
+            <li class="events__item event event--pushkincard">
+                <picture>
+                    <source type="image/webp" srcset="
+            ../events/image1-767@1x.webp 1x,
+            ../events/image1-767@2x.webp 2x,
+            ../events/image1-767@3x.webp 3x">
+                    <source type="image/jpeg" srcset="
+            ../events/image1-767@1x.jpg 1x,
+            ../events/image1-767@2x.jpg 2x,
+            ../events/image1-767@3x.jpg 3x">
+                    <img class="event__img" src="../events/image1.jpg" alt="Воркшоп Вам пора в музей">
+                </picture>
+                <div class="event__info">
+                    <p class="event__days">
+                        <time class="event__time-start" datetime="2022-03-21"><span class="event__day-month">21</span> марта <span class="event__weekday">ср</span></time>
+                        <time class="event__time-end" datetime="2022-03-31"><span class="event__day-month">31</span> марта <span class="event__weekday">чт</span></time>
+                    </p>
+                    <p class="event__age">6</p>
+                </div>
+                <div class="event__wrap-content">
+                    <h3 class="event__title">Воркшоп «Вам пора в музей»</h3>
+                    <div class="event__pushkincard">
+                        <p class="visually-hidden">Действует программа Пушкинская карта</p>
+                    </div>
+                    <p class="event__advt">С 21 по 31 марта 2022 года наш музей приглашает школьников на воркшоп «Вам пора в музей»! Мы проведём для вас интерактивные программы и игры на базе нашего музея!</p>
+                    <div class="event__place">
+                        <ul>
+                            <li>Национальный музей Республики Марий Эл им. Т. Евсеева</li>
+                        </ul>
+                    </div>
+                    <div class="event__link-wrap">
+                        <a class="btn btn--main-invert" href="#">Купить билет</a>
+                        <a class="btn btn--link" href="#">Подробнее
+                            <svg class="icon" width="20px" height="20px" fill="none">
+                                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="events__item event">
+                <picture>
+                    <source type="image/webp" srcset="
+            ../events/image2-767@1x.webp 1x,
+            ../events/image2-767@2x.webp 2x,
+            ../events/image2-767@3x.webp 3x">
+                    <source type="image/jpeg" srcset="
+            ../events/image2-767@1x.jpg 1x,
+            ../events/image2-767@2x.jpg 2x,
+            ../events/image2-767@3x.jpg 3x">
+                    <img class="event__img" src="../events/image2.jpg" alt="Евсеевский день каждую среду">
+                </picture>
+                <div class="event__info">
+                    <p class="event__days">
+                        <time class="event__time-end" datetime="2022-03-31"><span class="event__day-month">30</span> марта <span class="event__weekday">ср</span></time>
+                    </p>
+                    <p class="event__age">6</p>
+                </div>
+                <div class="event__wrap-content">
+                    <h3 class="event__title">Евсеевский день каждую среду</h3>
+                    <div class="event__pushkincard">
+                        <p class="visually-hidden">Действует программа Пушкинская карта</p>
+                    </div>
+                    <p class="event__advt">Дорогие друзья! В связи с проведением в музее акции «Евсеевский день» с 1 по 31 марта по средам мы приглашаем учащихся 1–4 классов школ республики посетить наши площадки бесплатно!</p>
+                    <div class="event__place">
+                        <ul>
+                            <li>Музей истории и археологии</li>
+                            <li>Музей истории православия Республики Марий Эл</li>
+                            <li>Музей народно-прикладного искусства</li>
+                            <li>Дом-музей И.С. Ключникова-Палантая</li>
+                        </ul>
+                    </div>
+                    <div class="event__link-wrap">
+                        <a class="btn btn--link" href="#">Подробнее
+                            <svg class="icon" width="20px" height="20px" fill="none">
+                                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="events__item event">
+                <picture>
+                    <source type="image/webp" srcset="
+            ../events/image2-767@1x.webp 1x,
+            ../events/image2-767@2x.webp 2x,
+            ../events/image2-767@3x.webp 3x">
+                    <source type="image/jpeg" srcset="
+            ../events/image2-767@1x.jpg 1x,
+            ../events/image2-767@2x.jpg 2x,
+            ../events/image2-767@3x.jpg 3x">
+                    <img class="event__img" src="../events/image2.jpg" alt="Евсеевский день каждую среду">
+                </picture>
+                <div class="event__info">
+                    <p class="event__days">
+                        <time class="event__time-end" datetime="2022-03-31"><span class="event__day-month">30</span> марта <span class="event__weekday">ср</span></time>
+                    </p>
+                    <p class="event__age">6</p>
+                </div>
+                <div class="event__wrap-content">
+                    <h3 class="event__title">Евсеевский день каждую среду</h3>
+                    <div class="event__pushkincard">
+                        <p class="visually-hidden">Действует программа Пушкинская карта</p>
+                    </div>
+                    <p class="event__advt">Дорогие друзья! В связи с проведением в музее акции «Евсеевский день» с 1 по 31 марта по средам мы приглашаем учащихся 1–4 классов школ республики посетить наши площадки бесплатно!</p>
+                    <div class="event__place">
+                        <ul>
+                            <li>Музей истории и археологии</li>
+                            <li>Музей истории православия Республики Марий Эл</li>
+                            <li>Музей народно-прикладного искусства</li>
+                            <li>Дом-музей И.С. Ключникова-Палантая</li>
+                        </ul>
+                    </div>
+                    <div class="event__link-wrap">
+                        <a class="btn btn--link" href="#">Подробнее
+                            <svg class="icon" width="20px" height="20px" fill="none">
+                                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="events__item event">
+                <picture>
+                    <source type="image/webp" srcset="
+            ../events/image2-767@1x.webp 1x,
+            ../events/image2-767@2x.webp 2x,
+            ../events/image2-767@3x.webp 3x">
+                    <source type="image/jpeg" srcset="
+            ../events/image2-767@1x.jpg 1x,
+            ../events/image2-767@2x.jpg 2x,
+            ../events/image2-767@3x.jpg 3x">
+                    <img class="event__img" src="../events/image2.jpg" alt="Евсеевский день каждую среду">
+                </picture>
+                <div class="event__info">
+                    <p class="event__days">
+                        <time class="event__time-end" datetime="2022-03-31"><span class="event__day-month">30</span> марта <span class="event__weekday">ср</span></time>
+                    </p>
+                    <p class="event__age">6</p>
+                </div>
+                <div class="event__wrap-content">
+                    <h3 class="event__title">Евсеевский день каждую среду</h3>
+                    <div class="event__pushkincard">
+                        <p class="visually-hidden">Действует программа Пушкинская карта</p>
+                    </div>
+                    <p class="event__advt">Дорогие друзья! В связи с проведением в музее акции «Евсеевский день» с 1 по 31 марта по средам мы приглашаем учащихся 1–4 классов школ республики посетить наши площадки бесплатно!</p>
+                    <div class="event__place">
+                        <ul>
+                            <li>Музей истории и археологии</li>
+                            <li>Музей истории православия Республики Марий Эл</li>
+                            <li>Музей народно-прикладного искусства</li>
+                            <li>Дом-музей И.С. Ключникова-Палантая</li>
+                        </ul>
+                    </div>
+                    <div class="event__link-wrap">
+                        <a class="btn btn--link" href="#">Подробнее
+                            <svg class="icon" width="20px" height="20px" fill="none">
+                                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="events__item event">
+                <picture>
+                    <source type="image/webp" srcset="
+            ../events/image2-767@1x.webp 1x,
+            ../events/image2-767@2x.webp 2x,
+            ../events/image2-767@3x.webp 3x">
+                    <source type="image/jpeg" srcset="
+            ../events/image2-767@1x.jpg 1x,
+            ../events/image2-767@2x.jpg 2x,
+            ../events/image2-767@3x.jpg 3x">
+                    <img class="event__img" src="../events/image2.jpg" alt="Евсеевский день каждую среду">
+                </picture>
+                <div class="event__info">
+                    <p class="event__days">
+                        <time class="event__time-end" datetime="2022-03-31"><span class="event__day-month">30</span> марта <span class="event__weekday">ср</span></time>
+                    </p>
+                    <p class="event__age">6</p>
+                </div>
+                <div class="event__wrap-content">
+                    <h3 class="event__title">Евсеевский день каждую среду</h3>
+                    <div class="event__pushkincard">
+                        <p class="visually-hidden">Действует программа Пушкинская карта</p>
+                    </div>
+                    <p class="event__advt">Дорогие друзья! В связи с проведением в музее акции «Евсеевский день» с 1 по 31 марта по средам мы приглашаем учащихся 1–4 классов школ республики посетить наши площадки бесплатно!</p>
+                    <div class="event__place">
+                        <ul>
+                            <li>Музей истории и археологии</li>
+                            <li>Музей истории православия Республики Марий Эл</li>
+                            <li>Музей народно-прикладного искусства</li>
+                            <li>Дом-музей И.С. Ключникова-Палантая</li>
+                        </ul>
+                    </div>
+                    <div class="event__link-wrap">
+                        <a class="btn btn--link" href="#">Подробнее
+                            <svg class="icon" width="20px" height="20px" fill="none">
+                                <use class="icon__symbol" xlink:href="#icon-arrow-up-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <a class="link link--more" href="#">Показать ещё</a>
+    </div>
+</section>

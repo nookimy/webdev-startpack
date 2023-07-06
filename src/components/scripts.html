@@ -50,6 +50,17 @@
 </script>
 <script>
     $(document).ready(function () {
+        if ($(window).width() < '1024'){
+            $(".events__filters-title").click(function (event) {
+                $(".events__filters-title").not($(this)).removeClass("active");
+                $(".events__filters-block").not($(this).next()).slideUp(300);
+                $(this).toggleClass("active").next().slideToggle(300);
+            });
+        }
+    });
+</script>
+<script>
+    $(document).ready(function () {
         $(".question").click(function (event) {
             if ($(".faq__list").hasClass("faq__list--showoneitem")) {
                 $(".question").not($(this)).removeClass("active");
