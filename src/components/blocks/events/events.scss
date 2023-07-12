@@ -295,6 +295,45 @@
 .events--section {
   background-color: $light-gray;
 
+  & .events__item {
+    & .event {
+      &__info {
+        @media (min-width: $md-width) {
+          border-left: 2px dashed $light-gray;
+        }
+
+        &::before,
+        &::after {
+          background-color: $light-gray;
+        }
+      }
+    }
+  }
+}
+
+.events--holidays {
+  background-color: $superlight;
+
+  & .events__item {
+    & .event {
+      &__info {
+        @media (min-width: $md-width) {
+          border-left: 2px dashed $superlight;
+        }
+
+        &::before,
+        &::after {
+          background-color: $superlight;
+        }
+      }
+    }
+  }
+}
+
+.events--holidays,
+.events--section {
+
+
   & .events__head {
     grid-template-areas:
       "title time-filter"
@@ -327,6 +366,8 @@
       margin-bottom: 50px;
     }
   }
+
+
 
 
   & .page__subtitle {
