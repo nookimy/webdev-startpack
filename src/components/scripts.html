@@ -40,6 +40,18 @@
 <script>
     $(document).ready(function () {
         if ($(window).width() < '1024'){
+            $(".collections__filters-title").click(function (event) {
+                $(".collections__filters-title").not($(this)).removeClass("active");
+                $(".collections__filters-block").not($(this).next()).slideUp(300);
+                $(this).toggleClass("active").next().slideToggle(300);
+            });
+        }
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        if ($(window).width() < '1024'){
             $(".excursions__filters-title").click(function (event) {
                 $(".excursions__filters-title").not($(this)).removeClass("active");
                 $(".excursions__filters-block").not($(this).next()).slideUp(300);
