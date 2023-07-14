@@ -1,0 +1,176 @@
+.collection-exhibit {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+              "head"
+              "img"
+              "text";
+
+  @media (min-width: $lg-width) {
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    column-gap: 40px;
+    grid-template-areas:
+              "head img"
+              "text img";
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $xl-width) {
+    grid-template-columns: auto auto;
+  }
+
+  &__head {
+    position: relative;
+    width: 100%;
+    grid-area: head;
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+    @media (min-width: $xl-width) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+
+
+    @media (min-width: $xl-width) {
+      margin: 0;
+    }
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background-color: $superlight;
+      transform: translateX(-50%);
+      z-index: -1;
+
+      @media (min-width: $lg-width) {
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+
+  &__head-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: $lg-width) {
+      padding-right: 0;
+    }
+
+    @media (min-width: $xl-width) {
+      width: 690px;
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__type {
+    display: inline-block;
+    @include text-normal-caps;
+    color: $dark-gray;
+    margin-bottom: 10px;
+
+    @media (min-width: $md-width) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    @include mp();
+    @include h1;
+  }
+
+  &__text {
+    @include text-10;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-area: text;
+    padding-top: 15px;
+    padding-bottom: 30px;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      padding-top: 50px;
+      padding-bottom: 0;
+    }
+
+    @media (min-width: $lg-width) {
+      padding-right: 0;
+    }
+
+    @media (min-width: $xl-width) {
+      width: 690px;
+      margin: 0;
+      justify-self: end;
+    }
+
+    & p:first-child {
+      margin-top: 0;
+    }
+
+    & a {
+      color: $main;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    & dl {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @media (min-width: $md-width) {
+        gap: 15px;
+      }
+    }
+
+    & dl > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      column-gap: 15px;
+    }
+
+
+
+    & dt,
+    & dd {
+      @include mp();
+      width: 250px;
+      flex-grow: 1;
+    }
+
+    & dt {
+      @include h3;
+    }
+  }
+  &__img {
+    grid-area: img;
+
+    @media (min-width: $lg-width) {
+      margin-right: 20px;
+      margin-top: 78px;
+    }
+
+    @media (min-width: $xl-width) {
+      width: 460px;
+      align-self: start;
+    }
+  }
+}
