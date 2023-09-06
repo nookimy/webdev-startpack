@@ -42,7 +42,7 @@ export const img = (done) => {
 
 
         // Возьми все изображения из папки
-        return app.gulp.src(app.path.src.imgOpt + '/' + block + '/*.{jpg,jpeg,png}')
+        return app.gulp.src(app.basePath.blocks + '/' + block + '/*.{jpg,jpeg,png}')
 
             .pipe(app.plugins.plumber(
                 app.plugins.notify.onError({

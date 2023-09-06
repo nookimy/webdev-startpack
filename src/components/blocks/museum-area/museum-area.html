@@ -185,42 +185,34 @@
     </div>
 
 </section>
-<section class="expositions page__section">
+<section class="expositions expositions--section page__section">
     <div class="page__wrap">
-        <h2 class="page__subtitle">Выставки</h2>
-        <div class="expositions__time-filter">
-            <p class="expositions__select-name">Фильтр:</p>
-            <select class="select select--time-filter" form="expositions-filters">
-                <option>Все</option>
-                <option>Текущие</option>
-                <option>Будущие</option>
-                <option>Прошедшие</option>
-            </select>
+        <div class="expositions__head">
+            <h2 class="page__subtitle">Выставки</h2>
+            <fieldset class="filter filter--select-status">
+                <legend>Фильтр:</legend>
+                <select form="expositions-filters">
+                    <include src="./src/components/blocks/filter/status-select-options.html"></include>
+                </select>
+            </fieldset>
+            <form class="visually-hidden" id="expositions-filters"></form>
         </div>
-        <div class="expositions__place-filter">
-            <select class="select select--place-filter" form="expositions-filters">
-                <option label="Музейный комплекс">Все музейные комплексы</option>
-                <option>Национальный музей Республики Марий Эл им. Т. Евсеева</option>
-                <option>Музей истории Православия </option>
-                <option>Музей народно-прикладного искусства</option>
-                <option>Музей ...</option>
-            </select>
-        </div>
-        <form class="expositions__filters visually-hidden" id="expositions-filters"></form>
+
+
         <ul class="expositions__list">
             <li class="expositions__item exposition exposition--pushkincard">
                 <a href="./exposition.html" class="expositions__item-link">
                     <p class="expositions__item-status"><span>Уже идёт</span></p>
                     <picture>
                         <source type="image/webp" srcset="
-            ../expositions/image1-767@1x.webp 1x,
-            ../expositions/image1-767@2x.webp 2x,
-            ../expositions/image1-767@3x.webp 3x">
+            ../museum-area/expositions-image1-767@1x.webp 1x,
+            ../museum-area/expositions-image1-767@2x.webp 2x,
+            ../museum-area/expositions-image1-767@3x.webp 3x">
                         <source type="image/jpeg" srcset="
-            ../expositions/image1-767@1x.jpg 1x,
-            ../expositions/image1-767@2x.jpg 2x,
-            ../expositions/image1-767@3x.jpg 3x">
-                        <img class="exposition__img" src="../expositions/image1.jpg" alt="Творцов вдохновляющая муза">
+            ../museum-area/expositions-image1-767@1x.jpg 1x,
+            ../museum-area/expositions-image1-767@2x.jpg 2x,
+            ../museum-area/expositions-image1-767@3x.jpg 3x">
+                        <img class="exposition__img" src="../museum-area/expositions-image1.jpg" alt="Творцов вдохновляющая муза">
                     </picture>
                     <div class="exposition__wrap-content">
                         <h3 class="exposition__title">Творцов вдохновляющая муза (<span class="exposition__age">0</span>)</h3>
@@ -236,14 +228,14 @@
                     <p class="expositions__item-status"><span>Уже идёт</span></p>
                     <picture>
                         <source type="image/webp" srcset="
-            ../expositions/image2-767@1x.webp 1x,
-            ../expositions/image2-767@2x.webp 2x,
-            ../expositions/image2-767@3x.webp 3x">
+            ../museum-area/expositions-image2-767@1x.webp 1x,
+            ../museum-area/expositions-image2-767@2x.webp 2x,
+            ../museum-area/expositions-image2-767@3x.webp 3x">
                         <source type="image/jpeg" srcset="
-            ../expositions/image2-767@1x.jpg 1x,
-            ../expositions/image2-767@2x.jpg 2x,
-            ../expositions/image2-767@3x.jpg 3x">
-                        <img class="exposition__img" src="../expositions/image2.jpg" alt="Выставка регионального этапа Международного конкурса детского рисунка">
+            ../museum-area/expositions-image2-767@1x.jpg 1x,
+            ../museum-area/expositions-image2-767@2x.jpg 2x,
+            ../museum-area/expositions-image2-767@3x.jpg 3x">
+                        <img class="exposition__img" src="../museum-area/expositions-image2.jpg" alt="Выставка регионального этапа Международного конкурса детского рисунка">
                     </picture>
                     <div class="exposition__wrap-content">
                         <h3 class="exposition__title">Красота Божьего мира / выставка регионального этапа Международного конкурса детского рисунка <span>(0+)</span></h3>
@@ -258,14 +250,14 @@
                     <p class="expositions__item-status"><span>Уже идёт</span></p>
                     <picture>
                         <source type="image/webp" srcset="
-            ../expositions/image3-767@1x.webp 1x,
-            ../expositions/image3-767@2x.webp 2x,
-            ../expositions/image3-767@3x.webp 3x">
+            ../museum-area/expositions-image3-767@1x.webp 1x,
+            ../museum-area/expositions-image3-767@2x.webp 2x,
+            ../museum-area/expositions-image3-767@3x.webp 3x">
                         <source type="image/jpeg" srcset="
-            ../expositions/image3-767@1x.jpg 1x,
-            ../expositions/image3-767@2x.jpg 2x,
-            ../expositions/image3-767@3x.jpg 3x">
-                        <img class="exposition__img" src="../expositions/image3.jpg" alt="передвижная выставка Музея-заповедника Кижи">
+            ../museum-area/expositions-image3-767@1x.jpg 1x,
+            ../museum-area/expositions-image3-767@2x.jpg 2x,
+            ../museum-area/expositions-image3-767@3x.jpg 3x">
+                        <img class="exposition__img" src="../museum-area/expositions-image3.jpg" alt="передвижная выставка Музея-заповедника Кижи">
                     </picture>
                     <div class="exposition__wrap-content">
                         <h3 class="exposition__title">Калевала / передвижная выставка Музея-заповедника «Кижи» <span>(0+)</span></h3>
