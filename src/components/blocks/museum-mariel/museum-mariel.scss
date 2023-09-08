@@ -1,0 +1,484 @@
+.museum-mariel {
+    & .page__cover {
+      background-image: url("../museum-mariel/cover.jpg");
+    }
+  
+    &__info-list {
+      @include list();
+      @include mp();
+      @include text-12;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 16px;
+  
+      @media (min-width: $md-width) {
+        @include text-normal;
+        gap: 10px;
+      }
+  
+      @media (min-width: $lg-width) {
+        margin-bottom: 40px;
+        grid-area: contacts;
+      }
+    }
+  
+    &__info-item {
+      & span {
+        font-weight: bold;
+      }
+  
+      & a {
+        color: inherit;
+        text-decoration: none;
+  
+        &:hover,
+        &:focus {
+          color: $main;
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    &__btn-wrap {
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+  
+      @media (min-width: $md-width) {
+        margin: 0;
+      }
+  
+      @media (min-width: $lg-width) {
+        gap: 30px;
+      }
+    }
+  
+    &__info {
+      background-color: $light;
+      padding-top: 10px;
+      padding-bottom: 30px;
+  
+      @media (min-width: $md-width) {
+        padding-top: 30px;
+        padding-bottom: 60px;
+      }
+  
+      @media (min-width: $lg-width) {
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        column-gap: 50px;
+        grid-template-areas:
+                "text detail"
+                "gallery gallery";
+      }
+  
+      @media (min-width: $xl-width) {
+        grid-template-columns: auto auto;
+      }
+    }
+  
+    &__gallery-list {
+      @include list();
+      @include mp();
+  
+      & > li > a {
+        position: relative;
+  
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+  
+        }
+        &:hover,
+        &:focus {
+          .img {
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+  
+      & > li > a .img {
+        position: relative;
+  
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($dark, 0.5);
+          background-image: url("../icons/search.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 50 50;
+          z-index: 5;
+          transition: $transition;
+          opacity: 0;
+        }
+      }
+    }
+  
+    &__subtitle {
+      @include mp();
+      @include h3;
+      margin-bottom: 13px;
+  
+      @media (min-width: $md-width) {
+        margin-bottom: 22px;
+      }
+    }
+  
+    &__working-mode,
+    &__price {
+      margin-bottom: 18px;
+  
+      @media (min-width: $md-width) {
+        margin-bottom: 60px;
+      }
+    }
+  
+    &__working-list {
+      @include list();
+      position: relative;
+      @include text-10;
+      padding-left: 36px;
+      display: flex;
+      gap: 20px;
+  
+      @media (min-width: $md-width) {
+        @include text-normal;
+      }
+  
+      @media (min-width: $lg-width) {
+        justify-content: space-between;
+      }
+  
+      & li {
+        @media (min-width: $lg-width) {
+          width: 40%;
+          flex-grow: 1;
+        }
+      }
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("../icons/calendar-heart.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform: translateY(-50%);
+      }
+    }
+  
+    &__price ul {
+      position: relative;
+      @include list();
+      @include mp();
+      padding-left: 30px;
+      @include text-10;
+      color: $dark-gray;
+  
+      @media (min-width: $md-width) {
+        @include text-normal;
+        padding-left: 40px;
+      }
+  
+      @media (min-width: $lg-width) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+  
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("../icons/tabler-ticket.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+  
+        @media (min-width: $md-width) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  
+    &__price li {
+      @media (min-width: $lg-width) {
+        width: 40%;
+        flex-grow: 1;
+      }
+      & span {
+        color: $dark;
+      }
+    }
+  
+    &__visiting-rules-title {
+      @include mp();
+      @include h3;
+      margin-bottom: 10px;
+  
+      @media (min-width: $md-width) {
+        margin-bottom: 25px;
+      }
+  
+      & a {
+        color: inherit;
+        text-decoration: none;
+        transition: $transition;
+  
+        &:hover,
+        &:focus {
+          color: $secondary;
+  
+          & use.icon__symbol {
+            stroke: $secondary;
+          }
+        }
+  
+        & .icon {
+          width: 14px;
+          height: 14px;
+          transform: translateY(2px);
+  
+          @media (min-width: $md-width) {
+            width: 20px;
+            height: 20px;
+            transform: translateY(5px);
+          }
+        }
+  
+        & use.icon__symbol {
+          stroke: $dark;
+        }
+      }
+    }
+  
+    &__visiting-rules {
+      @include container;
+      padding: 0;
+  
+      @media (min-width: $lg-width) {
+        grid-area: rules;
+        padding-left: 0;
+      }
+  
+      @media (min-width: $xl-width) {
+        margin: 0;
+        padding-right: 0;
+        width: 460px;
+        justify-self: start;
+      }
+    }
+  
+    &__visiting-notes {
+      position: relative;
+      @include mp();
+      padding-left: 30px;
+      @include text-10;
+      color: $dark-gray;
+  
+      @media (min-width: $md-width) {
+        @include text-normal;
+        padding-left: 40px;
+      }
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("../icons/accessible.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+  
+        @media (min-width: $md-width) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  
+    &__visiting-notes p {
+      @include text-10;
+  
+      @media (min-width: $md-width) {
+        @include text-normal;
+      }
+      & span {
+        display: block;
+      }
+      & a {
+        @include title;
+        color: $dark;
+        display: inline;
+        text-decoration: none;
+        transition: $transition;
+  
+        &:hover,
+        &:focus {
+          color: $secondary;
+  
+          & use.icon__symbol {
+            stroke: $secondary;
+          }
+        }
+  
+        & .icon {
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          transform: translateY(4px);
+  
+          @media (min-width: $md-width) {
+            width: 20px;
+            height: 20px;
+            transform: translateY(5px);
+          }
+        }
+  
+        & use.icon__symbol {
+          stroke: $dark;
+        }
+      }
+    }
+  }
+  
+  .page__head .museum-mariel {
+    &__title {
+      @include mp(0 0 10px);
+      @include h3;
+  
+      @media (min-width: $md-width) {
+        margin-bottom: 20px;
+      }
+  
+      & a {
+        color: inherit;
+        text-decoration: none;
+        transition: $transition;
+  
+        &:hover,
+        &:focus {
+          color: $secondary;
+  
+          & use.icon__symbol {
+            stroke: $secondary;
+          }
+        }
+  
+        & .icon {
+          width: 14px;
+          height: 14px;
+          transform: translateY(2px);
+  
+          @media (min-width: $md-width) {
+            width: 20px;
+            height: 20px;
+            transform: translateY(5px);
+          }
+        }
+  
+        & use.icon__symbol {
+          stroke: $dark;
+        }
+      }
+    }
+  
+    &__info-list {
+      @include text-10;
+      color: $dark-gray;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+  
+      @media (min-width: $md-width) {
+        @include text-normal;
+        row-gap: 10px;
+      }
+  
+      @media (min-width: $lg-width) {
+        margin-bottom: 40px;
+      }
+    }
+  
+    &__info-item--time {
+      & a {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        color: $secondary;
+        margin-left: 14px;
+        text-decoration: none;
+        min-height: 30px;
+  
+        @media (min-width: $md-width) {
+          min-height: unset;
+          font-size: 14px;
+        }
+  
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $secondary;
+          bottom: 7px;
+          left: 0;
+          transition: $transition;
+          opacity: 1;
+  
+          @media (min-width: $md-width) {
+            bottom: 0;
+          }
+        }
+  
+        &:hover,
+        &:focus {
+          &::before {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  
+    &__btn-wrap {
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+  
+      @media (min-width: $md-width) {
+        margin: 0;
+      }
+  
+      @media (min-width: $lg-width) {
+        gap: 30px;
+      }
+    }
+  }

@@ -1,6 +1,6 @@
-.museum-area {
+.museum-mariel {
   & .page__cover {
-    background-image: url("../museum-area/cover.jpg");
+    background-image: url("../museum-mariel/cover.jpg");
   }
 
   &__info-list {
@@ -367,7 +367,7 @@
   }
 }
 
-.page__head .museum-area {
+.page__head .museum-mariel {
   &__title {
     @include mp(0 0 10px);
     @include h3;
@@ -486,7 +486,7 @@
 
 
 .modal--museum-working-mode {
-  & .museum-area__working-list {
+  & .museum-mariel__working-list {
     @media (min-width: $lg-width) {
         justify-content: unset;
     }
