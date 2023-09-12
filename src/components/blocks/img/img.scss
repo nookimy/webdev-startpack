@@ -61,6 +61,7 @@
     object-fit: cover;
   }
 }
+
 .event__gallery-list .img,
 .exposition__gallery-list .img,
 .museum-area__gallery-list .img,
@@ -71,6 +72,7 @@
     object-fit: cover;
   }
 }
+
 .collection-exhibit .img,
 .news-detail__img .img {
   width: 100%;
@@ -89,9 +91,19 @@
 .season-ticket .img,
 .news__list .img,
 .tickets-and-benefits__list .img,
-.collections .img{
+.collections .img {
   width: 100%;
   aspect-ratio: 2 / 1;
+
+  & img {
+    object-fit: cover;
+  }
+}
+
+.team__item .img {
+  width: 100%;
+  aspect-ratio: 13 / 15;
+  background-color: $gray;
 
   & img {
     object-fit: cover;

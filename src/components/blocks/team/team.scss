@@ -1,0 +1,75 @@
+.team--page {
+    & .team {
+      &__head {
+        background-color: $superlight;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+  
+        @media (min-width: $lg-width) {
+          padding-top: 30px;
+          padding-bottom: 30px;
+          margin-bottom: 40px;
+        }
+  
+        & .page__subtitle {
+          margin-bottom: 0;
+        }
+  
+        & .page__wrap {
+          margin-bottom: 0;
+        }
+      }
+  
+      &__content {
+        @include container;
+      }
+
+      &__section {
+        margin-bottom: 30px;
+
+        @media (min-width: $lg-width) {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+      }
+
+      &__subtitle {
+        @include mp();
+        @include h3();
+        color: $dark-gray;
+        margin-bottom: 0.77em;
+
+        @media (min-width: $lg-width) {
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+      }
+
+      &__list {
+        @include list();
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @media (min-width: $md-width) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (min-width: $lg-width) {
+            max-width: 870px;
+        }
+      }
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        @media (min-width: $lg-width) {
+            row-gap: 20px;
+        }
+      }
+    }
+  }

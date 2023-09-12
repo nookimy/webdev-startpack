@@ -1,0 +1,19 @@
+.team__item.employee {
+    & .employee {
+        &__name {
+            @include mp();
+            @include h3();
+        }
+
+        &__position {
+            @include mp();
+            @include text-12();
+            color: $dark-gray;
+
+            @media (min-width: $lg-width) {
+                @include text-normal();
+            }
+        }
+    }
+}
+
