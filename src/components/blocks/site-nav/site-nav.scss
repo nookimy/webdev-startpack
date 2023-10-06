@@ -13,9 +13,9 @@
     @include list();
 
     & > li {
-      & > a {
+      & a {
         color: inherit;
-        text-decoration: none;
+        text-decoration: none;        
       }
     }
   }
@@ -58,7 +58,6 @@
 
       @media (min-width: $lg-width) {
         outline: none;
-        padding: 0;
       }
 
       &:hover,
@@ -131,7 +130,7 @@
   & button.open-submenu {
     @include btn-reset();
     width: 40px;
-    height: 40px;
+    height: 40px;    
   }
 
   & .open-submenu {
@@ -193,13 +192,60 @@
         transition: all 0.5s ease-in-out;
         transform:  translateY(-50%) rotate(90deg);
       }
+
+      & + .submenu {
+        max-height: 500px;
+        transition: max-height 0.5s ease-in;
+      }
     }
   }
 
   & .submenu {
-    display: none;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
     width: 100%;
     flex-grow: 1;
   }
 }
 
+.main-header--desktop {
+  & .site-nav {
+    &__item {
+      position: relative;
+
+      &:hover {
+        & .submenu {
+          display: block;
+        }
+        
+      }
+
+      & a {
+        padding: 9px 0;
+
+        &:hover,
+        &:focus {
+          color: $secondary;
+        }
+      }
+    }
+
+    & .submenu {
+      display: none;
+      background-color: white;
+      margin: 0;
+      top: unset;
+      left: -10px;
+      bottom: 1px;
+      transform: translateY(100%);
+      padding: 20px 10px;
+      width: 160px;
+      z-index: 10;
+    }
+  }
+
+  & button.open-submenu {
+    display: none;
+  }
+}

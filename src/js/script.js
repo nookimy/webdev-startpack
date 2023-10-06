@@ -12,15 +12,20 @@ testWebP(function (support) {
 });
 
 
+/* Динамическое отслеживание ширины экрана */
+let windowWidth;
+window.addEventListener('resize',function(){
+    windowWidth = document.documentElement.clientWidth;
+    styleHeader();
+    openSubmenu();    
+});
+
+
 
 /*Мобильное меню*/
 let mainHeader = document.querySelector(".main-header");
 let burgerButton = document.querySelector(".burger-button");
 let siteNav = document.querySelector(".main-header__menu");
-
-
-
-/*Открытие меню по клику на бургер*/
 burgerButton.onclick = function () {
     burgerButton.classList.toggle("burger-button--down");
     siteNav.classList.toggle("main-header__menu--opened");
@@ -28,11 +33,9 @@ burgerButton.onclick = function () {
 };
 
 
-
 /*Открытие поиска в мобильном меню*/
 let searchOpenButton = document.querySelector(".main-nav__search-btn");
 let search = document.querySelector(".main-header__search");
-
 searchOpenButton.onclick = function () {
     burgerButton.classList.remove("burger-button--down");
     siteNav.classList.remove("main-header__menu--opened");
@@ -40,20 +43,39 @@ searchOpenButton.onclick = function () {
 };
 
 
+/* Открытие подменю в мобильной версии на JS */
+function openSubmenu() {
+    if (windowWidth < 1024) {
+        let els = document.querySelectorAll('.open-submenu');
+        [].forEach.call(els, function(el, i, els) {
+            el.addEventListener('click', function() {
+                [].forEach.call(els, function(el) {
+                    if(el !== this) {
+                    el.classList.remove("open-submenu--in");
+                    } else {
+                    el.classList.add("open-submenu--in");
+                    }
+                }, this);
+            });
+        });
+    }
+}
 
-function checkScreen() {
-    let windowWidth = document.documentElement.clientWidth;
-
+/* Добавляем классы для мобильного и десктоп хедера */
+function styleHeader() {
     if (windowWidth < 1024) {
         mainHeader.classList.add('main-header--mobile');
-        mainHeader.classList.remove('main-header--desktop');
+        mainHeader.classList.remove('main-header--desktop'); 
+    
     } else {
         mainHeader.classList.add('main-header--desktop');
         mainHeader.classList.remove('main-header--mobile');
     }
-};
+}
 
-checkScreen();
+styleHeader();
+openSubmenu(); 
+
 
 let mainHeaderFixed = document.querySelector(".main-header--desktop-sticky");
 
@@ -70,7 +92,6 @@ function menuPosition() {
 }
 
 window.onscroll = menuPosition;
-
 
 
 /*function checkScreen() {

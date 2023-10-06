@@ -1,30 +1,7 @@
 <script src="js/jquery-3.7.0.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/sliders.js"></script>
-<script>
-    if ($(window).width() < '1024'){
-        $('.open-submenu').click(function () {
-            $(this).toggleClass('open-submenu--in').next().slideToggle();
-            $('.open-submenu').not(this).removeClass('open-submenu--in').next().slideUp();
-        });
-    };
 
-    /*$(window).scroll(function() {
-        var height = $(window).scrollTop();
-
-        /!*Если сделали скролл на 100px задаём новый класс для header*!/
-        if(height > 150){
-            $('.main-header').addClass('main-header--desktop-sticky');
-            $('.main-header').removeClass('main-header--desktop');
-        } else{
-            /!*Если меньше 100px удаляем класс для header*!/
-            $('.main-header').removeClass('main-header--desktop-sticky');
-            $('.main-header').addClass('main-header--desktop');
-        }
-    });*/
-
-
-</script>
 <script>
     $(document).ready(function () {
         if ($(window).width() < '1024'){
