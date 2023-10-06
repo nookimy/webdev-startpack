@@ -1,7 +1,8 @@
 <div class="site-nav">
     <ul class="site-nav__list">
-        <li class="site-nav__item site-nav__item--from-submenu">
-            <a class="open-submenu" href="./posetitelyam.html">Посетителям</a>
+        <li class="site-nav__item">
+            <!-- У пункта меню есть ссылка на страницу, поэтому кнопку открвтия меню делаем отдельно -->       
+            <a href="./posetitelyam.html">Посетителям</a><button class="open-submenu"></button>
             <ul class="site-nav__submenu-list submenu">
                 <li class="site-nav__submenu-item">
                     <a href="./objects.html">Здания и часы работы</a>
@@ -48,7 +49,8 @@
             <a href="#">Наука</a><!-- ? -->
         </li>        
         <li class="site-nav__item">
-            <a class="open-submenu" href="#">О музее</a>
+            <!-- У пункта меню нет ссылки на страницу, поэтому для удобства она является элементом открытия подменю -->  
+            <a class="open-submenu">О музее</a>
             <ul class="site-nav__submenu-list submenu">
                 <li class="site-nav__submenu-item">
                     <a href="./team.html">Наш коллектив</a>
