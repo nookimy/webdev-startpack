@@ -1,6 +1,20 @@
 body.lock {
   overflow: hidden;
+
+  .fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 10;
+    opacity: 0.5;
+  }
 }
+
+
+
 
 .page {
   &__section {
@@ -295,3 +309,43 @@ body.lock {
 
 
 }
+
+
+/*
+.main-header  {
+  @media (min-width: $lg-width) {
+    & .figure__yellow-triangle {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      background-color: $status;
+      clip-path: polygon(0 0, 100% 100%, 100% 0);
+      transform: translateX(410px);
+    }
+
+    & .figure__blue-line {
+      position: absolute;
+      bottom: -25px;
+      left: 1px;
+      background-color: $secondary;
+      width: 38px;
+      height: 38px;
+      clip-path: polygon(0 0, 0 100%, 100% 100%);
+      transform: translateX(-100%);
+    }
+
+    & .figure__blue-line {
+      position: absolute;
+      bottom: -25px;
+      left: 1px;
+      background-color: $secondary;
+      width: 38px;
+      height: 38px;
+      clip-path: polygon(0 0, 0 100%, 100% 100%);
+      transform: translateX(-100%);
+    }
+  }
+}*/

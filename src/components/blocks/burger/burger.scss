@@ -9,6 +9,7 @@
   padding: 0;
   border: none;
   transition: $transition;
+  cursor: pointer;
 
   @media (min-width: $lg-width) {
     width: 45px;
@@ -43,10 +44,19 @@
 
 }
 
-.main-header--desktop .burger-button {
+.main-header .burger-button {
+  position: relative;
+  z-index: 5;
+
+  @media (min-width: $lg-width) {
     display: none;
+  }
 }
 
-.main-header--desktop-sticky .burger-button {
-  display: inline-flex;
+.main-header--fixed .burger-button {
+  @media (min-width: $lg-width) {
+    display: inline-flex;
+  }
+
+
 }

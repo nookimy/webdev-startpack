@@ -82,25 +82,28 @@
   }
 }
 
-.main-header--mobile .logo {
+.main-header .logo {
   &__text {
     display: none;
+
+    @media (min-width: $lg-width) {
+      display: block;
+    }
   }
 }
 
-.main-header--desktop .logo {
-  &__text {
-    display: block;
-  }
-}
+.main-header--fixed .logo {
 
-.main-header--desktop-sticky .logo {
-  margin-right: auto;
-  margin-left: 39px;
-  order: 3;
-  &__text {
-    display: none;
+  @media (min-width: $lg-width) {
+    margin-right: auto;
+    margin-left: 39px;
+    order: 3;
+
+    &__text {
+      display: none;
+    }
   }
+
 }
 
 .main-footer .logo {

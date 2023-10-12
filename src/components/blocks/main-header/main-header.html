@@ -1,25 +1,24 @@
-<section class="main-header" id="navbar">
-    <div class="figure__yellow-triangle"></div>
-    <!--Лого, кнопки, поиск-->
-    <div class="main-header__nav">
-        <div class="page__wrap">
-            <div class="figure__blue-triangle"></div>
-            <div class="figure__blue-line"></div>
-            <include src="./src/components/blocks/main-nav/main-nav.html"></include>
-        </div>
-    </div>
-    <!--Основное меню-->
-    <div class="main-header__menu">
-        <div class="page__wrap">
-            <div class="main-header__button-wrap">
-                <a class="btn btn--main" href="#">Купить билет</a>
-                <include src="./src/components/blocks/languages/languages.html"></include>
+<header class="main-header">
+
+        <!--Лого, кнопки, поиск-->
+        <div class="main-header__nav">
+            <div class="page__wrap">
+                <include src="./src/components/blocks/main-nav/main-nav.html"></include>
             </div>
-            <include src="./src/components/blocks/site-nav/site-nav.html"></include>
         </div>
-    </div>
-    <!--Строка поиска-->
-    <div class="main-header__search">
-        <include src="./src/components/blocks/search/search.html"></include>
-    </div>
-</section>
+        <!--Основное меню-->
+        <div class="main-header__menu">
+            <div class="page__wrap">
+                <div class="main-header__button-wrap">
+                    <a class="btn btn--main" href="#">Купить билет</a>
+                    <include src="./src/components/blocks/languages/languages.html"></include>
+                </div>
+                <include src="./src/components/blocks/site-nav/site-nav.html"></include>
+            </div>
+        </div>
+        <!--Строка поиска-->
+        <div class="main-header__search">
+            <include src="./src/components/blocks/search/search.html"></include>
+        </div>
+
+</header>

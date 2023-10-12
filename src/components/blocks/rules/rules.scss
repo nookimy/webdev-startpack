@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    padding-bottom: 45px;
 
     @media (min-width: $lg-width) {
       grid-template-columns: 1fr 1fr;
@@ -19,6 +20,7 @@
       align-items: flex-start;
       column-gap: 50px;
       @include container;
+      padding-bottom: 75px;
     }
   }
 
