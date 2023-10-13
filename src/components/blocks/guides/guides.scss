@@ -1,0 +1,88 @@
+.guides {
+  background-color: $superlight;
+  padding-bottom: 20px;
+
+  @media (min-width: $md-width) {
+    padding-bottom: 40px;
+  }
+
+  &__head {
+    padding-top: 15px;
+    padding-bottom: 25px;
+
+    @media (min-width: $md-width) {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+
+    & .page__subtitle {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    @include container;
+  }
+
+  &__how {
+    padding: 20px 0 30px;
+
+    @media (min-width: $md-width) {
+      padding: 24px 0 63px;
+    }
+
+    & .page__wrap {
+      @media (min-width: $lg-width) {
+        display: grid;
+        column-gap: 50px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+                  "section section"
+                  "title img"
+                  "text img";
+      }
+
+      & > span {
+        display: inline-block;
+        @include text-normal-caps();
+        margin-bottom: 10px;
+
+        @media (min-width: $md-width) {
+          margin-bottom: 20px;
+        }
+
+        @media (min-width: $lg-width) {
+          grid-area: section;
+        }
+      }
+    }
+
+    & h2 {
+      @include mp();
+      @include h1();
+      margin-bottom: 0.8em;
+
+      @media (min-width: $lg-width) {
+        grid-area: title;
+      }
+    }
+
+    & .text {
+      @include text-normal();
+
+      @media (min-width: $lg-width) {
+        grid-area: text;
+      }
+    }
+
+    & .img {
+      @media (min-width: $lg-width) {
+        grid-area: img;
+        align-self: center;
+      }
+
+    }
+  }
+
+
+}

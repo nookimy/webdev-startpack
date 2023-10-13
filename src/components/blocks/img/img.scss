@@ -110,3 +110,13 @@
   }
 }
 
+.guides__how .img {
+  width: 100%;
+  aspect-ratio: 46 / 36;
+  background-color: $gray;
+
+  & img {
+    object-fit: contain;
+  }
+}
+
