@@ -1,0 +1,342 @@
+.history {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+              "img"
+              "head"
+              "filter"
+              "text";
+
+  @media (min-width: $lg-width) {
+    grid-template-columns: 1fr 460px;
+    column-gap: 40px;
+    grid-template-areas:
+              "head img"
+              "text img"
+              "text filter"
+  "text .";
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $xl-width) {
+    grid-template-columns: auto auto;
+  }
+
+  &__main-img {
+    grid-area: img;
+    aspect-ratio: 32 / 20;
+    object-fit: cover;
+    background-color: #b5b5b5;
+
+    @media (min-width: $lg-width) {
+      margin-right: 20px;
+      margin-top: 78px;
+    }
+
+    @media (min-width: $xl-width) {
+      width: 460px;
+      align-self: start;
+    }
+  }
+
+  &__head {
+    position: relative;
+    width: 100%;
+    grid-area: head;
+    padding-top: 15px;
+
+
+    @media (min-width: $xl-width) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @media (min-width: $xl-width) {
+      margin: 0;
+    }
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background-color: $superlight;
+      transform: translateX(-50%);
+      z-index: -1;
+
+      @media (min-width: $lg-width) {
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+
+  &__head-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: $lg-width) {
+      padding-right: 0;
+    }
+
+    @media (min-width: $xl-width) {
+      width: 690px;
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__title {
+    @include mp();
+    @include h1;
+  }
+
+  &__filter-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $superlight;
+
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    grid-area: filter;
+
+    @media (min-width: $lg-width) {
+      background-color: transparent;
+      margin-right: 20px;
+      margin-top: 78px;
+      flex-direction: column;
+      align-items: start;
+      padding: 20px 0 0;
+    }
+
+    @media (min-width: $xl-width) {
+      margin: 0;
+      justify-self: start;
+      width: 460px;
+
+
+    }
+  }
+
+  &__filter-wrap h3 {
+    @include mp;
+    @include text-normal;
+
+    @media (min-width: $lg-width) {
+      @include h3;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+
+    @media (min-width: $lg-width) {
+      display: flex;
+      flex-direction: column;
+      @include list();
+      @include h3;
+      gap: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__nav li {
+    position: relative;
+    padding-left: 40px;
+    transition: $transition;
+
+    &:hover {
+      color: $main;
+
+      &::after {
+        background-color: $main;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 1px;
+      height: 50px;
+      background-color: #4E4E4E;
+
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -5px;
+      transform-origin: center;
+      transform: translateY(-50%) rotate(45deg);
+      width: 11px;
+      height: 11px;
+      background-color: #4E4E4E;
+      transition: $transition;
+    }
+
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+
+
+  }
+
+  &__nav li a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & use.icon__symbol {
+      width: 20px;
+      height: 20px;
+      stroke: $dark;
+      transition: $transition;
+    }
+
+    &:hover {
+      & use.icon__symbol {
+        stroke: $main;
+      }
+    }
+  }
+
+  & .filter--history {
+    @media (min-width: $lg-width) {
+      display: none;
+    }
+    & select {
+      width: auto;
+    }
+  }
+
+  &__text {
+    @include text-normal;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-area: text;
+    padding-top: 15px;
+    padding-bottom: 30px;
+
+    @media (min-width: $md-width) {
+      @include text-normal;
+      padding-top: 50px;
+      padding-bottom: 0;
+    }
+
+    @media (min-width: $lg-width) {
+      padding-right: 0;
+    }
+
+    @media (min-width: $xl-width) {
+      width: 690px;
+      margin: 0;
+      justify-self: end;
+    }
+
+    & img {
+      display: block;
+      width: 100%;
+      background-color: #b5b5b5;
+      min-height: 100px;
+    }
+
+
+    & figure {
+      position: relative;
+      @include mp;
+
+    }
+
+    & figcaption {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      color: $light;
+      background: rgba(0, 0, 0, 0.50);
+      padding: 10px 15px;
+      @include text-12;
+
+      @media (min-width: $md-width) {
+        @include text-normal;
+        padding: 15px 22px;
+      }
+    }
+
+
+
+    & a {
+      color: $main;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    & .block {
+      &__item {
+        margin: 0 0 20px 0;
+      }
+
+      &__title {
+        @include h3;
+        color: $dark-gray;
+        position: relative;
+        padding: 10px 20px 10px 0;
+        cursor: pointer;
+        border-bottom: 1px solid #B5B5B5;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+          background-image: url("../icons/chevron-down-gray.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transform-origin: center;
+          transition: all 0.3s ease 0s;
+        }
+
+
+
+        &.active {
+          &::before {
+            transform: translateY(-50%) rotate(-180deg);
+          }
+        }
+      }
+
+      &__text {
+        display: none;
+        padding: 10px 0 0 0;
+      }
+    }
+
+  }
+}

@@ -189,15 +189,14 @@
   }
 
   &__place {
-
     position: relative;
     @include mp();
+    @include list();
     @include text-10;
     padding-left: 25px;
-    width: 50%;
+    max-width: 60%;
     flex-grow: 1;
 
-    @include list();
     display: flex;
     flex-direction: column;
 

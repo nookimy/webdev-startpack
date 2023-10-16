@@ -72,5 +72,12 @@
             row-gap: 20px;
         }
       }
+
+      &__item .img {
+        background-image: url("../team/no-photo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     }
   }
