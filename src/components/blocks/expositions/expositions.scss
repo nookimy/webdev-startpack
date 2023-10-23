@@ -537,14 +537,6 @@
     }
   }
 
-  & .expositions__list {
-    margin-bottom: 30px;
-
-    @media (min-width: $md-width) {
-      margin-bottom: 50px;
-    }
-  }
-
   & .filter--select-status {
     grid-area: time-filter;
     position: relative;
