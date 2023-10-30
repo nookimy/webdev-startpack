@@ -311,8 +311,34 @@ body.lock {
 }
 
 
-/*
 .main-header  {
+  @media (min-width: $lg-width) {
+
+    & .figure__blue-triangle {
+      position: absolute;
+      bottom: -25px;
+      left: 1px;
+      background-color: $main;
+      width: 38px;
+      height: 38px;
+      clip-path: polygon(0 0, 0 100%, 100% 100%);
+      transform: translateX(-100%);
+    }
+
+    & .figure__blue-line {
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      background-color: $main;
+      width: 100vw;
+      height: 1px;
+      transform: translateX(0);
+    }
+  }
+}
+
+body {
+  overflow-x: hidden;
   @media (min-width: $lg-width) {
     & .figure__yellow-triangle {
       display: block;
@@ -324,28 +350,7 @@ body.lock {
       background-color: $status;
       clip-path: polygon(0 0, 100% 100%, 100% 0);
       transform: translateX(410px);
-    }
-
-    & .figure__blue-line {
-      position: absolute;
-      bottom: -25px;
-      left: 1px;
-      background-color: $secondary;
-      width: 38px;
-      height: 38px;
-      clip-path: polygon(0 0, 0 100%, 100% 100%);
-      transform: translateX(-100%);
-    }
-
-    & .figure__blue-line {
-      position: absolute;
-      bottom: -25px;
-      left: 1px;
-      background-color: $secondary;
-      width: 38px;
-      height: 38px;
-      clip-path: polygon(0 0, 0 100%, 100% 100%);
-      transform: translateX(-100%);
+      z-index: -1;
     }
   }
-}*/
+}
