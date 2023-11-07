@@ -339,18 +339,34 @@ body.lock {
 
 body {
   overflow-x: hidden;
-  @media (min-width: $lg-width) {
-    & .figure__yellow-triangle {
-      display: block;
+
+
+  & .figure__yellow-triangle {
+
+    @media (max-width: 1023px) {
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      aspect-ratio: 1 / 1;
-      background-color: $status;
-      clip-path: polygon(0 0, 100% 100%, 100% 0);
-      transform: translateX(410px);
-      z-index: -1;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      margin: -1px;
+      padding: 0;
+      width: 1px;
+      height: 1px;
+      border: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
     }
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    background-color: $status;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    transform: translateX(410px);
+    z-index: -1;
+
   }
+
 }

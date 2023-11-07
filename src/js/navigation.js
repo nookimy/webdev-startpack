@@ -150,10 +150,11 @@ function scrollShowHeader() {
 
         if (prevScrollpos > currentScrollPos) {
             document.querySelector('.main-header__nav').style.transform = "translateY(0)";
+            document.querySelector('.btn--up').style.transform = "translateX(-25px)";
 
         } else {
             document.querySelector('.main-header__nav').style.transform = "translateY(-100%)";
-
+            document.querySelector('.btn--up').style.transform = "translateX(110%)";
         }
 
         prevScrollpos = currentScrollPos;
@@ -186,7 +187,12 @@ function headerPadding() {
 
 headerPadding();
 
-
-
-
-
+// при нажатии на кнопку .btn-up
+document.querySelector('.btn--up').onclick = () => {
+    // переместим в начало страницы
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+}

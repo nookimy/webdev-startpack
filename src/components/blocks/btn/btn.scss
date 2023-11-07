@@ -162,6 +162,52 @@
     }
   }
 
+  &--up {
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: none;
+
+    @media (min-width: $md-width) {
+      border-color: 1px solid $main;
+      padding: 10px;
+      background-color: white;
+    }
+
+    & > .icon {
+      @media (min-width: $md-width) {
+        position: relative;
+        margin-top: -29px;
+        margin-right: -6px;
+        margin-bottom: -12px;
+      }
+    }
+
+
+    & > span {
+      @include text-normal;
+      color: $main;
+
+      @media (max-width: $mobile-width-only) {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        border: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+      }
+
+    }
+  }
+
 }
 
 .main-header__button-wrap .btn {
